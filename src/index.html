@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-mode="light" dir="ltr">
+
+<head>
+  {{> partials/title-meta
+  title="Oora Labz | Modern Software and Technology Solutions for Real Business Needs"
+  description="Oora Labz builds custom software, AI-driven tools, and scalable digital solutions that help businesses work smarter and grow faster."
+  path=""
+  }}
+  {{> partials/head-css }}
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Oora Labz",
+    "url": "https://ooralabz.com/",
+    "logo": "https://ooralabz.com/assets/images/home-modern/oora-logo.svg",
+    "email": "hello@ooralabz.com",
+    "telephone": "+94761234567",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "107/B, Wanatha Rd",
+      "addressLocality": "Maharagama",
+      "addressCountry": "LK"
+    },
+    "sameAs": [
+      "https://www.instagram.com/oora_labz?igsh=MTZnYzg1anFjaTh1eA==",
+      "https://www.linkedin.com/company/ooralab/"
+    ]
+  }
+  </script>
+</head>
+
+<body class="home-modern-page overflow-x-hidden antialiased selection:bg-[#231E1A] selection:text-white">
+  {{> partials/header-modern }}
+  {{> partials/loader }}
+
+  <!-- ========================================================================= -->
+  <!-- 1. HERO SECTION                                                          -->
+  <!-- ========================================================================= -->
+  <section class="hero-custom-bg relative pt-32 sm:pt-40 lg:pt-48 pb-20 sm:pb-28 lg:pb-36 overflow-hidden bg-[#FAF5EF] bg-[80%_center] sm:bg-[85%_center] lg:bg-right">
+    <!-- Subtle mobile readability overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#FAF5EF]/95 via-[#FAF5EF]/80 to-transparent lg:hidden pointer-events-none"></div>
+
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[460px] lg:min-h-[540px]">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 xl:col-span-6 flex flex-col gap-5 sm:gap-6" data-aos="fade-up" data-aos-duration="800">
+          
+          <!-- Eyebrow Tag -->
+          <div class="inline-flex">
+            <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453]">
+              BUILD THINGS FOR PEOPLE
+            </span>
+          </div>
+
+          <!-- Hero Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-[52px] xl:text-[58px] font-bold text-[#231E1A] leading-[1.14] tracking-tight">
+            Modern Software and<br/>Technology Solutions<br/>for <span class="font-extrabold text-[#1A1512]">Real Business Needs</span>
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="text-sm sm:text-base text-[#615145] leading-relaxed max-w-lg font-normal">
+            We design, develop, and deliver reliable, scalable, and intelligent digital solutions that help businesses work smarter, grow faster, and create better experiences.
+          </p>
+
+          <!-- Action CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-1">
+            <a href="#services" class="bg-[#231E1A] text-white hover:bg-[#3B322C] px-7 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+              <span>Our Services</span>
+              <i class="ri-arrow-right-line text-base"></i>
+            </a>
+
+            <a href="about-contact.html" class="border border-[#CEBCAC] text-[#231E1A] hover:bg-[#231E1A] hover:text-white hover:border-[#231E1A] px-7 py-3 rounded-full text-sm font-semibold transition-all duration-300 transform hover:-translate-y-0.5">
+              <span>Contact Us</span>
+            </a>
+          </div>
+
+          <!-- Feature Highlights Row -->
+          <div class="flex flex-wrap items-center gap-4 sm:gap-6 pt-2 text-xs sm:text-[13px] font-semibold text-[#54463C]">
+            <div class="flex items-center gap-1.5">
+              <i class="ri-checkbox-circle-fill text-[#745A43] text-sm"></i>
+              <span>Custom Solutions</span>
+            </div>
+
+            <div class="flex items-center gap-1.5">
+              <i class="ri-checkbox-circle-fill text-[#745A43] text-sm"></i>
+              <span>Scalable &amp; Secure</span>
+            </div>
+
+            <div class="flex items-center gap-1.5">
+              <i class="ri-checkbox-circle-fill text-[#745A43] text-sm"></i>
+              <span>Business-Focused</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right side empty spacer so the background statue artwork displays cleanly -->
+        <div class="hidden lg:block lg:col-span-5 xl:col-span-6 pointer-events-none"></div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 2. TECHNOLOGY SERVICES ("WHAT WE DO")                                    -->
+  <!-- ========================================================================= -->
+  <section class="py-16 lg:py-24 relative bg-[#FAF5EF]" id="services">
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+        <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453] block mb-2">
+          WHAT WE DO
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#231E1A] leading-tight mb-3">
+          Technology Services to Drive<br/>Your Business Forward
+        </h2>
+        <p class="text-sm sm:text-base text-[#68584B] leading-relaxed">
+          End-to-end digital solutions designed for efficiency, growth, and innovation.
+        </p>
+      </div>
+
+      <!-- 6 Service Cards Grid (3 Columns x 2 Rows) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        
+        <!-- Card 1: Custom Software Development -->
+        <a href="custom-software-development.html" class="service-card-interactive bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[26px] p-7 flex flex-col justify-between group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300" data-aos="fade-up" data-aos-delay="50">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-white/15 group-hover:border group-hover:border-white/20 group-hover:text-white">
+              <i class="ri-code-s-slash-line font-bold"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-[#231E1A] mb-2 group-hover:text-white transition-colors duration-300">
+                Custom Software Development
+              </h3>
+              <p class="text-xs sm:text-sm text-[#66574C] leading-relaxed group-hover:text-[#DFD0C4] transition-colors duration-300">
+                Web &amp; desktop applications, business-specific solutions, scalable systems.
+              </p>
+            </div>
+          </div>
+          <div class="flex justify-end pt-6">
+            <div class="w-9 h-9 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-white group-hover:text-[#231E1A] group-hover:shadow-sm flex items-center justify-center text-sm transition-all duration-300 group-hover:translate-x-1">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 2: Business Applications -->
+        <a href="business-applications-automation.html" class="service-card-interactive bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[26px] p-7 flex flex-col justify-between group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-white/15 group-hover:border group-hover:border-white/20 group-hover:text-white">
+              <i class="ri-stack-line"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-[#231E1A] mb-2 group-hover:text-white transition-colors duration-300">
+                Business Applications
+              </h3>
+              <p class="text-xs sm:text-sm text-[#66574C] leading-relaxed group-hover:text-[#DFD0C4] transition-colors duration-300">
+                Management systems, inventory, sales/billing, and digitalization.
+              </p>
+            </div>
+          </div>
+          <div class="flex justify-end pt-6">
+            <div class="w-9 h-9 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-white group-hover:text-[#231E1A] group-hover:shadow-sm flex items-center justify-center text-sm transition-all duration-300 group-hover:translate-x-1">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3: AI & Intelligent Solutions -->
+        <a href="ai-intelligent-solutions.html" class="service-card-interactive bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[26px] p-7 flex flex-col justify-between group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300" data-aos="fade-up" data-aos-delay="150">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-white/15 group-hover:border group-hover:border-white/20 group-hover:text-white">
+              <i class="ri-sparkling-fill"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-[#231E1A] mb-2 group-hover:text-white transition-colors duration-300">
+                AI &amp; Intelligent Solutions
+              </h3>
+              <p class="text-xs sm:text-sm text-[#66574C] leading-relaxed group-hover:text-[#DFD0C4] transition-colors duration-300">
+                Chatbots, AI assistants, automation, and AI integration for your business.
+              </p>
+            </div>
+          </div>
+          <div class="flex justify-end pt-6">
+            <div class="w-9 h-9 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-white group-hover:text-[#231E1A] group-hover:shadow-sm flex items-center justify-center text-sm transition-all duration-300 group-hover:translate-x-1">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 4: Data & Business Intelligence -->
+        <a href="data-business-intelligence.html" class="service-card-interactive bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[26px] p-7 flex flex-col justify-between group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-white/15 group-hover:border group-hover:border-white/20 group-hover:text-white">
+              <i class="ri-bar-chart-grouped-fill"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-[#231E1A] mb-2 group-hover:text-white transition-colors duration-300">
+                Data &amp; Business Intelligence
+              </h3>
+              <p class="text-xs sm:text-sm text-[#66574C] leading-relaxed group-hover:text-[#DFD0C4] transition-colors duration-300">
+                Dashboards, reports, and analytics to make smarter decisions.
+              </p>
+            </div>
+          </div>
+          <div class="flex justify-end pt-6">
+            <div class="w-9 h-9 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-white group-hover:text-[#231E1A] group-hover:shadow-sm flex items-center justify-center text-sm transition-all duration-300 group-hover:translate-x-1">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 5: UI/UX & Digital Experiences -->
+        <a href="ui-ux-digital-experiences.html" class="service-card-interactive bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[26px] p-7 flex flex-col justify-between group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300" data-aos="fade-up" data-aos-delay="250">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-white/15 group-hover:border group-hover:border-white/20 group-hover:text-white">
+              <i class="ri-macbook-line"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-[#231E1A] mb-2 group-hover:text-white transition-colors duration-300">
+                UI/UX &amp; Digital Experiences
+              </h3>
+              <p class="text-xs sm:text-sm text-[#66574C] leading-relaxed group-hover:text-[#DFD0C4] transition-colors duration-300">
+                User-centered, responsive, and modern digital experiences.
+              </p>
+            </div>
+          </div>
+          <div class="flex justify-end pt-6">
+            <div class="w-9 h-9 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-white group-hover:text-[#231E1A] group-hover:shadow-sm flex items-center justify-center text-sm transition-all duration-300 group-hover:translate-x-1">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 6: Cloud & IT Solutions -->
+        <a href="cloud-it-solutions.html" class="service-card-interactive bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[26px] p-7 flex flex-col justify-between group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-white/15 group-hover:border group-hover:border-white/20 group-hover:text-white">
+              <i class="ri-cloud-line"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-[#231E1A] mb-2 group-hover:text-white transition-colors duration-300">
+                Cloud &amp; IT Solutions
+              </h3>
+              <p class="text-xs sm:text-sm text-[#66574C] leading-relaxed group-hover:text-[#DFD0C4] transition-colors duration-300">
+                Deployment, integration, maintenance, and ongoing support.
+              </p>
+            </div>
+          </div>
+          <div class="flex justify-end pt-6">
+            <div class="w-9 h-9 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-white group-hover:text-[#231E1A] group-hover:shadow-sm flex items-center justify-center text-sm transition-all duration-300 group-hover:translate-x-1">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 3. TURNING IDEAS INTO REAL BUSINESS IMPACT                                -->
+  <!-- ========================================================================= -->
+  <section class="innovative-custom-bg relative pt-20 sm:pt-28 lg:pt-36 pb-20 sm:pb-28 lg:pb-36 overflow-hidden bg-[#FAF5EF] bg-[80%_center] sm:bg-[85%_center] lg:bg-right" id="about">
+    <!-- Subtle mobile readability overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#FAF5EF]/95 via-[#FAF5EF]/80 to-transparent lg:hidden pointer-events-none"></div>
+
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[460px] lg:min-h-[540px]">
+        
+        <!-- Left Column: Content & Statistics -->
+        <div class="lg:col-span-7 xl:col-span-6 flex flex-col gap-6" data-aos="fade-right">
+          
+          <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453]">
+            OUR INNOVATIVE SOLUTIONS
+          </span>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#231E1A] leading-tight">
+            Turning Ideas into<br/><span class="font-extrabold text-[#1A1512]">Real Business Impact</span>
+          </h2>
+
+          <p class="text-sm sm:text-base text-[#615145] leading-relaxed max-w-lg font-normal">
+            Practical, future-ready solutions that connect people, processes, and data to drive growth.
+          </p>
+
+          <!-- Animated Stat Counters Row -->
+          <div class="grid grid-cols-3 gap-4 sm:gap-6 py-4 border-y border-[#DCBEA6]/60 max-w-lg" id="statsSection">
+            <div>
+              <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#231E1A] stat-counter-number tracking-tight" data-target="3" data-suffix="+">
+                3+
+              </div>
+              <div class="text-xs sm:text-sm text-[#745A43] mt-1 font-medium">
+                Years of Experience
+              </div>
+            </div>
+
+            <div>
+              <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#231E1A] stat-counter-number tracking-tight" data-target="2" data-suffix="">
+                2
+              </div>
+              <div class="text-xs sm:text-sm text-[#745A43] mt-1 font-medium">
+                System Applications
+              </div>
+            </div>
+
+            <div>
+              <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#231E1A] stat-counter-number tracking-tight" data-target="5" data-suffix="">
+                5
+              </div>
+              <div class="text-xs sm:text-sm text-[#745A43] mt-1 font-medium">
+                Websites Delivered
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Button -->
+          <div class="pt-1">
+            <a href="about-contact.html" class="bg-[#231E1A] text-white hover:bg-[#3B322C] px-7 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+              <span>About Oora Labz</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right side empty spacer so the background statue & laptop artwork displays cleanly -->
+        <div class="hidden lg:block lg:col-span-5 xl:col-span-6 pointer-events-none"></div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 4. BUSINESS PLATFORMS BUILT BY OORA LABZ ("OUR PRODUCTS")                 -->
+  <!-- ========================================================================= -->
+  <section class="py-16 lg:py-24 relative bg-[#FAF5EF]" id="products">
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+        <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453] block mb-2">
+          OUR PRODUCTS
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#231E1A] leading-tight mb-3">
+          Business Platforms Built by Oora Labz
+        </h2>
+        <p class="text-sm sm:text-base text-[#68584B] leading-relaxed">
+          Purpose-built solutions to simplify operations, improve customer engagement, and drive business growth.
+        </p>
+      </div>
+
+      <!-- 4 Products Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        
+        <!-- Product 1: OOSEND -->
+        <div class="bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[24px] p-6 flex flex-col justify-between group cursor-pointer hover:bg-white hover:border-[#CDBBA9] hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(74,56,42,0.08)] transition-all duration-300" data-aos="fade-up" data-aos-delay="50">
+          <div class="flex flex-col gap-3.5">
+            <div class="w-11 h-11 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-[#231E1A] group-hover:text-white group-hover:rotate-6">
+              <i class="ri-mail-line"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-extrabold text-[#231E1A] mb-1 tracking-tight group-hover:text-[#745A43] transition-colors">
+                OOSEND
+              </h3>
+              <p class="text-xs sm:text-[13px] text-[#66574C] leading-relaxed">
+                Bulk Email &amp; WhatsApp Messaging Platform
+              </p>
+            </div>
+          </div>
+          <div class="flex justify-end pt-5">
+            <div class="w-8 h-8 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-[#231E1A] group-hover:text-white flex items-center justify-center text-xs transition-all duration-300 group-hover:translate-x-1">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: FINLOO -->
+        <div class="bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[24px] p-6 flex flex-col justify-between group cursor-pointer hover:bg-white hover:border-[#CDBBA9] hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(74,56,42,0.08)] transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex flex-col gap-3.5">
+            <div class="w-11 h-11 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-[#231E1A] group-hover:text-white group-hover:rotate-6">
+              <i class="ri-coins-line"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-extrabold text-[#231E1A] mb-1 tracking-tight group-hover:text-[#745A43] transition-colors">
+                FINLOO
+              </h3>
+              <p class="text-xs sm:text-[13px] text-[#66574C] leading-relaxed">
+                Micro-Finance Business Application
+              </p>
+            </div>
+          </div>
+          <div class="flex justify-end pt-5">
+            <div class="w-8 h-8 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-[#231E1A] group-hover:text-white flex items-center justify-center text-xs transition-all duration-300 group-hover:translate-x-1">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3: LOOGA -->
+        <div class="bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[24px] p-6 flex flex-col justify-between group cursor-pointer hover:bg-white hover:border-[#CDBBA9] hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(74,56,42,0.08)] transition-all duration-300" data-aos="fade-up" data-aos-delay="150">
+          <div class="flex flex-col gap-3.5">
+            <div class="w-11 h-11 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-[#231E1A] group-hover:text-white group-hover:rotate-6">
+              <i class="ri-box-3-line"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-extrabold text-[#231E1A] mb-1 tracking-tight group-hover:text-[#745A43] transition-colors">
+                LOOGA
+              </h3>
+              <p class="text-xs sm:text-[13px] text-[#66574C] leading-relaxed">
+                Supply Chain Management Platform
+              </p>
+            </div>
+          </div>
+          <div class="flex justify-end pt-5">
+            <div class="w-8 h-8 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-[#231E1A] group-hover:text-white flex items-center justify-center text-xs transition-all duration-300 group-hover:translate-x-1">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4: OOLA -->
+        <div class="bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[24px] p-6 flex flex-col justify-between group cursor-pointer hover:bg-white hover:border-[#CDBBA9] hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(74,56,42,0.08)] transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex flex-col gap-3.5">
+            <div class="w-11 h-11 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-[#231E1A] group-hover:text-white group-hover:rotate-6">
+              <i class="ri-group-line"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-extrabold text-[#231E1A] mb-1 tracking-tight group-hover:text-[#745A43] transition-colors">
+                OOLA
+              </h3>
+              <p class="text-xs sm:text-[13px] text-[#66574C] leading-relaxed">
+                CRM Platform
+              </p>
+            </div>
+          </div>
+          <div class="flex justify-end pt-5">
+            <div class="w-8 h-8 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-[#231E1A] group-hover:text-white flex items-center justify-center text-xs transition-all duration-300 group-hover:translate-x-1">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Fluid Wave Divider transitioning into Why Choose -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" fill="#F4EDE1"/>
+    </svg>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- 5. WHY CHOOSE OORA LABZ ("A TECHNOLOGY PARTNER YOU CAN RELY ON")          -->
+  <!-- ========================================================================= -->
+  <section class="py-16 lg:py-24 relative bg-[#F4EDE1]">
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        
+        <!-- Left: Exact Greek Statue VR Landscape Banner Card -->
+        <div class="lg:col-span-6" data-aos="fade-right">
+          <div class="rounded-[28px] overflow-hidden shadow-[0_16px_36px_rgba(74,56,42,0.14)] border border-[#DFD0C2] group">
+            <img src="assets/images/home-modern/exact/why-exact.png" alt="A Technology Partner You Can Rely On" class="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-700 ease-out" />
+          </div>
+        </div>
+
+        <!-- Right: Why Choose Bullet Points -->
+        <div class="lg:col-span-6 flex flex-col gap-6" data-aos="fade-left">
+          
+          <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453]">
+            WHY CHOOSE OORA LABZ
+          </span>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#231E1A] leading-tight">
+            A Technology Partner<br/>You Can Rely On
+          </h2>
+
+          <!-- Checkmark items matching exact bullet styling -->
+          <ul class="flex flex-col gap-3 text-sm sm:text-base text-[#47392F]">
+            <li class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-[#745A43] text-white flex items-center justify-center text-xs flex-shrink-0">
+                <i class="ri-check-line font-bold"></i>
+              </span>
+              <span class="font-medium text-[#382E27]">Business-focused and people-centric approach</span>
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-[#745A43] text-white flex items-center justify-center text-xs flex-shrink-0">
+                <i class="ri-check-line font-bold"></i>
+              </span>
+              <span class="font-medium text-[#382E27]">Reliable, scalable, and secure solutions</span>
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-[#745A43] text-white flex items-center justify-center text-xs flex-shrink-0">
+                <i class="ri-check-line font-bold"></i>
+              </span>
+              <span class="font-medium text-[#382E27]">End-to-end support and long-term partnership</span>
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-[#745A43] text-white flex items-center justify-center text-xs flex-shrink-0">
+                <i class="ri-check-line font-bold"></i>
+              </span>
+              <span class="font-medium text-[#382E27]">A team that turns ideas into working solutions</span>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Fluid Wave Divider transitioning into Testimonials -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="!h-[40px] sm:!h-[60px]">
+      <path d="M0,32L80,34.7C160,37,320,43,480,37.3C640,32,800,16,960,13.3C1120,11,1280,21,1360,26.7L1440,32L1440,60L1360,60C1280,60,1120,60,960,60C800,60,640,60,480,60C320,60,160,60,80,60L0,60Z" fill="#FAF5EF"/>
+    </svg>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- 6. WHAT OUR CLIENTS SAY (TESTIMONIAL CAROUSEL)                           -->
+  <!-- ========================================================================= -->
+  <section class="pt-6 sm:pt-8 lg:pt-10 pb-8 sm:pb-10 relative bg-[#FAF5EF] overflow-hidden">
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-xl mx-auto mb-7 sm:mb-9" data-aos="fade-up">
+        <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453] block mb-1.5">
+          WHAT OUR CLIENTS SAY
+        </span>
+        <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-bold text-[#231E1A] leading-tight">
+          Trusted by Growing Businesses
+        </h2>
+      </div>
+
+      <!-- 3D 5-Card Rotating Fan Deck Carousel -->
+      <div class="testimonial-deck-wrapper px-2" data-aos="zoom-in">
+        
+        <!-- Prev Button -->
+        <button id="testimonialPrev" class="testimonial-nav-btn" aria-label="Previous Testimonial">
+          <i class="ri-arrow-left-line text-sm font-bold"></i>
+        </button>
+
+        <!-- 5-Card Interactive Stage -->
+        <div id="testimonialDeckStage" class="testimonial-deck-stage">
+          
+          <!-- Card Slot 0 (Initially Outer Left) -->
+          <div class="testimonial-fan-card pos-outer-left" data-slot="-2">
+            <div class="fan-card-content">
+              <div class="flex items-center justify-center gap-3 mb-4">
+                <img src="assets/images/team/team1.png" alt="Nimal Perera" class="fan-avatar w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover flex-shrink-0" />
+                <div class="text-left">
+                  <div class="fan-name text-xs sm:text-[13px] font-bold text-[#1A1512] leading-tight">Nimal Perera</div>
+                  <div class="fan-role text-[11px] sm:text-[12px] text-[#9E9489] font-normal leading-tight mt-0.5">Operations Manager</div>
+                </div>
+              </div>
+              <p class="fan-quote text-center text-xs sm:text-[14px] text-[#1A1512] font-bold leading-[1.45] max-w-[340px] mx-auto">
+                Oora Labz delivered a solution that really improved our operations. The team was professional, responsive, and easy to work with.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card Slot 1 (Initially Mid Left) -->
+          <div class="testimonial-fan-card pos-mid-left" data-slot="-1">
+            <div class="fan-card-content">
+              <div class="flex items-center justify-center gap-3 mb-4">
+                <img src="assets/images/team/team2.png" alt="Kavinda Silva" class="fan-avatar w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover flex-shrink-0" />
+                <div class="text-left">
+                  <div class="fan-name text-xs sm:text-[13px] font-bold text-[#1A1512] leading-tight">Kavinda Silva</div>
+                  <div class="fan-role text-[11px] sm:text-[12px] text-[#9E9489] font-normal leading-tight mt-0.5">Head of Product</div>
+                </div>
+              </div>
+              <p class="fan-quote text-center text-xs sm:text-[14px] text-[#1A1512] font-bold leading-[1.45] max-w-[340px] mx-auto">
+                Working with Oora Labz transformed our customer workflows. Their custom platform reduced our turnaround time by over 40%.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card Slot 2 (Initially Front Active - Roshan Fernando) -->
+          <div class="testimonial-fan-card pos-front" data-slot="0">
+            <div class="fan-card-content">
+              <div class="flex items-center justify-center gap-3 mb-4">
+                <img src="assets/images/home-modern/avatar-roshan-sharp.png" alt="Roshan Fernando" class="fan-avatar w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover flex-shrink-0" />
+                <div class="text-left">
+                  <div class="fan-name text-xs sm:text-[13px] font-bold text-[#1A1512] leading-tight">Roshan Fernando</div>
+                  <div class="fan-role text-[11px] sm:text-[12px] text-[#9E9489] font-normal leading-tight mt-0.5">Managing Director</div>
+                </div>
+              </div>
+              <p class="fan-quote text-center text-xs sm:text-[14px] text-[#1A1512] font-bold leading-[1.45] max-w-[340px] mx-auto">
+                From inception to launch, their team was communicative, disciplined, and focused on our business gols. Atrue partner
+              </p>
+            </div>
+          </div>
+
+          <!-- Card Slot 3 (Initially Mid Right) -->
+          <div class="testimonial-fan-card pos-mid-right" data-slot="1">
+            <div class="fan-card-content">
+              <div class="flex items-center justify-center gap-3 mb-4">
+                <img src="assets/images/team/team3.png" alt="Dilini Rajapakse" class="fan-avatar w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover flex-shrink-0" />
+                <div class="text-left">
+                  <div class="fan-name text-xs sm:text-[13px] font-bold text-[#1A1512] leading-tight">Dilini Rajapakse</div>
+                  <div class="fan-role text-[11px] sm:text-[12px] text-[#9E9489] font-normal leading-tight mt-0.5">Chief Technology Officer</div>
+                </div>
+              </div>
+              <p class="fan-quote text-center text-xs sm:text-[14px] text-[#1A1512] font-bold leading-[1.45] max-w-[340px] mx-auto">
+                The AI integrations they delivered were seamless and immediately actionable. Exceptional engineering and reliable delivery.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card Slot 4 (Initially Outer Right) -->
+          <div class="testimonial-fan-card pos-outer-right" data-slot="2">
+            <div class="fan-card-content">
+              <div class="flex items-center justify-center gap-3 mb-4">
+                <img src="assets/images/team/team1.png" alt="Nimal Perera" class="fan-avatar w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover flex-shrink-0" />
+                <div class="text-left">
+                  <div class="fan-name text-xs sm:text-[13px] font-bold text-[#1A1512] leading-tight">Nimal Perera</div>
+                  <div class="fan-role text-[11px] sm:text-[12px] text-[#9E9489] font-normal leading-tight mt-0.5">Operations Manager</div>
+                </div>
+              </div>
+              <p class="fan-quote text-center text-xs sm:text-[14px] text-[#1A1512] font-bold leading-[1.45] max-w-[340px] mx-auto">
+                Oora Labz delivered a solution that really improved our operations. The team was professional, responsive, and easy to work with.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Next Button -->
+        <button id="testimonialNext" class="testimonial-nav-btn" aria-label="Next Testimonial">
+          <i class="ri-arrow-right-line text-sm font-bold"></i>
+        </button>
+
+      </div>
+
+      <!-- Pagination Dash Indicators -->
+      <div id="testimonialDots" class="flex items-center justify-center gap-[5px] mt-7">
+        <!-- Injected via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Fluid Wave Divider transitioning into Projects -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="!h-[40px] sm:!h-[60px]">
+      <path d="M0,16L80,24C160,32,320,48,480,48C640,48,800,32,960,26.7C1120,21,1280,26,1360,29.3L1440,32L1440,60L1360,60C1280,60,1120,60,960,60C800,60,640,60,480,60C320,60,160,60,80,60L0,60Z" fill="#F4EDE1"/>
+    </svg>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- 7. RECENT PROJECTS & SUCCESS STORIES ("OUR WORK")                        -->
+  <!-- ========================================================================= -->
+  <section class="py-16 lg:py-24 relative bg-[#F4EDE1]" id="projects">
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+        <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453] block mb-2">
+          OUR WORK
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#231E1A] leading-tight mb-3">
+          Recent Projects &amp; Success Stories
+        </h2>
+        <p class="text-sm sm:text-base text-[#68584B] leading-relaxed">
+          A glimpse of the solutions we've built for our clients.
+        </p>
+      </div>
+
+      <!-- 3 Project Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        
+        <!-- Project 1: Finance Management System -->
+        <div class="bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[24px] overflow-hidden group cursor-pointer flex flex-col justify-between hover:bg-white hover:border-[#CDBBA9] hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(74,56,42,0.1)] transition-all duration-300" data-aos="fade-up" data-aos-delay="50">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden bg-[#E8DDD2]">
+              <img src="assets/images/home-modern/exact/p1-exact.png" alt="Finance Management System" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-600 ease-out" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg sm:text-xl font-bold text-[#231E1A] mb-1.5 group-hover:text-[#745A43] transition-colors">
+                Finance Management System
+              </h3>
+              <p class="text-xs sm:text-[13px] text-[#66574C] leading-relaxed">
+                End-to-end solution for a microfinance business.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-5 flex justify-end">
+            <div class="w-8 h-8 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-[#231E1A] group-hover:text-white flex items-center justify-center text-xs transition-all duration-300 group-hover:translate-x-1">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Supply Chain Platform -->
+        <div class="bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[24px] overflow-hidden group cursor-pointer flex flex-col justify-between hover:bg-white hover:border-[#CDBBA9] hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(74,56,42,0.1)] transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden bg-[#E8DDD2]">
+              <img src="assets/images/home-modern/exact/p2-exact.png" alt="Supply Chain Platform" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-600 ease-out" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg sm:text-xl font-bold text-[#231E1A] mb-1.5 group-hover:text-[#745A43] transition-colors">
+                Supply Chain Platform
+              </h3>
+              <p class="text-xs sm:text-[13px] text-[#66574C] leading-relaxed">
+                Streamlined inventory, procurement, and distribution operations.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-5 flex justify-end">
+            <div class="w-8 h-8 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-[#231E1A] group-hover:text-white flex items-center justify-center text-xs transition-all duration-300 group-hover:translate-x-1">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Client CRM System -->
+        <div class="bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[24px] overflow-hidden group cursor-pointer flex flex-col justify-between hover:bg-white hover:border-[#CDBBA9] hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(74,56,42,0.1)] transition-all duration-300" data-aos="fade-up" data-aos-delay="150">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden bg-[#E8DDD2]">
+              <img src="assets/images/home-modern/exact/p3-exact.png" alt="Client CRM System" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-600 ease-out" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg sm:text-xl font-bold text-[#231E1A] mb-1.5 group-hover:text-[#745A43] transition-colors">
+                Client CRM System
+              </h3>
+              <p class="text-xs sm:text-[13px] text-[#66574C] leading-relaxed">
+                Managing leads, customers, and interactions in one platform.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-5 flex justify-end">
+            <div class="w-8 h-8 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-[#231E1A] group-hover:text-white flex items-center justify-center text-xs transition-all duration-300 group-hover:translate-x-1">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 8. CTA BANNER ("LET'S BUILD WHAT'S NEXT")                                -->
+  <!-- ========================================================================= -->
+  <section class="py-14 sm:py-20 relative bg-[#F4EDE1]" id="contact">
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="rounded-[30px] sm:rounded-[40px] p-8 sm:p-12 lg:p-12 bg-gradient-to-r from-[#EFE3D5] via-[#E6D4C2] to-[#DCC7B3] border border-[#D5C2AF] shadow-[0_16px_40px_rgba(74,56,42,0.09)] flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden group" data-aos="zoom-in">
+        
+        <!-- Fluid glowing wave accent in background -->
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-white/30 blur-2xl pointer-events-none"></div>
+
+        <div class="flex flex-col gap-1.5 max-w-xl text-center lg:text-left z-10">
+          <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#231E1A] tracking-tight leading-tight">
+            Let's Build What's Next
+          </h2>
+          <p class="text-sm sm:text-base text-[#524133] font-medium leading-relaxed">
+            Have an idea or a business need? Let's turn it into a practical, scalable solution together.
+          </p>
+        </div>
+
+        <div class="flex-shrink-0 z-10">
+          <a href="about-contact.html" class="bg-[#231E1A] text-white hover:bg-[#3B322C] text-sm sm:text-base font-medium py-3.5 px-8 rounded-full shadow-lg hover:shadow-xl inline-flex items-center gap-2 transition-all duration-300 transform hover:-translate-y-0.5">
+            <span>Get in Touch</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 9. FOOTER                                                                 -->
+  <!-- ========================================================================= -->
+  {{> partials/footer-modern }}
+  {{> partials/back-to-top }}
+  {{> partials/vendor-scripts }}
+</body>
+
+</html>

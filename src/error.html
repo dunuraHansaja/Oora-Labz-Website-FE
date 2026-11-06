@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-mode="light" dir="ltr">
+
+<head>
+  {{> partials/title-meta title="404" }} {{> partials/head-css }}
+</head>
+
+<body class="overflow-x-hidden">
+  <div class="min-h-screen flex justify-center items-center">
+    <div class="container flex flex-col lg:flex-row justify-center items-center gap-5 xl:gap-[50px]">
+      <img src="./assets/images/error.png" alt="error" class="sm:w-[42%]" />
+
+      <div class="w-full lg:w-[58%]">
+        <div class="flex flex-col gap-[30px]">
+          <div class="flex flex-col gap-[10px]">
+            <h1
+              class="text-[36px] sm:text-[44px] xl:text-[56px] leading-[46px] sm:leading-[56px] xl:leading-[68px] font-bold text-secondary-white">
+              404 - This page isn’t Available.
+            </h1>
+            <p class="text-body2 text-secondary-white">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et
+              massa mi. Aliquam in hendrerit urna. Pellentesque sit amet
+              sapien.
+            </p>
+          </div>
+
+          <div class="flex justify-start items-center gap-[10px]">
+            <a href="index.html"
+              class="section-btn flex justify-center items-center gap-[10px] py-[5px] pl-[22px] pr-[6px] rounded-[60px]">
+              <p class="capitalize inline-flex text-body3 md:text-body2 xl:text-body1 text-secondary-white">
+                Go Back Home
+              </p>
+              <div class="icon-wrapper cursor-pointer">
+                <i class="button__icon ri-arrow-right-line text-[16px]"></i>
+                <i class="button__icon button__icon-copy ri-arrow-right-line text-[16px]"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{> partials/back-to-top}}
+</body>
+
+</html>

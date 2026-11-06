@@ -1,0 +1,85 @@
+<section class="container pt-[70px] xl:pt-[100px] flex flex-col gap-[30px] sm:gap-[50px] overflow-hidden">
+  <h2
+    class="headline text-[28px] sm:text-[40px] lg:text-[44px] leading-[38px] sm:leading-[50px] lg:leading-[56px] font-bold text-secondary-white">
+    Where strategy meets <span class="text-primary-light">engineering</span>: software that's <span
+      class="text-primary-light">built for people</span>, not just built to spec
+  </h2>
+
+  <div class="grid lg:grid-cols-2 items-center gap-[30px] lg:gap-5">
+    <div data-aos="zoom-in" class="relative w-[288px] sm:w-[600px] lg:w-full">
+      <img src="../assets/images/counter.png" alt="" class="w-full">
+      <div
+        class="absolute bottom-0 sm:bottom-5 right-0 sm:right-5 flex flex-col justify-center items-center gap-[10px] p-[15px] sm:p-5 bg-secondary-dark rounded-[20px]">
+        <h2
+          class="counter-number text-[40px] sm:text-[68px] xl:text-[86px] leading-10 sm:leading-[78px] xl:leading-[98px] font-bold text-secondary-white"
+          data-target="5" data-suffix="">0</h2>
+        <p class="text-[16px] sm:text-[20px] leading-6 sm:leading-7 font-bold text-secondary-white">In-House Products Built</p>
+      </div>
+    </div>
+    <div>
+      <p data-aos="fade-left"
+        class=" text-[16px] sm:text-[20px] xl:text-[24px] leading-6 xl:leading-8 font-medium text-secondary-white">OORA
+        Labs is a Colombo-based software team founded in 2023. We design and build custom applications, business
+        tools, and AI-driven solutions for companies that need technology to work the way they do. We also build
+        our own products — CRM, supply chain, and micro-finance platforms among them — which keeps our engineering
+        sharp and our advice practical.</p>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-5 xl:gap-[30px] mt-5 xl:mt-[30px]">
+        <div data-aos="zoom-in-up"
+          class="w-full sm:w-[50%] flex flex-col gap-[10px] justify-center items-center p-5 rounded-[20px] bg-gradient-to-r from-[rgba(0,150,136,0.5)] to-[rgba(122,188,155,0.5)]">
+          <h2 class="counter-number text-[44px] leading-[56px] font-bold text-secondary-white" data-target="11"
+            data-suffix="">0</h2>
+          <p class="text-body1   text-secondary-white">Service Specialties</p>
+        </div>
+        <div data-aos="zoom-in-up"
+          class="w-full sm:w-[50%] flex flex-col gap-[10px] justify-center items-center p-5 rounded-[20px] bg-gradient-to-r from-[rgba(0,150,136,0.5)] to-[rgba(122,188,155,0.5)]">
+          <h2 class="counter-number text-[44px] leading-[56px] font-bold text-secondary-white" data-target="3"
+            data-suffix="+">0</h2>
+          <p class="text-body1   text-secondary-white">Years Building Software</p>
+        </div>
+      </div>
+      <div class="flex justify-start items-start mt-[30px] 2x:mt-[50px] ">
+        <div data-aos="flip-up"
+          class="section-btn  flex justify-center items-center gap-[10px] py-[5px] pl-[22px] pr-[6px] rounded-[60px] ">
+          <a href="about-contact.html" class="capitalize inline-flex  text-body3 md:text-body2  text-secondary-white">
+            Get Started
+          </a>
+
+          <div class="icon-wrapper cursor-pointer">
+            <i class="button__icon ri-arrow-right-line text-[16px]"></i>
+            <i class="button__icon button__icon-copy ri-arrow-right-line text-[16px]"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<script>
+  const counters = document.querySelectorAll(".counter-number");
+
+  counters.forEach(counter => {
+    counter.innerText = "0";
+
+    const updateCounter = () => {
+      const target = +counter.getAttribute("data-target");
+      const suffix = counter.getAttribute("data-suffix") || "";
+      const current = +counter.innerText.replace(/\D/g, "");
+
+      const increment = Math.max(target / 200, 1); // Fix: minimum increment = 1
+
+      if (current < target) {
+        const newValue = Math.ceil(current + increment);
+        counter.innerText = `${Math.min(newValue, target).toLocaleString()}${suffix}`;
+        setTimeout(updateCounter, 500);
+      } else {
+        counter.innerText = `${target.toLocaleString()}${suffix}`;
+      }
+    };
+    updateCounter();
+  });
+
+
+
+</script>

@@ -1,0 +1,120 @@
+<header class="overflow-x-hidden">
+  <nav data-aos="fade-down" data-aos-duration="700"
+    class="left-0 right-0 fixed top-0 z-20 px-[16px] md:px-[32px] lg:px-[48px] xl:px-[64px] 2xl:px-0">
+    <div id="siteHeader"
+      class="flex py-[10px] lg:py-0 justify-between items-center md:max-w-[768px] lg:max-w-[1025px] xl:max-w-[1280px] 2xl:max-w-[1288px] mx-auto rounded-[100px] border border-primary-light px-[30px] xl:px-[50px] bg-secondary-dark translate-y-[30px] transition-transform duration-300 ease-in-out">
+      <a href="index.html">
+        <img class="max-w-[85%] md:max-w-full" src="assets/images/Logo.svg" alt="OORA Labs logo" />
+      </a>
+
+      <ul class="hidden lg:flex justify-center gap-[30px] items-center">
+        <li class="relative group">
+          <div class="inline-flex py-[26px] xl:py-[31px]">
+            <a href="index.html" class="capitalize text-body2 font-bold text-secondary-white">
+              Home
+            </a>
+          </div>
+        </li>
+
+        <li class="relative group">
+          <div class="inline-flex py-[26px] xl:py-[31px]">
+            <a href="services.html" class="capitalize text-body2 font-bold text-secondary-white">
+              Services
+            </a>
+          </div>
+        </li>
+
+        <li class="relative group">
+          <div class="inline-flex py-[26px] xl:py-[31px]">
+            <a href="about-contact.html" class="capitalize text-body2 font-bold text-secondary-white">
+              About & Contact Us
+            </a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="flex justify-end gap-[10px]">
+        <div class="flex justify-center items-center gap-[10px]">
+          <div
+            class="section-btn hidden xl:flex justify-center items-center gap-[10px] py-[5px] pl-[22px] pr-[6px] rounded-[60px]">
+            <a href="about-contact.html" class="capitalize inline-flex text-body2 xl:text-body1 text-secondary-white">
+              Get Started
+            </a>
+            <div class="icon-wrapper cursor-pointer">
+              <i class="button__icon ri-arrow-right-line text-[16px]"></i>
+              <i class="button__icon button__icon-copy ri-arrow-right-line text-[16px]"></i>
+            </div>
+          </div>
+        </div>
+
+        <button id="menu-toggle" class="block lg:hidden">
+          <i id="menu-icon" class="text-[25px] text-primary-light font-semibold ri-menu-3-line"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="overlay" class="fixed inset-0 bg-primary-dark bg-opacity-50 z-[998] hidden"></div>
+
+  <div id="mobile-menu"
+    class="border-l-[5px] border-primary-light lg:hidden fixed top-0 right-0 w-[100%] sm:w-[50%] h-screen bg-gradient-to-b from-[#000000] to-[#004a4399] backdrop-blur-[50px] z-[999] px-6 py-10 transition-transform duration-300 ease-linear transform translate-x-full overflow-y-auto">
+    <div class="flex flex-col gap-10">
+      <div class="flex justify-between items-center">
+        <img src="../assets/images/Logo.svg" alt="OORA Labs logo" />
+        <i id="close-icon" class="text-[28px] text-primary-light block font-semibold ri-close-line text-right"></i>
+      </div>
+      <div class="relative flex flex-col items-center gap-[10px]">
+        <div class="relative w-full">
+          <div class="flex group justify-between items-center">
+            <a href="index.html"
+              class="flex justify-start items-start pb-2 transition-all duration-300 ease-in text-body2 font-semibold text-secondary-white border-b border-secondary-white w-full">
+              Home
+            </a>
+          </div>
+        </div>
+
+        <div class="relative w-full">
+          <div class="flex group justify-between items-center">
+            <a href="services.html"
+              class="flex justify-start items-start pb-2 transition-all duration-300 ease-in text-body2 font-semibold text-secondary-white border-b border-secondary-white w-full">
+              Services
+            </a>
+          </div>
+        </div>
+
+        <div class="relative w-full">
+          <div class="flex group justify-between items-center">
+            <a href="about-contact.html"
+              class="flex justify-start items-start pb-2 transition-all duration-300 ease-in text-body2 font-semibold text-secondary-white border-b border-sectext-secondary-white w-full">
+              About & Contact Us
+            </a>
+          </div>
+        </div>
+
+        <div class="section-btn flex justify-center items-center gap-[10px] py-[5px] pl-[22px] pr-[6px] rounded-[60px]">
+          <a href="about-contact.html" class="capitalize inline-flex text-body2 text-secondary-white">
+            Get Started
+          </a>
+          <div class="icon-wrapper cursor-pointer">
+            <i class="button__icon ri-arrow-right-line text-[16px]"></i>
+            <i class="button__icon button__icon-copy ri-arrow-right-line text-[16px]"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById("siteHeader");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.remove("translate-y-[30px]");
+      header.classList.add("translate-y-0");
+    } else {
+      header.classList.add("translate-y-[30px]");
+      header.classList.remove("translate-y-0");
+    }
+  });
+</script>

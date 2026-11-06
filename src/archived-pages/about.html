@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-mode="light" dir="ltr">
+
+<head>
+  {{> partials/title-meta title="About" }} {{> partials/head-css }}
+</head>
+
+<body class="overflow-x-hidden">
+
+  {{> partials/header}}
+  {{> partials/loader}}
+
+  <div
+    class="bg-center bg-cover bg-no-repeat background-section bg-[url('/assets/images/backgroundImg.png')] pt-[150px] sm:pt-[170px] md:pt-[200px] lg:pt-[240px] xl:pt-[267px] pb-[70px] sm:pb-[100px] md:pb-[115px] lg:pb-[135px] xl:pb-[151px]">
+    <div class="container flex flex-col justify-center items-center sm:gap-[10px]">
+      <h2 class="text-[30px] sm:text-[44px] leading-[40px] sm:leading-[56px] font-bold">About Us</h2>
+      <div class="flex justify-center items-center gap-[10px]">
+        <a href="index.html"
+          class="text-body2 sm:text-body1 text-secondary-white hover:text-primary-light transition-all duration-300 ease-in-out">Home</a>
+        <a href="#"><img src="./assets/images/nextPage.svg" alt="bckground"></a>
+        <a href="about.html"
+          class="text-body2 sm:text-body1 text-secondary-white hover:text-primary-light transition-all duration-300 ease-in-out">About
+          Us</a>
+      </div>
+    </div>
+  </div>
+
+  {{> partials/counterPart}}
+  {{> partials/tab-part}}
+  {{> partials/chooseUs}}
+  {{> partials/impact}}
+
+  <div class=" pb-[70px] xl:pb-[100px]">
+    {{> partials/testimonial}}
+  </div>
+
+  {{> partials/footer}}
+  {{> partials/back-to-top}} {{>
+  partials/vendor-scripts}}
+
+</body>
+
+</html>

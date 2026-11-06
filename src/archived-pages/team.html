@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-mode="light" dir="ltr">
+
+<head>
+    {{> partials/title-meta title="Team" }} {{> partials/head-css }}
+</head>
+
+<body class="overflow-x-hidden">
+
+    {{> partials/header}}
+    {{> partials/loader}}
+
+    <div
+        class="bg-center bg-cover bg-no-repeat background-section bg-[url('/assets/images/backgroundImg.png')] pt-[150px] sm:pt-[170px] md:pt-[200px] lg:pt-[240px] xl:pt-[267px] pb-[70px] sm:pb-[100px] md:pb-[115px] lg:pb-[135px] xl:pb-[151px]">
+        <div class="container flex flex-col justify-center items-center sm:gap-[10px]">
+            <h2 class="text-[30px] sm:text-[44px] leading-[40px] sm:leading-[56px] font-bold">Team
+            </h2>
+            <div class="flex justify-center items-center gap-[10px]">
+                <a href="index.html"
+                    class="text-body2 sm:text-body1 text-secondary-white hover:text-primary-light transition-all duration-300 ease-in-out">Home</a>
+                <a href="#"><img src="./assets/images/nextPage.svg" alt="page"></a>
+                <a href="#"
+                    class="text-body2 sm:text-body1 text-secondary-white hover:text-primary-light transition-all duration-300 ease-in-out">Page’s</a>
+                <a href="#"><img src="./assets/images/nextPage.svg" alt="page"></a>
+                <a href="team.html"
+                    class="text-body2 sm:text-body1 text-secondary-white hover:text-primary-light transition-all duration-300 ease-in-out">Team</a>
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center gap-x-5 gap-5 sm:gap-y-[30px] container py-[70px] xl:py-[100px] overflow-hidden">
+
+        <div onclick="window.location.href='teamDetail.html'" data-aos="flip-up"
+            class="relative w-[288px] sm:w-full z-[1] group mx-auto sm:mx-0">
+            <img src="./assets/images/team/team1.png" alt="team1" class="relative w-full h-full">
+
+            <div class="cursor-pointer absolute top-0 w-full h-full bg-[#000000B2] bg-gradient-to-b 
+              from-[rgba(0,150,136,0.1)] to-[rgba(122,188,155,0.1)] opacity-0 
+              group-hover:opacity-100 transition-opacity duration-500">
+            </div>
+
+            <div
+                class="cursor-pointer absolute top-0 left-0 p-4 xl:p-5 w-full h-full flex flex-col justify-between z-[3]">
+                <div class="flex flex-col gap-4 xl:gap-5">
+
+                    <a href="#" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center 
+                from-primary-light to-[#7ABC9B] rounded-[40px] relative z-[5]">
+                        <i
+                            class="ri-share-fill  text-[24px] xl:text-[30px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                    </a>
+
+                    <div class="flex flex-col gap-4 xl:gap-5 opacity-0 -translate-y-10 
+                  group-hover:opacity-100 group-hover:translate-y-0 
+                  transition-all duration-500 ease-in-out">
+                        <a href="https://www.facebook.com/" target="_blank" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px]">
+                            <i
+                                class="ri-facebook-circle-fill text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center  hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px] ">
+                            <i
+                                class="ri-instagram-fill text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" class=" w-[40px] xl:w-[50px]   h-[40px] xl:h-[50px] bg-gradient-to-b text-center  hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px]">
+                            <i
+                                class="ri-twitter-x-line text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-[5px] justify-end items-end opacity-0 
+                group-hover:opacity-100     transition-opacity duration-500 delay-200">
+                    <h3 class="text-[24px] leading-8 text-secondary-white font-bold text-right">Daniel Ortiz</h3>
+                    <p class="text-body1 text-primary-light text-right">Senior Data Scientist</p>
+                </div>
+            </div>
+        </div>
+
+        <div onclick="window.location.href='teamDetail.html'" data-aos="flip-up"
+            class="relative w-[288px] sm:w-full z-[1] group mx-auto sm:mx-0">
+            <img src="./assets/images/team/team2.png" alt="team1" class="relative w-full h-full">
+
+            <div class="cursor-pointer absolute top-0 w-full h-full bg-[#000000B2] bg-gradient-to-b 
+              from-[rgba(0,150,136,0.1)] to-[rgba(122,188,155,0.1)] opacity-0 
+              group-hover:opacity-100 transition-opacity duration-500">
+            </div>
+
+            <div
+                class="cursor-pointer absolute top-0 left-0 p-4 xl:p-5 w-full h-full flex flex-col justify-between z-[3]">
+                <div class="flex flex-col gap-4 xl:gap-5">
+
+                    <a href="#" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center 
+                from-primary-light to-[#7ABC9B] rounded-[40px] relative z-[5]">
+                        <i
+                            class="ri-share-fill  text-[24px] xl:text-[30px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                    </a>
+
+                    <div class="flex flex-col gap-4 xl:gap-5 opacity-0 -translate-y-10 
+                  group-hover:opacity-100 group-hover:translate-y-0 
+                  transition-all duration-500 ease-in-out">
+                        <a href="https://www.facebook.com/" target="_blank" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px]">
+                            <i
+                                class="ri-facebook-circle-fill text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center  hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px] ">
+                            <i
+                                class="ri-instagram-fill text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" class=" w-[40px] xl:w-[50px]   h-[40px] xl:h-[50px] bg-gradient-to-b text-center  hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px]">
+                            <i
+                                class="ri-twitter-x-line text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-[5px] justify-end items-end opacity-0 
+                group-hover:opacity-100     transition-opacity duration-500 delay-200">
+                    <h3 class="text-[24px] leading-8 text-secondary-white font-bold text-right">Elena Park</h3>
+                    <p class="text-body1 text-primary-light text-right">Product & Strategy</p>
+                </div>
+            </div>
+        </div>
+
+        <div onclick="window.location.href='teamDetail.html'" data-aos="flip-up"
+            class="relative w-[288px] sm:w-full z-[1] group mx-auto sm:mx-0">
+            <img src="./assets/images/team/team3.png" alt="team1" class="relative w-full h-full">
+
+            <div class="cursor-pointer absolute top-0 w-full h-full bg-[#000000B2] bg-gradient-to-b 
+              from-[rgba(0,150,136,0.1)] to-[rgba(122,188,155,0.1)] opacity-0 
+              group-hover:opacity-100 transition-opacity duration-500">
+            </div>
+
+            <div
+                class="cursor-pointer absolute top-0 left-0 p-4 xl:p-5 w-full h-full flex flex-col justify-between z-[3]">
+                <div class="flex flex-col gap-4 xl:gap-5">
+
+                    <a href="#" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center 
+                from-primary-light to-[#7ABC9B] rounded-[40px] relative z-[5]">
+                        <i
+                            class="ri-share-fill  text-[24px] xl:text-[30px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                    </a>
+
+                    <div class="flex flex-col gap-4 xl:gap-5 opacity-0 -translate-y-10 
+                  group-hover:opacity-100 group-hover:translate-y-0 
+                  transition-all duration-500 ease-in-out">
+                        <a href="https://www.facebook.com/" target="_blank" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px]">
+                            <i
+                                class="ri-facebook-circle-fill text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center  hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px] ">
+                            <i
+                                class="ri-instagram-fill text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" class=" w-[40px] xl:w-[50px]   h-[40px] xl:h-[50px] bg-gradient-to-b text-center  hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px]">
+                            <i
+                                class="ri-twitter-x-line text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-[5px] justify-end items-end opacity-0 
+                group-hover:opacity-100     transition-opacity duration-500 delay-200">
+                    <h3 class="text-[24px] leading-8 text-secondary-white font-bold text-right">Lucas Chen</h3>
+                    <p class="text-body1 text-primary-light text-right">Lead ML Engineer</p>
+                </div>
+            </div>
+        </div>
+
+        <div onclick="window.location.href='teamDetail.html'" data-aos="flip-up"
+            class="relative w-[288px] sm:w-full z-[1] group mx-auto sm:mx-0">
+            <img src="./assets/images/team/team4.png" alt="team1" class="relative w-full h-full">
+
+            <div class="cursor-pointer absolute top-0 w-full h-full bg-[#000000B2] bg-gradient-to-b 
+              from-[rgba(0,150,136,0.1)] to-[rgba(122,188,155,0.1)] opacity-0 
+              group-hover:opacity-100 transition-opacity duration-500">
+            </div>
+
+            <div
+                class="cursor-pointer absolute top-0 left-0 p-4 xl:p-5 w-full h-full flex flex-col justify-between z-[3]">
+                <div class="flex flex-col gap-4 xl:gap-5">
+
+                    <a href="#" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center 
+                from-primary-light to-[#7ABC9B] rounded-[40px] relative z-[5]">
+                        <i
+                            class="ri-share-fill  text-[24px] xl:text-[30px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                    </a>
+
+                    <div class="flex flex-col gap-4 xl:gap-5 opacity-0 -translate-y-10 
+                  group-hover:opacity-100 group-hover:translate-y-0 
+                  transition-all duration-500 ease-in-out">
+                        <a href="https://www.facebook.com/" target="_blank" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px]">
+                            <i
+                                class="ri-facebook-circle-fill text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center  hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px] ">
+                            <i
+                                class="ri-instagram-fill text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" class=" w-[40px] xl:w-[50px]   h-[40px] xl:h-[50px] bg-gradient-to-b text-center  hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px]">
+                            <i
+                                class="ri-twitter-x-line text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-[5px] justify-end items-end opacity-0 
+                group-hover:opacity-100     transition-opacity duration-500 delay-200">
+                    <h3 class="text-[24px] leading-8 text-secondary-white font-bold text-right">Jhon Wick</h3>
+                    <p class="text-body1 text-primary-light text-right">AI Solutions Architect</p>
+                </div>
+            </div>
+        </div>
+
+        <div onclick="window.location.href='teamDetail.html'" data-aos="flip-up"
+            class="relative w-[288px] sm:w-full z-[1] group mx-auto sm:mx-0">
+            <img src="./assets/images/team/team5.png" alt="team1" class="relative w-full h-full">
+
+            <div class="cursor-pointer absolute top-0 w-full h-full bg-[#000000B2] bg-gradient-to-b 
+              from-[rgba(0,150,136,0.1)] to-[rgba(122,188,155,0.1)] opacity-0 
+              group-hover:opacity-100 transition-opacity duration-500">
+            </div>
+
+            <div
+                class="cursor-pointer absolute top-0 left-0 p-4 xl:p-5 w-full h-full flex flex-col justify-between z-[3]">
+                <div class="flex flex-col gap-4 xl:gap-5">
+
+                    <a href="#" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center 
+                from-primary-light to-[#7ABC9B] rounded-[40px] relative z-[5]">
+                        <i
+                            class="ri-share-fill  text-[24px] xl:text-[30px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                    </a>
+
+                    <div class="flex flex-col gap-4 xl:gap-5 opacity-0 -translate-y-10 
+                  group-hover:opacity-100 group-hover:translate-y-0 
+                  transition-all duration-500 ease-in-out">
+                        <a href="https://www.facebook.com/" target="_blank" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px]">
+                            <i
+                                class="ri-facebook-circle-fill text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center  hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px] ">
+                            <i
+                                class="ri-instagram-fill text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" class=" w-[40px] xl:w-[50px]   h-[40px] xl:h-[50px] bg-gradient-to-b text-center  hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px]">
+                            <i
+                                class="ri-twitter-x-line text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-[5px] justify-end items-end opacity-0 
+                group-hover:opacity-100     transition-opacity duration-500 delay-200">
+                    <h3 class="text-[24px] leading-8 text-secondary-white font-bold text-right">Sofia Almeida </h3>
+                    <p class="text-body1 text-primary-light text-right">Platform Lead</p>
+                </div>
+            </div>
+        </div>
+
+        <div onclick="window.location.href='teamDetail.html'" data-aos="flip-up"
+            class="relative w-[288px] sm:w-full z-[1] group mx-auto sm:mx-0">
+            <img src="./assets/images/team/team6.png" alt="team1" class="relative w-full h-full">
+
+            <div class="cursor-pointer absolute top-0 w-full h-full bg-[#000000B2] bg-gradient-to-b 
+              from-[rgba(0,150,136,0.1)] to-[rgba(122,188,155,0.1)] opacity-0 
+              group-hover:opacity-100 transition-opacity duration-500">
+            </div>
+
+            <div
+                class="cursor-pointer absolute top-0 left-0 p-4 xl:p-5 w-full h-full flex flex-col justify-between z-[3]">
+                <div class="flex flex-col gap-4 xl:gap-5">
+
+                    <a href="#" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center 
+                from-primary-light to-[#7ABC9B] rounded-[40px] relative z-[5]">
+                        <i
+                            class="ri-share-fill  text-[24px] xl:text-[30px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                    </a>
+
+                    <div class="flex flex-col gap-4 xl:gap-5 opacity-0 -translate-y-10 
+                  group-hover:opacity-100 group-hover:translate-y-0 
+                  transition-all duration-500 ease-in-out">
+                        <a href="https://www.facebook.com/" target="_blank" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px]">
+                            <i
+                                class="ri-facebook-circle-fill text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="w-[40px] xl:w-[50px] h-[40px] xl:h-[50px] bg-gradient-to-b text-center  hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px] ">
+                            <i
+                                class="ri-instagram-fill text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" class=" w-[40px] xl:w-[50px]   h-[40px] xl:h-[50px] bg-gradient-to-b text-center  hover:translate-x-2 transition-all duration-300 ease-in-out
+                  from-primary-light to-[#7ABC9B] rounded-[40px]">
+                            <i
+                                class="ri-twitter-x-line text-[22px] leading-10 xl:leading-[50px] text-secondary-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-[5px] justify-end items-end opacity-0 
+                group-hover:opacity-100     transition-opacity duration-500 delay-200">
+                    <h3 class="text-[24px] leading-8 text-secondary-white font-bold text-right">Cane Wills</h3>
+                    <p class="text-body1 text-primary-light text-right">Head of Engineering</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {{> partials/footer}}
+    {{> partials/back-to-top}} {{>
+    partials/vendor-scripts}}
+
+</body>
+
+</html>

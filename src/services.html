@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-mode="light" dir="ltr">
+
+<head>
+  {{> partials/title-meta
+    title="Our Services"
+    description="Explore OORA Labs' full range of services: custom software, AI solutions, business automation, cloud, mobile, UI/UX, e-commerce, and IT consulting."
+    path="services.html"
+  }}
+  {{> partials/head-css }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ooralabz.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://ooralabz.com/services.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="overflow-x-hidden">
+  {{> partials/header}} {{> partials/loader}}
+
+  <div
+    class="bg-center bg-cover bg-no-repeat background-section bg-[url('/assets/images/backgroundImg.png')] pt-[150px] sm:pt-[170px] md:pt-[200px] lg:pt-[240px] xl:pt-[267px] pb-[70px] sm:pb-[100px] md:pb-[115px] lg:pb-[135px] xl:pb-[151px]">
+    <div class="container flex flex-col justify-center items-center sm:gap-[10px]">
+      <h2 class="text-[30px] sm:text-[44px] leading-[40px] sm:leading-[56px] font-bold">
+        Services
+      </h2>
+      <div class="flex justify-center items-center gap-[10px]">
+        <a href="index.html"
+          class="text-body2 sm:text-body1 text-secondary-white hover:text-primary-light transition-all duration-300 ease-in-out">Home</a>
+        <a href="#"><img src="./assets/images/nextPage.svg" alt="" /></a>
+        <a href="services.html"
+          class="text-body2 sm:text-body1 text-secondary-white hover:text-primary-light transition-all duration-300 ease-in-out">Services</a>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-stretch gap-x-5 gap-5 sm:gap-y-[50px] container py-[70px] xl:py-[100px] overflow-hidden">
+
+    <a href="custom-software-development.html"
+      class="px-5 pt-5 pb-[30px] bg-secondary-dark flex flex-col gap-5 rounded-[30px] hover:shadow-[0_0_40px_#009688CC] w-[288px] sm:w-full mx-auto sm:mx-0 transition-all duration-300 ease-in-out"
+      data-aos="zoom-in">
+      <img src="./assets/images/service-img/service-2-1.png" alt="Custom Software Development" class="w-full" />
+      <div class="flex flex-col gap-[10px]">
+        <h3 class="text-[21px] xl:text-[24px] leading-[28px] xl:leading-[32px] font-bold text-secondary-white">
+          Custom Software Development
+        </h3>
+        <p class="text-body2 text-secondary-white">
+          Bespoke web and desktop applications engineered around your exact workflows, from architecture to launch.
+        </p>
+      </div>
+    </a>
+
+    <a href="business-applications-automation.html" data-aos="zoom-in"
+      class="px-5 pt-5 pb-[30px] bg-secondary-dark flex flex-col gap-5 rounded-[30px] hover:shadow-[0_0_40px_#009688CC] w-[288px] sm:w-full mx-auto sm:mx-0 transition-all duration-300 ease-in-out">
+      <img src="./assets/images/service-img/service-2-2.png" alt="Business Applications & Automation" class="w-full" />
+      <div class="flex flex-col gap-[10px]">
+        <h3 class="text-[21px] xl:text-[24px] leading-[28px] xl:leading-[32px] font-bold text-secondary-white">
+          Business Applications & Automation
+        </h3>
+        <p class="text-body2 text-secondary-white">
+          CRM, ERP, and internal tools that automate approvals, records, and everyday business processes.
+        </p>
+      </div>
+    </a>
+
+    <a href="ai-intelligent-solutions.html" data-aos="zoom-in"
+      class="px-5 pt-5 pb-[30px] bg-secondary-dark flex flex-col gap-5 rounded-[30px] hover:shadow-[0_0_40px_#009688CC] w-[288px] sm:w-full mx-auto sm:mx-0 transition-all duration-300 ease-in-out">
+      <img src="./assets/images/service-img/service-2-3.png" alt="AI & Intelligent Solutions" class="w-full" />
+      <div class="flex flex-col gap-[10px]">
+        <h3 class="text-[21px] xl:text-[24px] leading-[28px] xl:leading-[32px] font-bold text-secondary-white">
+          AI & Intelligent Solutions
+        </h3>
+        <p class="text-body2 text-secondary-white">
+          Practical AI, chatbots, and predictive tools that turn your data into faster, smarter decisions.
+        </p>
+      </div>
+    </a>
+
+    <a href="data-business-intelligence.html" data-aos="zoom-in"
+      class="px-5 pt-5 pb-[30px] bg-secondary-dark flex flex-col gap-5 rounded-[30px] hover:shadow-[0_0_40px_#009688CC] w-[288px] sm:w-full mx-auto sm:mx-0 transition-all duration-300 ease-in-out">
+      <img src="./assets/images/service-img/service-2-4.png" alt="Data & Business Intelligence" class="w-full" />
+      <div class="flex flex-col gap-[10px]">
+        <h3 class="text-[21px] xl:text-[24px] leading-[28px] xl:leading-[32px] font-bold text-secondary-white">
+          Data & Business Intelligence
+        </h3>
+        <p class="text-body2 text-secondary-white">
+          Dashboards, data pipelines, and reporting that give you a clear, real-time view of your business.
+        </p>
+      </div>
+    </a>
+
+    <a href="ui-ux-digital-experiences.html" data-aos="zoom-in"
+      class="px-5 pt-5 pb-[30px] bg-secondary-dark flex flex-col gap-5 rounded-[30px] hover:shadow-[0_0_40px_#009688CC] w-[288px] sm:w-full mx-auto sm:mx-0 transition-all duration-300 ease-in-out">
+      <img src="./assets/images/service-img/service-2-5.png" alt="UI/UX & Digital Experiences" class="w-full" />
+      <div class="flex flex-col gap-[10px]">
+        <h3 class="text-[21px] xl:text-[24px] leading-[28px] xl:leading-[32px] font-bold text-secondary-white">
+          UI/UX & Digital Experiences
+        </h3>
+        <p class="text-body2 text-secondary-white">
+          User research, wireframes, and polished interfaces that make every product intuitive and on-brand.
+        </p>
+      </div>
+    </a>
+
+    <a href="mobile-application-development.html" data-aos="zoom-in"
+      class="px-5 pt-5 pb-[30px] bg-secondary-dark flex flex-col gap-5 rounded-[30px] hover:shadow-[0_0_40px_#009688CC] w-[288px] sm:w-full mx-auto sm:mx-0 transition-all duration-300 ease-in-out">
+      <img src="./assets/images/service-img/service-2-6.png" alt="Mobile Application Development" class="w-full" />
+      <div class="flex flex-col gap-[10px]">
+        <h3 class="text-[21px] xl:text-[24px] leading-[28px] xl:leading-[32px] font-bold text-secondary-white">
+          Mobile Application Development
+        </h3>
+        <p class="text-body2 text-secondary-white">
+          Native and cross-platform mobile apps built for performance, reliability, and great user experience.
+        </p>
+      </div>
+    </a>
+
+    <a href="cloud-it-solutions.html" data-aos="zoom-in"
+      class="px-5 pt-5 pb-[30px] bg-secondary-dark flex flex-col gap-5 rounded-[30px] hover:shadow-[0_0_40px_#009688CC] w-[288px] sm:w-full mx-auto sm:mx-0 transition-all duration-300 ease-in-out">
+      <img src="./assets/images/service-img/service-2-1.png" alt="Cloud & IT Solutions" class="w-full" />
+      <div class="flex flex-col gap-[10px]">
+        <h3 class="text-[21px] xl:text-[24px] leading-[28px] xl:leading-[32px] font-bold text-secondary-white">
+          Cloud & IT Solutions
+        </h3>
+        <p class="text-body2 text-secondary-white">
+          Cloud migration, hosting, and DevOps that keep your infrastructure scalable, secure, and cost-efficient.
+        </p>
+      </div>
+    </a>
+
+    <a href="it-consulting-technology-services.html" data-aos="zoom-in"
+      class="px-5 pt-5 pb-[30px] bg-secondary-dark flex flex-col gap-5 rounded-[30px] hover:shadow-[0_0_40px_#009688CC] w-[288px] sm:w-full mx-auto sm:mx-0 transition-all duration-300 ease-in-out">
+      <img src="./assets/images/service-img/service-2-2.png" alt="IT Consulting & Technology Services" class="w-full" />
+      <div class="flex flex-col gap-[10px]">
+        <h3 class="text-[21px] xl:text-[24px] leading-[28px] xl:leading-[32px] font-bold text-secondary-white">
+          IT Consulting & Technology Services
+        </h3>
+        <p class="text-body2 text-secondary-white">
+          Technology audits, roadmaps, and advisory support to guide confident, well-informed IT decisions.
+        </p>
+      </div>
+    </a>
+
+    <a href="automation-digital-transformation.html" data-aos="zoom-in"
+      class="px-5 pt-5 pb-[30px] bg-secondary-dark flex flex-col gap-5 rounded-[30px] hover:shadow-[0_0_40px_#009688CC] w-[288px] sm:w-full mx-auto sm:mx-0 transition-all duration-300 ease-in-out">
+      <img src="./assets/images/service-img/service-2-3.png" alt="Automation & Digital Transformation" class="w-full" />
+      <div class="flex flex-col gap-[10px]">
+        <h3 class="text-[21px] xl:text-[24px] leading-[28px] xl:leading-[32px] font-bold text-secondary-white">
+          Automation & Digital Transformation
+        </h3>
+        <p class="text-body2 text-secondary-white">
+          Process automation and digital transformation that eliminate manual work and boost efficiency.
+        </p>
+      </div>
+    </a>
+
+    <a href="ecommerce-solutions.html" data-aos="zoom-in"
+      class="px-5 pt-5 pb-[30px] bg-secondary-dark flex flex-col gap-5 rounded-[30px] hover:shadow-[0_0_40px_#009688CC] w-[288px] sm:w-full mx-auto sm:mx-0 transition-all duration-300 ease-in-out">
+      <img src="./assets/images/service-img/service-2-4.png" alt="E-Commerce Solutions" class="w-full" />
+      <div class="flex flex-col gap-[10px]">
+        <h3 class="text-[21px] xl:text-[24px] leading-[28px] xl:leading-[32px] font-bold text-secondary-white">
+          E-Commerce Solutions
+        </h3>
+        <p class="text-body2 text-secondary-white">
+          Secure, scalable online stores with integrated payments, inventory, and order management.
+        </p>
+      </div>
+    </a>
+
+    <a href="support-system-maintenance.html" data-aos="zoom-in"
+      class="px-5 pt-5 pb-[30px] bg-secondary-dark flex flex-col gap-5 rounded-[30px] hover:shadow-[0_0_40px_#009688CC] w-[288px] sm:w-full mx-auto sm:mx-0 transition-all duration-300 ease-in-out">
+      <img src="./assets/images/service-img/service-2-5.png" alt="Support & System Maintenance" class="w-full" />
+      <div class="flex flex-col gap-[10px]">
+        <h3 class="text-[21px] xl:text-[24px] leading-[28px] xl:leading-[32px] font-bold text-secondary-white">
+          Support & System Maintenance
+        </h3>
+        <p class="text-body2 text-secondary-white">
+          Ongoing support, monitoring, and maintenance that keep your systems running smoothly.
+        </p>
+      </div>
+    </a>
+
+  </div>
+
+  {{> partials/footer}} {{> partials/back-to-top}} {{>
+  partials/vendor-scripts}}
+</body>
+
+</html>

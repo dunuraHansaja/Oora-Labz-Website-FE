@@ -1,0 +1,744 @@
+/* ==========================================================================
+   OORA LABZ - LUXURY MODERN RENAISSANCE TECH THEME
+   Typography, Sand Dunes, Organic Waves & Micro-Interactions
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+/* Global Root Configuration */
+:root {
+  --sand-50: #FDFBF8;
+  --sand-100: #FAF6F0;
+  --sand-200: #F4EDE2;
+  --sand-300: #EADDCF;
+  --sand-400: #DCBEA6;
+  --sand-500: #C2A388;
+  --sand-600: #9A7B5F;
+  --sand-700: #745A43;
+  --sand-800: #4A382A;
+  --sand-900: #211B16;
+  --sand-950: #17120E;
+}
+
+body.home-modern-page {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  background-color: var(--sand-100) !important;
+  color: var(--sand-900) !important;
+  overflow-x: hidden;
+  position: relative;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.home-modern-page h1,
+body.home-modern-page h2,
+body.home-modern-page h3,
+body.home-modern-page h4,
+body.home-modern-page h5,
+body.home-modern-page h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  color: var(--sand-900);
+  letter-spacing: -0.025em;
+}
+
+/* ==========================================================================
+   1. ORGANIC FLUID WAVE BACKGROUNDS
+   ========================================================================== */
+
+.bg-sand-hero {
+  background: radial-gradient(circle at 85% 25%, #F4EBE0 0%, #FAF6F0 50%, #F5EFE5 100%);
+}
+
+.hero-custom-bg {
+  background-image: url('../images/home-modern/hero-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.innovative-custom-bg {
+  background-image: url('../images/home-modern/innovative-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Service Cards Hover State - Transitions to dark brown like Card 1 */
+.service-card-interactive {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    background: linear-gradient(135deg, #6B5240 0%, #4D382B 100%) !important;
+    border-color: transparent !important;
+    box-shadow: 0 16px 36px rgba(42, 32, 26, 0.28) !important;
+  }
+}
+
+.bg-sand-gradient-subtle {
+  background: linear-gradient(180deg, #FAF6F0 0%, #F3EAE0 50%, #FAF6F0 100%);
+}
+
+.bg-sand-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 214, 200, 0.75);
+}
+
+/* Wave Dividers */
+.wave-divider {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.wave-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+@media (min-width: 768px) {
+  .wave-divider svg {
+    height: 90px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .wave-divider svg {
+    height: 110px;
+  }
+}
+
+/* ==========================================================================
+   2. KEYFRAME ANIMATIONS & FLOATING HOLOGRAPHICS
+   ========================================================================== */
+
+@keyframes floatSmooth {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(0.8deg);
+  }
+}
+
+@keyframes floatSmoothReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(9px) rotate(-0.8deg);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes holographicGlow {
+  0%, 100% {
+    box-shadow: 0 10px 25px -4px rgba(116, 90, 67, 0.12), 0 0 12px rgba(220, 190, 166, 0.25);
+  }
+  50% {
+    box-shadow: 0 16px 32px -4px rgba(116, 90, 67, 0.18), 0 0 22px rgba(220, 190, 166, 0.45);
+  }
+}
+
+.animate-float-1 {
+  animation: floatSmooth 4.5s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: floatSmoothReverse 5.2s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: floatSlow 6.5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: holographicGlow 3.5s ease-in-out infinite;
+}
+
+/* Hologram Badges */
+.holo-pill {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(220, 206, 192, 0.9);
+  color: var(--sand-900);
+  box-shadow: 0 8px 24px -4px rgba(74, 56, 42, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.holo-pill:hover {
+  transform: translateY(-3px) scale(1.03) !important;
+  border-color: var(--sand-600);
+  box-shadow: 0 12px 28px -4px rgba(74, 56, 42, 0.18), 0 0 16px rgba(194, 163, 136, 0.4);
+}
+
+/* ==========================================================================
+   3. MODERN LUXURY CARDS & HOVER EFFECTS
+   ========================================================================== */
+
+/* Glassmorphic Light Card */
+.modern-luxury-card {
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(228, 216, 202, 0.85);
+  box-shadow: 0 4px 20px -3px rgba(80, 60, 45, 0.04), 0 1px 3px rgba(80, 60, 45, 0.02);
+  transition: all 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-luxury-card:hover {
+  transform: translateY(-7px);
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(180, 145, 115, 0.55);
+  box-shadow: 0 20px 40px -8px rgba(74, 56, 42, 0.12), 0 0 0 1px rgba(180, 145, 115, 0.25);
+}
+
+/* Featured Dark Active Card (e.g. Custom Software Development) */
+.modern-featured-card {
+  background: linear-gradient(135deg, #4A3A2F 0%, #2A201A 100%);
+  border: 1px solid rgba(212, 175, 140, 0.35);
+  box-shadow: 0 16px 36px -6px rgba(42, 32, 26, 0.35);
+  color: #FFFFFF !important;
+  transition: all 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-featured-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 24px 48px -6px rgba(42, 32, 26, 0.5), 0 0 0 1px rgba(224, 192, 160, 0.55);
+}
+
+/* Subtle top shimmer line on featured card */
+.modern-featured-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 225, 195, 0.6), transparent);
+}
+
+/* Circular Arrow Button */
+.card-arrow-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  background: rgba(235, 224, 212, 0.85);
+  color: var(--sand-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(74, 56, 42, 0.08);
+}
+
+.group:hover .card-arrow-circle {
+  background: var(--sand-900);
+  color: #FFFFFF;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(33, 27, 22, 0.25);
+}
+
+.modern-featured-card .card-arrow-circle {
+  background: rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
+}
+
+.modern-featured-card:hover .card-arrow-circle {
+  background: #FFFFFF;
+  color: var(--sand-900);
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================================================
+   4. BUTTONS & PILLS
+   ========================================================================== */
+
+/* Primary Pill Button */
+.btn-pill-dark {
+  background-color: var(--sand-900);
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 11px 26px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(33, 27, 22, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-pill-dark:hover {
+  background-color: var(--sand-800);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(33, 27, 22, 0.26);
+  color: #FFFFFF;
+}
+
+.btn-pill-dark i {
+  transition: transform 0.25s ease;
+}
+
+.btn-pill-dark:hover i {
+  transform: translateX(4px);
+}
+
+/* Secondary Outline Pill Button */
+.btn-pill-outline {
+  background-color: transparent;
+  color: var(--sand-900);
+  border: 1px solid rgba(194, 163, 136, 0.7);
+  border-radius: 9999px;
+  padding: 11px 26px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-pill-outline:hover {
+  background-color: var(--sand-900);
+  color: #FFFFFF;
+  border-color: var(--sand-900);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(33, 27, 22, 0.16);
+}
+
+/* Feature Badge Item */
+.feature-badge-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sand-700);
+  background: rgba(240, 230, 220, 0.5);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(220, 206, 192, 0.6);
+  transition: all 0.25s ease;
+}
+
+.feature-badge-item:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: var(--sand-600);
+  color: var(--sand-900);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   5. NAVIGATION & HEADER SCROLL EFFECT
+   ========================================================================== */
+
+.nav-pill-active {
+  background-color: var(--sand-900);
+  color: #FFFFFF !important;
+  border-radius: 9999px;
+  padding: 6px 18px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(33, 27, 22, 0.2);
+}
+
+.nav-pill-link {
+  color: #55483F;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.nav-pill-link:hover {
+  color: var(--sand-900);
+  background-color: rgba(230, 220, 210, 0.5);
+}
+
+/* Dropdown Menus */
+.nav-dropdown-menu {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(8px);
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-dropdown-parent:hover .nav-dropdown-menu,
+.nav-dropdown-parent:focus-within .nav-dropdown-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+
+/* Modern Fixed Header with Pill Frosted Glass Capsule */
+#modernHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+
+  .header-inner-container {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .navbar-glass-pill {
+    background: linear-gradient(
+      90deg,
+      rgba(244, 239, 233, 0.72) 0%,
+      rgba(235, 226, 217, 0.66) 50%,
+      rgba(232, 224, 215, 0.72) 100%
+    );
+    backdrop-filter: blur(20px) saturate(155%);
+    -webkit-backdrop-filter: blur(20px) saturate(155%);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow:
+      0 6px 24px -4px rgba(42, 32, 26, 0.08),
+      inset 0 1px 1.5px rgba(255, 255, 255, 0.92),
+      inset 0 -1px 1px rgba(214, 200, 185, 0.45);
+    transition: background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+
+  &.header-scrolled {
+    background-color: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+
+    .navbar-glass-pill {
+      background: linear-gradient(
+        90deg,
+        rgba(244, 239, 233, 0.84) 0%,
+        rgba(235, 226, 217, 0.78) 50%,
+        rgba(232, 224, 215, 0.84) 100%
+      );
+      border-color: rgba(255, 255, 255, 0.92);
+      box-shadow:
+        0 10px 30px -4px rgba(42, 32, 26, 0.13),
+        inset 0 1px 1.5px rgba(255, 255, 255, 0.95),
+        inset 0 -1px 1px rgba(214, 200, 185, 0.55);
+    }
+  }
+}
+
+/* ==========================================================================
+   6. PROJECT SHOWCASE CARD HOVER
+   ========================================================================== */
+
+.project-img-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.project-img-wrapper img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .project-img-wrapper img {
+  transform: scale(1.06);
+}
+
+.project-img-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(33, 27, 22, 0.15) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.group:hover .project-img-wrapper::after {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Stacked 3D Testimonial Deck Carousel (Interactive 5-Card Rotating Fan)
+   ========================================================================== */
+
+.testimonial-deck-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  gap: 28px;
+}
+
+.testimonial-deck-stage {
+  position: relative;
+  width: 100%;
+  max-width: 710px;
+  height: 218px;
+  margin: 0 auto;
+}
+
+.testimonial-fan-card {
+  position: absolute;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 26px 28px;
+  text-align: center;
+  transition: left 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              top 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              width 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: left, top, width, height, background-color, box-shadow;
+  user-select: none;
+
+  .fan-card-content {
+    width: 380px;
+    max-width: 68vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.32s ease, transform 0.48s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* 1. Left Outer Slot */
+  &.pos-outer-left {
+    left: 0%;
+    top: 0px;
+    width: 35.2%;
+    height: 175px;
+    background-color: #F4EEE2;
+    box-shadow: -7px 8px 6px rgba(0, 0, 0, 0.24);
+    z-index: 2;
+    cursor: pointer;
+
+    .fan-card-content {
+      opacity: 0;
+      transform: scale(0.75);
+      pointer-events: none;
+    }
+  }
+
+  /* 2. Left Middle Slot */
+  &.pos-mid-left {
+    left: 9.5%;
+    top: 21px;
+    width: 34.2%;
+    height: 175px;
+    background-color: #F4EEE2;
+    box-shadow: -7px 8px 6px rgba(0, 0, 0, 0.26);
+    z-index: 5;
+    cursor: pointer;
+
+    .fan-card-content {
+      opacity: 0;
+      transform: scale(0.84);
+      pointer-events: none;
+    }
+  }
+
+  /* 3. Center Foreground Active Slot */
+  &.pos-front {
+    left: 17.4%;
+    top: 38px;
+    width: 65.2%;
+    height: 179px;
+    background-color: #F4EEE2;
+    box-shadow: 6px 7px 6px rgba(0, 0, 0, 0.24), 0 7px 6px rgba(0, 0, 0, 0.16);
+    z-index: 10;
+    cursor: default;
+
+    .fan-card-content {
+      opacity: 1;
+      transform: scale(1);
+      transition-delay: 0.08s;
+    }
+  }
+
+  /* 4. Right Middle Slot */
+  &.pos-mid-right {
+    left: 56.8%;
+    top: 21px;
+    width: 34.2%;
+    height: 175px;
+    background-color: #F4EEE2;
+    box-shadow: 7px 8px 6px rgba(0, 0, 0, 0.26);
+    z-index: 5;
+    cursor: pointer;
+
+    .fan-card-content {
+      opacity: 0;
+      transform: scale(0.84);
+      pointer-events: none;
+    }
+  }
+
+  /* 5. Right Outer Slot */
+  &.pos-outer-right {
+    left: 64.8%;
+    top: 0px;
+    width: 35.2%;
+    height: 175px;
+    background-color: #F4EEE2;
+    box-shadow: 7px 8px 6px rgba(0, 0, 0, 0.24);
+    z-index: 2;
+    cursor: pointer;
+
+    .fan-card-content {
+      opacity: 0;
+      transform: scale(0.75);
+      pointer-events: none;
+    }
+  }
+
+  &.is-leaving-front {
+    z-index: 7 !important;
+  }
+
+  &.is-wrapping {
+    z-index: 1 !important;
+  }
+}
+
+/* Round Prev / Next Arrow Buttons with Directional Drop Shadow */
+.testimonial-nav-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  background-color: #F4EBD9;
+  color: #1A1512;
+  border: none;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background-color: #231E1A;
+    color: #FFFFFF;
+    transform: translateY(-1px);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-deck-wrapper {
+    gap: 12px;
+  }
+  .testimonial-fan-card {
+    &.pos-outer-left {
+      width: 38%;
+      height: 160px;
+    }
+    &.pos-outer-right {
+      left: 62%;
+      width: 38%;
+      height: 160px;
+    }
+    &.pos-mid-left {
+      left: 6%;
+      width: 38%;
+      height: 160px;
+    }
+    &.pos-mid-right {
+      left: 56%;
+      width: 38%;
+      height: 160px;
+    }
+    &.pos-front {
+      left: 11%;
+      width: 78%;
+      padding: 22px 20px;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .testimonial-fan-card {
+    &.pos-outer-left,
+    &.pos-outer-right {
+      opacity: 0;
+      pointer-events: none;
+    }
+    &.pos-mid-left {
+      left: 0%;
+      width: 45%;
+    }
+    &.pos-mid-right {
+      left: 55%;
+      width: 45%;
+    }
+    &.pos-front {
+      left: 5%;
+      width: 90%;
+      top: 24px;
+    }
+  }
+}
+
+/* ==========================================================================
+   7. STATS & WHY CHOOSE STYLING
+   ========================================================================== */
+
+.stat-item {
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+}
+
+.why-check-item {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.why-check-item:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: translateX(4px);
+}

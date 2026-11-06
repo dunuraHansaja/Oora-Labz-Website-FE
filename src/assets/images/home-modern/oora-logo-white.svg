@@ -1,0 +1,13 @@
+<svg width="220" height="48" viewBox="0 0 220 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Code Polygon Logo Mark (White/Cream) -->
+  <g transform="translate(4, 8)">
+    <path d="M11 5L21 9V23L11 27L1 23V9L11 5Z" stroke="#FDFBF8" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M7.5 13L4.5 16L7.5 19" stroke="#CBB4A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M14.5 13L17.5 16L14.5 19" stroke="#CBB4A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12 12L10 20" stroke="#FDFBF8" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="44" y="24" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="20" font-weight="800" fill="#FDFBF8" letter-spacing="-0.02em">Oora Labz</text>
+  <text x="45" y="37" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="8.5" font-weight="600" fill="#C2AB95" letter-spacing="0.08em">BUILDING THINGS FOR PEOPLE</text>
+</svg>

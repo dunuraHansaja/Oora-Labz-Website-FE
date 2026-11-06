@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-mode="light" dir="ltr">
+
+<head>
+    {{> partials/title-meta title="Blog" }} {{> partials/head-css }}
+</head>
+
+<body class="overflow-x-hidden">
+
+    {{> partials/header}}
+    {{> partials/loader}}
+
+    <div
+        class="bg-center bg-cover bg-no-repeat background-section bg-[url('/assets/images/backgroundImg.png')] pt-[150px] sm:pt-[170px] md:pt-[200px] lg:pt-[240px] xl:pt-[267px] pb-[70px] sm:pb-[100px] md:pb-[115px] lg:pb-[135px] xl:pb-[151px]">
+        <div class="container flex flex-col justify-center items-center sm:gap-[10px]">
+            <h2 class="text-[30px] sm:text-[44px] leading-[40px] sm:leading-[56px] font-bold">Blog
+            </h2>
+            <div class="flex justify-center items-center gap-[10px]">
+                <a href="index.html"
+                    class="text-body2 sm:text-body1 text-secondary-white hover:text-primary-light transition-all duration-300 ease-in-out">Home</a>
+                <a href="#"><img src="./assets/images/nextPage.svg" alt="page"></a>
+                <a href="#"
+                    class="text-body2 sm:text-body1 text-secondary-white hover:text-primary-light transition-all duration-300 ease-in-out">Blog</a>
+                <a href="#"><img src="./assets/images/nextPage.svg" alt="page"></a>
+                <a href="blog.html"
+                    class="text-body2 sm:text-body1 text-secondary-white hover:text-primary-light transition-all duration-300 ease-in-out">Blog</a>
+            </div>
+        </div>
+    </div>
+
+    <div class=" container py-[70px] xl:py-[100px] overflow-hidden">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3  gap-x-5 gap-y-5 sm:gap-y-[30px] items-center">
+            <div data-aos="flip-right" class="group  w-[288px] sm:w-full mx-auto sm:mx-0">
+                <img src="./assets/images/blog/blog1.png" alt="blog" class="w-full">
+                <div class="p-5 relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-[rgba(0,150,136,0.2)] to-[rgba(122,188,155,0.2)] rounded-br-[20px] rounded-bl-[20px] transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-secondary-dark  rounded-br-[20px] rounded-bl-[20px]  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div class="relative">
+                        <p class="text-body1 font-bold text-primary-light">Strategy</p>
+                        <div class="mt-[10px]">
+                            <h5
+                                class="text-[18px] md:text-[20px] lg:text-[18px] xl:text-[24px] leading-[26px] md:leading-[30px] lg:leading-[26px] xl:leading-8 font-bold text-secondary-white">
+                                Building an AI-First Culture: A Leadership Guide</h5>
+                            <p class="text-body3 xl:text-body2 text-secondary-white mt-[5px]">Lorem ipsum dolor sit amet
+                                adipiscing
+                                elit Ut et massa mi. Aliquam in hendrerit.</p>
+                        </div>
+                        <div class="flex justify-start items-start mt-5 xl:mt-[30px]">
+                            <a href="blogDetail.html"
+                                class="section-btn  flex justify-start items-center gap-[10px] py-[5px] pl-[22px] pr-[6px] rounded-[60px] ">
+                                <p class="capitalize inline-flex  text-body3   text-secondary-white">
+                                    Get Started
+                                </p>
+                                <div class="icon-wrapper cursor-pointer w-[28px] h-[28px]">
+                                    <i class="button__icon ri-arrow-right-line text-[16px]"></i>
+                                    <i class="button__icon button__icon-copy ri-arrow-right-line text-[16px]"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="flip-right" class="group w-[288px] sm:w-full mx-auto sm:mx-0">
+                <img src="./assets/images/blog/blog2.png" alt="blog" class="w-full">
+                <div class="p-5 relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-[rgba(0,150,136,0.2)] to-[rgba(122,188,155,0.2)] rounded-br-[20px] rounded-bl-[20px] transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-secondary-dark  rounded-br-[20px] rounded-bl-[20px]  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div class="relative">
+                        <p class="text-body1 font-bold text-primary-light">Technical</p>
+                        <div class="mt-[10px]">
+                            <h5
+                                class="text-[18px] md:text-[20px] lg:text-[18px] xl:text-[24px] leading-[26px] md:leading-[30px] lg:leading-[26px] xl:leading-8 font-bold text-secondary-white">
+                                MLOps Best Practices for Enterprise Deployment</h5>
+                            <p class="text-body3 xl:text-body2 text-secondary-white mt-[5px]">Lorem ipsum dolor sit amet
+                                adipiscing
+                                elit Ut et massa mi. Aliquam in hendrerit.</p>
+                        </div>
+                        <div class="flex justify-start items-start mt-5 xl:mt-[30px]">
+                            <a href="blogDetail.html"
+                                class="section-btn  flex justify-start items-center gap-[10px] py-[5px] pl-[22px] pr-[6px] rounded-[60px] ">
+                                <p class="capitalize inline-flex  text-body3   text-secondary-white">
+                                    Get Started
+                                </p>
+                                <div class="icon-wrapper cursor-pointer w-[28px] h-[28px]">
+                                    <i class="button__icon ri-arrow-right-line text-[16px]"></i>
+                                    <i class="button__icon button__icon-copy ri-arrow-right-line text-[16px]"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="flip-right" class="group w-[288px] sm:w-full mx-auto sm:mx-0">
+                <img src="./assets/images/blog/blog3.png" alt="blog" class="w-full">
+                <div class="p-5 relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-[rgba(0,150,136,0.2)] to-[rgba(122,188,155,0.2)] rounded-br-[20px] rounded-bl-[20px] transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-secondary-dark  rounded-br-[20px] rounded-bl-[20px]  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div class="relative">
+                        <p class="text-body1 font-bold text-primary-light">ROI</p>
+                        <div class="mt-[10px]">
+                            <h5
+                                class="text-[18px] md:text-[20px] lg:text-[18px] xl:text-[24px] leading-[26px] md:leading-[30px] lg:leading-[26px] xl:leading-8 font-bold text-secondary-white">
+                                Measuring AI ROI: Beyond the Hype</h5>
+                            <p class="text-body3 xl:text-body2 text-secondary-white mt-[5px]">Lorem ipsum dolor sit amet
+                                adipiscing
+                                elit Ut et massa mi. Aliquam in hendrerit.</p>
+                        </div>
+                        <div class="flex justify-start items-start mt-5 xl:mt-[30px]">
+                            <a href="blogDetail.html"
+                                class="section-btn  flex justify-start items-center gap-[10px] py-[5px] pl-[22px] pr-[6px] rounded-[60px] ">
+                                <p class="capitalize inline-flex  text-body3   text-secondary-white">
+                                    Get Started
+                                </p>
+                                <div class="icon-wrapper cursor-pointer w-[28px] h-[28px]">
+                                    <i class="button__icon ri-arrow-right-line text-[16px]"></i>
+                                    <i class="button__icon button__icon-copy ri-arrow-right-line text-[16px]"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="flip-right" class="group w-[288px] sm:w-full mx-auto sm:mx-0">
+                <img src="./assets/images/blog/blog4.png" alt="blog" class="w-full">
+                <div class="p-5 relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-[rgba(0,150,136,0.2)] to-[rgba(122,188,155,0.2)] rounded-br-[20px] rounded-bl-[20px] transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-secondary-dark  rounded-br-[20px] rounded-bl-[20px]  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div class="relative">
+                        <p class="text-body1 font-bold text-primary-light">AI Assistants</p>
+                        <div class="mt-[10px]">
+                            <h5
+                                class="text-[18px] md:text-[20px] lg:text-[18px] xl:text-[24px] leading-[26px] md:leading-[30px] lg:leading-[26px] xl:leading-8 font-bold text-secondary-white">
+                                Building AI Assistants That Actually Help</h5>
+                            <p class="text-body3 xl:text-body2 text-secondary-white mt-[5px]">Lorem ipsum dolor sit amet
+                                adipiscing
+                                elit Ut et massa mi. Aliquam in hendrerit.</p>
+                        </div>
+                        <div class="flex justify-start items-start mt-5 xl:mt-[30px]">
+                            <a href="blogDetail.html"
+                                class="section-btn  flex justify-start items-center gap-[10px] py-[5px] pl-[22px] pr-[6px] rounded-[60px] ">
+                                <p class="capitalize inline-flex  text-body3   text-secondary-white">
+                                    Get Started
+                                </p>
+                                <div class="icon-wrapper cursor-pointer w-[28px] h-[28px]">
+                                    <i class="button__icon ri-arrow-right-line text-[16px]"></i>
+                                    <i class="button__icon button__icon-copy ri-arrow-right-line text-[16px]"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="flip-right" class="group w-[288px] sm:w-full mx-auto sm:mx-0">
+                <img src="./assets/images/blog/blog5.png" alt="blog" class="w-full">
+                <div class="p-5 relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-[rgba(0,150,136,0.2)] to-[rgba(122,188,155,0.2)] rounded-br-[20px] rounded-bl-[20px] transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-secondary-dark  rounded-br-[20px] rounded-bl-[20px]  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div class="relative">
+                        <p class="text-body1 font-bold text-primary-light">Security</p>
+                        <div class="mt-[10px]">
+                            <h5
+                                class="text-[18px] md:text-[20px] lg:text-[18px] xl:text-[24px] leading-[26px] md:leading-[30px] lg:leading-[26px] xl:leading-8 font-bold text-secondary-white">
+                                AI Security & Compliance: Protecting Your Data</h5>
+                            <p class="text-body3 xl:text-body2 text-secondary-white mt-[5px]">Lorem ipsum dolor sit amet
+                                adipiscing
+                                elit Ut et massa mi. Aliquam in hendrerit.</p>
+                        </div>
+                        <div class="flex justify-start items-start mt-5 xl:mt-[30px]">
+                            <a href="blogDetail.html"
+                                class="section-btn  flex justify-start items-center gap-[10px] py-[5px] pl-[22px] pr-[6px] rounded-[60px] ">
+                                <p class="capitalize inline-flex  text-body3   text-secondary-white">
+                                    Get Started
+                                </p>
+                                <div class="icon-wrapper cursor-pointer w-[28px] h-[28px]">
+                                    <i class="button__icon ri-arrow-right-line text-[16px]"></i>
+                                    <i class="button__icon button__icon-copy ri-arrow-right-line text-[16px]"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="flip-right" class="group w-[288px] sm:w-full mx-auto sm:mx-0">
+                <img src="./assets/images/blog/blog6.png" alt="blog" class="w-full">
+                <div class="p-5 relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-[rgba(0,150,136,0.2)] to-[rgba(122,188,155,0.2)] rounded-br-[20px] rounded-bl-[20px] transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-secondary-dark  rounded-br-[20px] rounded-bl-[20px]  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div class="relative">
+                        <p class="text-body1 font-bold text-primary-light">Trends</p>
+                        <div class="mt-[10px]">
+                            <h5
+                                class="text-[18px] md:text-[20px] lg:text-[18px] xl:text-[24px] leading-[26px] md:leading-[30px] lg:leading-[26px] xl:leading-8 font-bold text-secondary-white">
+                                Measuring AI ROI: Beyond the Hype</h5>
+                            <p class="text-body3 xl:text-body2 text-secondary-white mt-[5px]">Lorem ipsum dolor sit amet
+                                adipiscing
+                                elit Ut et massa mi. Aliquam in hendrerit.</p>
+                        </div>
+                        <div class="flex justify-start items-start mt-5 xl:mt-[30px]">
+                            <a href="blogDetail.html"
+                                class="section-btn  flex justify-start items-center gap-[10px] py-[5px] pl-[22px] pr-[6px] rounded-[60px] ">
+                                <p class="capitalize inline-flex  text-body3   text-secondary-white">
+                                    Get Started
+                                </p>
+                                <div class="icon-wrapper cursor-pointer w-[28px] h-[28px]">
+                                    <i class="button__icon ri-arrow-right-line text-[16px]"></i>
+                                    <i class="button__icon button__icon-copy ri-arrow-right-line text-[16px]"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center items-center gap-3 sm:gap-5 mt-[30px]">
+            <button
+                class="rounded-full   bg-primary-light hover:bg-[#7ABC9B] w-[35px] sm:w-[40px] h-[35px] sm:h-[40px]  text-center   transition duration-300 ease-in-out"><i
+                    class="ri-arrow-left-s-line text-[16px] sm:text-[20px] leading-[35px] sm:leading-[40px] font-semibold transition duration-300 ease-in-out"></i></button>
+            <button
+                class="rounded-full   bg-primary-light hover:bg-[#7ABC9B] w-[35px] sm:w-[40px] h-[35px] sm:h-[40px]  text-center text-[16px] sm:text-[20px] leading-[35px] sm:leading-[40px] font-semibold   transition duration-300 ease-in-out">
+                01 </button>
+            <button
+                class="rounded-full   bg-primary-light hover:bg-[#7ABC9B] w-[35px] sm:w-[40px] h-[35px] sm:h-[40px]  text-center text-[16px] sm:text-[20px] leading-[35px] sm:leading-[40px] font-semibold   transition duration-300 ease-in-out">
+                02</button>
+            <button
+                class="rounded-full   bg-primary-light hover:bg-[#7ABC9B] w-[35px] sm:w-[40px] h-[35px] sm:h-[40px]  text-center   transition duration-300 ease-in-out"><i
+                    class="ri-arrow-right-s-line text-[16px] sm:text-[20px] leading-[35px] sm:leading-[40px] font-semibold  transition duration-300 ease-in-out"></i></button>
+        </div>
+    </div>
+
+    {{> partials/footer}}
+    {{> partials/back-to-top}} {{>
+    partials/vendor-scripts}}
+
+</body>
+
+</html>

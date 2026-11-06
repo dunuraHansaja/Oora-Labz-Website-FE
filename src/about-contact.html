@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-mode="light" dir="ltr">
+
+<head>
+  {{> partials/title-meta
+    title="About Oora Labz - Technology & Software Solutions"
+    description="Where strategy meets engineering: software that's built for people, not just built to spec. Learn about Oora Labz and get in touch with our team."
+    path="about-contact.html"
+  }}
+  {{> partials/head-css }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Oora Labz",
+    "description": "Where strategy meets engineering: software that's built for people, not just built to spec.",
+    "url": "https://ooralabz.com/about-contact.html",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Oora Labz",
+      "url": "https://ooralabz.com",
+      "telephone": "+94712688070",
+      "email": "hello@ooralabz.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "97, Wanatha Rd",
+        "addressLocality": "Maharagama",
+        "addressRegion": "Western Province",
+        "addressCountry": "LK"
+      }
+    }
+  }
+  </script>
+</head>
+
+<body class="home-modern-page overflow-x-hidden antialiased selection:bg-[#231E1A] selection:text-white">
+  {{> partials/header-modern }}
+  {{> partials/loader }}
+
+  <!-- ========================================================================= -->
+  <!-- 1. HERO SECTION                                                          -->
+  <!-- ========================================================================= -->
+  <section class="hero-custom-bg relative pt-32 sm:pt-40 lg:pt-48 pb-20 sm:pb-28 lg:pb-36 overflow-hidden bg-[#FAF5EF] bg-[80%_center] sm:bg-[85%_center] lg:bg-right">
+    <!-- Subtle mobile readability overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#FAF5EF]/95 via-[#FAF5EF]/80 to-transparent lg:hidden pointer-events-none"></div>
+
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[460px] lg:min-h-[520px]">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 xl:col-span-6 flex flex-col gap-5 sm:gap-6" data-aos="fade-up" data-aos-duration="800">
+          
+          <!-- Eyebrow Tag -->
+          <div class="inline-flex">
+            <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453]">
+              ABOUT &amp; CONTACT US ——
+            </span>
+          </div>
+
+          <!-- Hero Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-bold text-[#231E1A] leading-[1.15] tracking-tight">
+            About Oora Labz
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="text-sm sm:text-base text-[#615145] leading-relaxed max-w-lg font-normal">
+            Where strategy meets engineering: software that's built for people, not just built to spec.
+          </p>
+
+          <!-- Action CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-1">
+            <a href="#story" class="bg-[#231E1A] text-white hover:bg-[#3B322C] px-7 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+              <span>Get Started</span>
+              <i class="ri-arrow-right-line text-base"></i>
+            </a>
+
+            <a href="#contact" class="border border-[#CEBCAC] text-[#231E1A] hover:bg-[#231E1A] hover:text-white hover:border-[#231E1A] px-7 py-3 rounded-full text-sm font-semibold transition-all duration-300 transform hover:-translate-y-0.5">
+              <span>Contact Us</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right side empty spacer so the background statue artwork displays cleanly -->
+        <div class="hidden lg:block lg:col-span-5 xl:col-span-6 pointer-events-none"></div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 2. OUR STORY SECTION                                                     -->
+  <!-- ========================================================================= -->
+  <section class="py-16 sm:py-20 lg:py-28 relative bg-[#FAF5EF]" id="story">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        
+        <!-- Left Column: Modern Team Photo -->
+        <div class="lg:col-span-5" data-aos="fade-right">
+          <div class="relative rounded-[28px] overflow-hidden border border-[#E8DDD1] shadow-[0_16px_36px_rgba(74,56,42,0.12)] group">
+            <img 
+              src="assets/images/home-modern/team-story-hq.jpg" 
+              alt="Oora Labz Engineering Team" 
+              class="w-full h-[320px] sm:h-[380px] lg:h-[420px] object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#231E1A]/40 via-transparent to-transparent pointer-events-none"></div>
+          </div>
+        </div>
+
+        <!-- Right Column: Story Text & 3 Stat Badges -->
+        <div class="lg:col-span-7 flex flex-col gap-6" data-aos="fade-left">
+          
+          <!-- Eyebrow -->
+          <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453]">
+            OUR STORY ——
+          </span>
+
+          <!-- Headline -->
+          <h2 class="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#231E1A] leading-tight">
+            A Colombo-Based Software Team<br/>Building Practical Solutions
+          </h2>
+
+          <!-- Description -->
+          <p class="text-sm sm:text-[15px] text-[#615145] leading-relaxed">
+            OORA Labs is a Colombo-based software team founded in 2023. We design and build custom applications, business tools, and AI-driven solutions for companies that need technology to work the way they do. We also build our own products — CRM, supply chain, and micro-finance platforms among them — which keeps our engineering sharp and our advice practical.
+          </p>
+
+          <!-- 3 Stat Badges Row -->
+          <div class="grid grid-cols-3 gap-3 sm:gap-6 pt-4 border-t border-[#E8DDD1]">
+            
+            <!-- Stat 1: Products -->
+            <div class="bg-white/80 backdrop-blur-sm border border-[#E8DDD1] rounded-2xl p-4 sm:p-5 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+              <div class="w-10 h-10 rounded-xl bg-[#F4EDE4] text-[#745A43] flex items-center justify-center text-lg mb-2">
+                <i class="ri-box-3-line"></i>
+              </div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-[#231E1A] tracking-tight">
+                5
+              </div>
+              <div class="text-[11px] sm:text-xs text-[#745A43] font-medium mt-1 leading-snug">
+                In-House<br/>Products Built
+              </div>
+            </div>
+
+            <!-- Stat 2: Specialists -->
+            <div class="bg-white/80 backdrop-blur-sm border border-[#E8DDD1] rounded-2xl p-4 sm:p-5 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+              <div class="w-10 h-10 rounded-xl bg-[#F4EDE4] text-[#745A43] flex items-center justify-center text-lg mb-2">
+                <i class="ri-team-line"></i>
+              </div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-[#231E1A] tracking-tight">
+                11
+              </div>
+              <div class="text-[11px] sm:text-xs text-[#745A43] font-medium mt-1 leading-snug">
+                Service<br/>Specialists
+              </div>
+            </div>
+
+            <!-- Stat 3: Years -->
+            <div class="bg-white/80 backdrop-blur-sm border border-[#E8DDD1] rounded-2xl p-4 sm:p-5 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+              <div class="w-10 h-10 rounded-xl bg-[#F4EDE4] text-[#745A43] flex items-center justify-center text-lg mb-2">
+                <i class="ri-code-s-slash-line"></i>
+              </div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-[#231E1A] tracking-tight">
+                3+
+              </div>
+              <div class="text-[11px] sm:text-xs text-[#745A43] font-medium mt-1 leading-snug">
+                Years Building<br/>Software
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 3. MISSION & VISION SECTION                                              -->
+  <!-- ========================================================================= -->
+  <section class="py-12 sm:py-16 bg-[#FAF5EF]">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+        
+        <!-- Card 1: Our Mission (Light Warm Sand Card) -->
+        <div class="bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[24px] p-7 sm:p-9 flex flex-col justify-between shadow-[0_12px_28px_rgba(74,56,42,0.06)] hover:-translate-y-1.5 hover:shadow-[0_18px_36px_rgba(74,56,42,0.12)] transition-all duration-300 group" data-aos="fade-up" data-aos-delay="50">
+          <div>
+            <div class="flex items-center gap-3.5 mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-2xl flex-shrink-0 transition-colors group-hover:bg-[#231E1A] group-hover:text-white">
+                <i class="ri-focus-3-line"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-[#231E1A]">
+                Our Mission
+              </h3>
+            </div>
+            <p class="text-sm sm:text-base text-[#615145] leading-relaxed">
+              To deliver practical, reliable, and scalable software solutions that solve real business challenges and create lasting value.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2: Our Vision (Highlighted Dark Mocha Card) -->
+        <div class="rounded-[24px] p-7 sm:p-9 flex flex-col justify-between shadow-[0_16px_36px_rgba(42,32,26,0.25)] hover:-translate-y-1.5 hover:shadow-[0_20px_42px_rgba(42,32,26,0.32)] transition-all duration-300 group" style="background: linear-gradient(135deg, #6B5240 0%, #4D382B 100%);" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="flex items-center gap-3.5 mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-white/15 border border-white/20 text-white flex items-center justify-center text-2xl flex-shrink-0">
+                <i class="ri-eye-line"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-white">
+                Our Vision
+              </h3>
+            </div>
+            <p class="text-sm sm:text-base text-[#DFD0C4] leading-relaxed">
+              To be a trusted technology partner for businesses, known for building simple, impactful, and people-centric digital solutions.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 4. OUR PROCESS SECTION ("From Idea To Impact")                           -->
+  <!-- ========================================================================= -->
+  <section class="py-16 sm:py-20 lg:py-28 relative bg-[#FAF5EF]" id="process">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16" data-aos="fade-up">
+        <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453] block mb-2">
+          OUR PROCESS
+        </span>
+        <h2 class="text-2xl sm:text-3xl lg:text-[38px] font-bold text-[#231E1A] leading-tight mb-3">
+          From Idea To Impact: A Five-Stage Delivery Process
+        </h2>
+        <p class="text-sm sm:text-base text-[#68584B] leading-relaxed">
+          A clear and collaborative approach to turn your ideas into real, working solutions.
+        </p>
+      </div>
+
+      <!-- 2 Columns: Statue on Left, 5 Process Pills on Right -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- Left: Greek Philosopher Statue with Laptop -->
+        <div class="lg:col-span-5 flex justify-center items-center" data-aos="fade-right">
+          <div class="relative w-full max-w-[440px] group">
+            <img 
+              src="assets/images/home-modern/exact/laptop-exact.png" 
+              alt="Five-Stage Delivery Process" 
+              class="w-full h-auto object-contain transform group-hover:scale-105 transition-transform duration-700 ease-out drop-shadow-[0_16px_32px_rgba(74,56,42,0.12)]" 
+            />
+          </div>
+        </div>
+
+        <!-- Right: 5 Numbered Stages -->
+        <div class="lg:col-span-7 flex flex-col gap-3.5" data-aos="fade-left">
+          
+          <!-- Stage 1 -->
+          <div class="bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-2xl sm:rounded-full py-4 px-6 flex items-center gap-4 hover:bg-white hover:border-[#CDBBA9] hover:shadow-md hover:translate-x-2 transition-all duration-300 group cursor-default">
+            <div class="w-8 h-8 rounded-full bg-[#6B5240] text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-sm group-hover:scale-110 transition-transform">
+              1
+            </div>
+            <div>
+              <h4 class="font-bold text-[#231E1A] text-sm sm:text-base group-hover:text-[#745A43] transition-colors">
+                Discover &amp; Align
+              </h4>
+              <p class="text-xs sm:text-sm text-[#66574C]">
+                Understand your goals, users, and constraints.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-2xl sm:rounded-full py-4 px-6 flex items-center gap-4 hover:bg-white hover:border-[#CDBBA9] hover:shadow-md hover:translate-x-2 transition-all duration-300 group cursor-default">
+            <div class="w-8 h-8 rounded-full bg-[#6B5240] text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-sm group-hover:scale-110 transition-transform">
+              2
+            </div>
+            <div>
+              <h4 class="font-bold text-[#231E1A] text-sm sm:text-base group-hover:text-[#745A43] transition-colors">
+                Define &amp; Prototype
+              </h4>
+              <p class="text-xs sm:text-sm text-[#66574C]">
+                Turn requirements into a clear, workable solution.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-2xl sm:rounded-full py-4 px-6 flex items-center gap-4 hover:bg-white hover:border-[#CDBBA9] hover:shadow-md hover:translate-x-2 transition-all duration-300 group cursor-default">
+            <div class="w-8 h-8 rounded-full bg-[#6B5240] text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-sm group-hover:scale-110 transition-transform">
+              3
+            </div>
+            <div>
+              <h4 class="font-bold text-[#231E1A] text-sm sm:text-base group-hover:text-[#745A43] transition-colors">
+                Build &amp; Integrate
+              </h4>
+              <p class="text-xs sm:text-sm text-[#66574C]">
+                Develop, integrate, and configure the solution.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stage 4 -->
+          <div class="bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-2xl sm:rounded-full py-4 px-6 flex items-center gap-4 hover:bg-white hover:border-[#CDBBA9] hover:shadow-md hover:translate-x-2 transition-all duration-300 group cursor-default">
+            <div class="w-8 h-8 rounded-full bg-[#6B5240] text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-sm group-hover:scale-110 transition-transform">
+              4
+            </div>
+            <div>
+              <h4 class="font-bold text-[#231E1A] text-sm sm:text-base group-hover:text-[#745A43] transition-colors">
+                Validate &amp; Launch
+              </h4>
+              <p class="text-xs sm:text-sm text-[#66574C]">
+                Test, refine, and go live with confidence.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stage 5 -->
+          <div class="bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-2xl sm:rounded-full py-4 px-6 flex items-center gap-4 hover:bg-white hover:border-[#CDBBA9] hover:shadow-md hover:translate-x-2 transition-all duration-300 group cursor-default">
+            <div class="w-8 h-8 rounded-full bg-[#6B5240] text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-sm group-hover:scale-110 transition-transform">
+              5
+            </div>
+            <div>
+              <h4 class="font-bold text-[#231E1A] text-sm sm:text-base group-hover:text-[#745A43] transition-colors">
+                Measure &amp; Improve
+              </h4>
+              <p class="text-xs sm:text-sm text-[#66574C]">
+                Monitor performance and keep enhancing the value.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 5. WHY BUSINESSES CHOOSE OORA LABS                                       -->
+  <!-- ========================================================================= -->
+  <section class="py-16 sm:py-20 lg:py-28 relative bg-[#FAF5EF]" id="why-choose">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16" data-aos="fade-up">
+        <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453] block mb-2">
+          WHY CHOOSE US
+        </span>
+        <h2 class="text-2xl sm:text-3xl lg:text-[38px] font-bold text-[#231E1A] leading-tight">
+          Why Businesses Choose OORA Labs
+        </h2>
+      </div>
+
+      <!-- 3 Feature Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7 items-stretch">
+        
+        <!-- Card 1: 3+ Years Building Software (Dark Mocha Card) -->
+        <div class="rounded-[26px] p-7 sm:p-8 flex flex-col gap-5 text-white shadow-[0_16px_36px_rgba(42,32,26,0.25)] hover:-translate-y-1.5 transition-all duration-300" style="background: linear-gradient(135deg, #6B5240 0%, #4D382B 100%);" data-aos="fade-up" data-aos-delay="50">
+          <div class="w-12 h-12 rounded-2xl bg-white/15 border border-white/20 flex items-center justify-center text-white text-2xl">
+            <i class="ri-award-line"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white mb-4">
+              3+ Years Building Software
+            </h3>
+            <ul class="flex flex-col gap-3 text-xs sm:text-sm text-[#DFD0C4] leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <i class="ri-check-line text-white font-bold text-base mt-0.5 flex-shrink-0"></i>
+                <span>Hands-on experience since 2023 across custom software, CRM, and workflow tools.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="ri-check-line text-white font-bold text-base mt-0.5 flex-shrink-0"></i>
+                <span>Lessons learned from real production systems, not just tutorials.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="ri-check-line text-white font-bold text-base mt-0.5 flex-shrink-0"></i>
+                <span>A track record built on shipping, not just planning.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2: Small Team, Direct Access (Light Cream Card) -->
+        <div class="bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[26px] p-7 sm:p-8 flex flex-col gap-5 shadow-[0_12px_28px_rgba(74,56,42,0.06)] hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(74,56,42,0.12)] transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-2xl">
+            <i class="ri-team-line"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-[#231E1A] mb-4">
+              Small Team, Direct Access
+            </h3>
+            <ul class="flex flex-col gap-3 text-xs sm:text-sm text-[#615145] leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <i class="ri-check-line text-[#745A43] font-bold text-base mt-0.5 flex-shrink-0"></i>
+                <span>You work directly with the people building your software — no account layers.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="ri-check-line text-[#745A43] font-bold text-base mt-0.5 flex-shrink-0"></i>
+                <span>Faster decisions and clearer iterations.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="ri-check-line text-[#745A43] font-bold text-base mt-0.5 flex-shrink-0"></i>
+                <span>Close, direct communication throughout the project.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 3: We Build Our Own Products Too (Light Cream Card) -->
+        <div class="bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[26px] p-7 sm:p-8 flex flex-col gap-5 shadow-[0_12px_28px_rgba(74,56,42,0.06)] hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(74,56,42,0.12)] transition-all duration-300" data-aos="fade-up" data-aos-delay="150">
+          <div class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-2xl">
+            <i class="ri-box-3-line"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-[#231E1A] mb-4">
+              We Build Our Own Products Too
+            </h3>
+            <ul class="flex flex-col gap-3 text-xs sm:text-sm text-[#615145] leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <i class="ri-check-line text-[#745A43] font-bold text-base mt-0.5 flex-shrink-0"></i>
+                <span>In-house tools like OOLA CRM, FINLOO, and LOOGA keep our engineering sharp.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="ri-check-line text-[#745A43] font-bold text-base mt-0.5 flex-shrink-0"></i>
+                <span>We understand product thinking, not just feature delivery.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="ri-check-line text-[#745A43] font-bold text-base mt-0.5 flex-shrink-0"></i>
+                <span>That experience shapes every client project we take on.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 6. CLIENT TESTIMONIALS                                                   -->
+  <!-- ========================================================================= -->
+  <section class="py-16 sm:py-20 lg:py-24 relative bg-[#FAF5EF]">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left: Section Title & Navigation Buttons -->
+        <div class="lg:col-span-5 flex flex-col gap-4" data-aos="fade-right">
+          <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453]">
+            TESTIMONIAL
+          </span>
+          <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-bold text-[#231E1A] leading-tight">
+            What Clients Say About Working With Us
+          </h2>
+
+          <!-- Previous / Next Controls -->
+          <div class="flex items-center gap-3 pt-3">
+            <button 
+              id="aboutTestimonialPrev"
+              aria-label="Previous Testimonial" 
+              class="w-10 h-10 rounded-full border border-[#D5C2B2] bg-white/70 hover:bg-[#231E1A] hover:text-white text-[#231E1A] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer">
+              <i class="ri-arrow-left-s-line text-lg"></i>
+            </button>
+            <button 
+              id="aboutTestimonialNext"
+              aria-label="Next Testimonial" 
+              class="w-10 h-10 rounded-full border border-[#D5C2B2] bg-white/70 hover:bg-[#231E1A] hover:text-white text-[#231E1A] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer">
+              <i class="ri-arrow-right-s-line text-lg"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Testimonial Quote Card -->
+        <div class="lg:col-span-7" data-aos="fade-left">
+          <div id="aboutTestimonialCard" class="bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[28px] p-7 sm:p-10 shadow-[0_16px_36px_rgba(74,56,42,0.08)] transition-all duration-500">
+            <div class="text-[#745A43] text-3xl font-serif leading-none mb-3">
+              <i class="ri-double-quotes-l"></i>
+            </div>
+            <h3 id="aboutTestimonialTitle" class="text-lg sm:text-xl font-bold text-[#231E1A] mb-3">
+              “Clear communication from start to finish”
+            </h3>
+            <p id="aboutTestimonialQuote" class="text-sm sm:text-base text-[#615145] leading-relaxed mb-6">
+              They kept us updated at every stage and delivered exactly what was agreed — no surprises, no chasing for updates. It felt like working with an extension of our own team.
+            </p>
+            <div class="flex items-center gap-3.5 pt-4 border-t border-[#E8DDD1]">
+              <img 
+                id="aboutTestimonialAvatar"
+                src="assets/images/team/lady.png" 
+                alt="Client avatar" 
+                class="w-11 h-11 rounded-full object-cover border-2 border-[#745A43]/30 shadow-sm" 
+              />
+              <div>
+                <h4 id="aboutTestimonialName" class="font-bold text-sm sm:text-base text-[#231E1A]">
+                  Verified Client
+                </h4>
+                <p id="aboutTestimonialRole" class="text-xs sm:text-[13px] text-[#745A43]">
+                  SME Operations Lead
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 7. CONTACT INFO CARDS (Location, Phone, Email)                            -->
+  <!-- ========================================================================= -->
+  <section class="py-10 bg-[#FAF5EF]" id="contact">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        
+        <!-- Location Card -->
+        <div class="bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[22px] p-6 flex items-center gap-4 hover:shadow-md hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="50">
+          <div class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#745A43] flex items-center justify-center text-2xl flex-shrink-0">
+            <i class="ri-map-pin-2-fill"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-[#231E1A]">Location</h3>
+            <p class="text-xs sm:text-sm text-[#615145] mt-0.5">
+              97, Wanatha Rd, Maharagama.
+            </p>
+          </div>
+        </div>
+
+        <!-- Phone Card -->
+        <div class="bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[22px] p-6 flex items-center gap-4 hover:shadow-md hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#745A43] flex items-center justify-center text-2xl flex-shrink-0">
+            <i class="ri-phone-fill"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-[#231E1A]">Phone</h3>
+            <a href="tel:0712688070" class="text-xs sm:text-sm text-[#615145] hover:text-[#231E1A] mt-0.5 block transition-colors">
+              071 268 8070
+            </a>
+          </div>
+        </div>
+
+        <!-- Email Card -->
+        <div class="bg-white/80 backdrop-blur-md border border-[#E8DDD1] rounded-[22px] p-6 flex items-center gap-4 hover:shadow-md hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="150">
+          <div class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#745A43] flex items-center justify-center text-2xl flex-shrink-0">
+            <i class="ri-mail-fill"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-[#231E1A]">Email</h3>
+            <a href="mailto:hello@ooralabz.com" class="text-xs sm:text-sm text-[#615145] hover:text-[#231E1A] mt-0.5 block transition-colors">
+              hello@ooralabz.com
+            </a>
+            <a href="mailto:ooralabz@gmail.com" class="text-xs sm:text-sm text-[#615145] hover:text-[#231E1A] block transition-colors">
+              ooralabz@gmail.com
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 8. "HAVE ANY QUERY? SEND US A MESSAGE" CONTACT FORM BANNER                -->
+  <!-- ========================================================================= -->
+  <section class="py-12 sm:py-16 bg-[#FAF5EF]">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="relative rounded-[32px] overflow-hidden p-8 sm:p-12 lg:p-14 text-white shadow-[0_20px_48px_rgba(42,32,26,0.30)]" style="background: linear-gradient(135deg, #4A382A 0%, #2E2016 100%);" data-aos="fade-up">
+        
+        <!-- Subtle decorative warm overlay -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#745A43]/40 via-transparent to-transparent pointer-events-none"></div>
+
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Left Column: Title & Text -->
+          <div class="lg:col-span-5 flex flex-col gap-4">
+            <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-bold text-white leading-tight">
+              Have Any Query?<br/>Send Us a Message
+            </h2>
+            <p class="text-sm sm:text-base text-[#DFD0C4] leading-relaxed max-w-sm">
+              Tell us about your project or requirement and our team will get back to you shortly.
+            </p>
+          </div>
+
+          <!-- Right Column: Interactive Form -->
+          <div class="lg:col-span-7">
+            <form id="contactForm" class="flex flex-col gap-4">
+              
+              <!-- Row 1: First Name & Last Name -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <input 
+                    type="text" 
+                    name="firstName" 
+                    placeholder="First Name" 
+                    required 
+                    class="w-full bg-white/10 border border-white/20 rounded-full px-5 py-3 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all" 
+                  />
+                </div>
+                <div>
+                  <input 
+                    type="text" 
+                    name="lastName" 
+                    placeholder="Last Name" 
+                    required 
+                    class="w-full bg-white/10 border border-white/20 rounded-full px-5 py-3 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all" 
+                  />
+                </div>
+              </div>
+
+              <!-- Row 2: Phone Number & Email -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <input 
+                    type="tel" 
+                    name="phone" 
+                    placeholder="Phone Number" 
+                    class="w-full bg-white/10 border border-white/20 rounded-full px-5 py-3 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all" 
+                  />
+                </div>
+                <div>
+                  <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Email" 
+                    required 
+                    class="w-full bg-white/10 border border-white/20 rounded-full px-5 py-3 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all" 
+                  />
+                </div>
+              </div>
+
+              <!-- Row 3: Message Textarea -->
+              <div>
+                <textarea 
+                  name="message" 
+                  rows="3" 
+                  placeholder="Write your message" 
+                  required 
+                  class="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5 text-sm text-white placeholder-white/60 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all resize-none"
+                ></textarea>
+              </div>
+
+              <!-- Row 4: Submit Button -->
+              <div class="pt-1">
+                <button 
+                  type="submit" 
+                  class="bg-white text-[#231E1A] hover:bg-[#FAF6F0] px-8 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer">
+                  <span>Send Message</span>
+                  <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 9. INTERACTIVE GOOGLE MAP                                                -->
+  <!-- ========================================================================= -->
+  <section class="pb-16 sm:pb-20 lg:pb-28 bg-[#FAF5EF]">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-[28px] overflow-hidden border border-[#E8DDD1] shadow-[0_16px_36px_rgba(74,56,42,0.08)]" data-aos="fade-up">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.341857945763!2d79.92348577587483!3d6.849557493148767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a6109968433%3A0xe76a6e27e8b61c47!2s97%20Wanatha%20Rd%2C%20Maharagama!5e0!3m2!1sen!2slk!4v1700000000000!5m2!1sen!2slk" 
+          width="100%" 
+          height="400" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full h-[320px] sm:h-[380px] lg:h-[420px] block"
+          title="Oora Labz Office Location Map">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 10. MODERN FOOTER                                                        -->
+  <!-- ========================================================================= -->
+  {{> partials/footer-modern }}
+  {{> partials/back-to-top }}
+  {{> partials/vendor-scripts }}
+
+</body>
+
+</html>
