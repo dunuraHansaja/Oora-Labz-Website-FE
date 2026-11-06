@@ -54,6 +54,7 @@ body.home-modern-page h6 {
   background-image: url('../images/home-modern/hero-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center bottom;
 }
 
 .innovative-custom-bg {
@@ -501,28 +502,28 @@ body.home-modern-page h6 {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 860px;
+  max-width: 1040px;
   margin: 0 auto;
-  gap: 28px;
+  gap: 32px;
 }
 
 .testimonial-deck-stage {
   position: relative;
   width: 100%;
-  max-width: 710px;
-  height: 218px;
+  max-width: 860px;
+  height: 266px;
   margin: 0 auto;
 }
 
 .testimonial-fan-card {
   position: absolute;
-  border-radius: 18px;
+  border-radius: 20px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 26px 28px;
+  padding: 30px 34px;
   text-align: center;
   transition: left 0.55s cubic-bezier(0.22, 1, 0.36, 1),
               top 0.55s cubic-bezier(0.22, 1, 0.36, 1),
@@ -535,8 +536,8 @@ body.home-modern-page h6 {
   user-select: none;
 
   .fan-card-content {
-    width: 380px;
-    max-width: 68vw;
+    width: 440px;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -549,9 +550,12 @@ body.home-modern-page h6 {
     left: 0%;
     top: 0px;
     width: 35.2%;
-    height: 175px;
-    background-color: #F4EEE2;
-    box-shadow: -7px 8px 6px rgba(0, 0, 0, 0.24);
+    height: 214px;
+    background-color: rgba(244, 238, 226, 0.58);
+    backdrop-filter: blur(10px) saturate(135%);
+    -webkit-backdrop-filter: blur(10px) saturate(135%);
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    box-shadow: -7px 8px 6px rgba(0, 0, 0, 0.24), inset 0 1px 1px rgba(255, 255, 255, 0.75);
     z-index: 2;
     cursor: pointer;
 
@@ -565,11 +569,14 @@ body.home-modern-page h6 {
   /* 2. Left Middle Slot */
   &.pos-mid-left {
     left: 9.5%;
-    top: 21px;
+    top: 26px;
     width: 34.2%;
-    height: 175px;
-    background-color: #F4EEE2;
-    box-shadow: -7px 8px 6px rgba(0, 0, 0, 0.26);
+    height: 214px;
+    background-color: rgba(244, 238, 226, 0.72);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    box-shadow: -7px 8px 6px rgba(0, 0, 0, 0.26), inset 0 1px 1px rgba(255, 255, 255, 0.8);
     z-index: 5;
     cursor: pointer;
 
@@ -583,10 +590,11 @@ body.home-modern-page h6 {
   /* 3. Center Foreground Active Slot */
   &.pos-front {
     left: 17.4%;
-    top: 38px;
+    top: 46px;
     width: 65.2%;
-    height: 179px;
+    height: 218px;
     background-color: #F4EEE2;
+    border: 1px solid transparent;
     box-shadow: 6px 7px 6px rgba(0, 0, 0, 0.24), 0 7px 6px rgba(0, 0, 0, 0.16);
     z-index: 10;
     cursor: default;
@@ -601,11 +609,14 @@ body.home-modern-page h6 {
   /* 4. Right Middle Slot */
   &.pos-mid-right {
     left: 56.8%;
-    top: 21px;
+    top: 26px;
     width: 34.2%;
-    height: 175px;
-    background-color: #F4EEE2;
-    box-shadow: 7px 8px 6px rgba(0, 0, 0, 0.26);
+    height: 214px;
+    background-color: rgba(244, 238, 226, 0.72);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    box-shadow: 7px 8px 6px rgba(0, 0, 0, 0.26), inset 0 1px 1px rgba(255, 255, 255, 0.8);
     z-index: 5;
     cursor: pointer;
 
@@ -621,9 +632,12 @@ body.home-modern-page h6 {
     left: 64.8%;
     top: 0px;
     width: 35.2%;
-    height: 175px;
-    background-color: #F4EEE2;
-    box-shadow: 7px 8px 6px rgba(0, 0, 0, 0.24);
+    height: 214px;
+    background-color: rgba(244, 238, 226, 0.58);
+    backdrop-filter: blur(10px) saturate(135%);
+    -webkit-backdrop-filter: blur(10px) saturate(135%);
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    box-shadow: 7px 8px 6px rgba(0, 0, 0, 0.24), inset 0 1px 1px rgba(255, 255, 255, 0.75);
     z-index: 2;
     cursor: pointer;
 
@@ -645,8 +659,8 @@ body.home-modern-page h6 {
 
 /* Round Prev / Next Arrow Buttons with Directional Drop Shadow */
 .testimonial-nav-btn {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   border-radius: 9999px;
   background-color: #F4EBD9;
   color: #1A1512;
@@ -667,57 +681,104 @@ body.home-modern-page h6 {
   }
 }
 
+/* Tablet & Mobile: Keep the exact same 5-card stepped fan arrangement scaled to fit */
 @media (max-width: 768px) {
   .testimonial-deck-wrapper {
     gap: 12px;
   }
+  .testimonial-deck-stage {
+    height: 206px;
+  }
+  .testimonial-nav-btn {
+    width: 32px;
+    height: 32px;
+  }
   .testimonial-fan-card {
+    border-radius: 14px;
+    padding: 16px 14px;
+
     &.pos-outer-left {
-      width: 38%;
-      height: 160px;
-    }
-    &.pos-outer-right {
-      left: 62%;
-      width: 38%;
-      height: 160px;
+      left: 0%;
+      top: 0px;
+      width: 35.2%;
+      height: 164px;
     }
     &.pos-mid-left {
-      left: 6%;
-      width: 38%;
-      height: 160px;
-    }
-    &.pos-mid-right {
-      left: 56%;
-      width: 38%;
-      height: 160px;
+      left: 9.5%;
+      top: 20px;
+      width: 34.2%;
+      height: 164px;
     }
     &.pos-front {
-      left: 11%;
-      width: 78%;
-      padding: 22px 20px;
+      left: 17.4%;
+      top: 36px;
+      width: 65.2%;
+      height: 168px;
+    }
+    &.pos-mid-right {
+      left: 56.8%;
+      top: 20px;
+      width: 34.2%;
+      height: 164px;
+    }
+    &.pos-outer-right {
+      left: 64.8%;
+      top: 0px;
+      width: 35.2%;
+      height: 164px;
     }
   }
 }
 
 @media (max-width: 520px) {
+  .testimonial-deck-wrapper {
+    gap: 6px;
+  }
+  .testimonial-deck-stage {
+    height: 168px;
+  }
+  .testimonial-nav-btn {
+    width: 26px;
+    height: 26px;
+  }
   .testimonial-fan-card {
-    &.pos-outer-left,
-    &.pos-outer-right {
-      opacity: 0;
-      pointer-events: none;
+    border-radius: 12px;
+    padding: 10px 10px;
+
+    &.pos-outer-left {
+      left: 0%;
+      top: 0px;
+      width: 35.2%;
+      height: 132px;
+      box-shadow: -4px 5px 4px rgba(0, 0, 0, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.75);
     }
     &.pos-mid-left {
-      left: 0%;
-      width: 45%;
-    }
-    &.pos-mid-right {
-      left: 55%;
-      width: 45%;
+      left: 9.5%;
+      top: 15px;
+      width: 34.2%;
+      height: 132px;
+      box-shadow: -4px 5px 4px rgba(0, 0, 0, 0.24), inset 0 1px 1px rgba(255, 255, 255, 0.8);
     }
     &.pos-front {
-      left: 5%;
-      width: 90%;
-      top: 24px;
+      left: 17.4%;
+      top: 28px;
+      width: 65.2%;
+      height: 136px;
+      box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.22), 0 5px 5px rgba(0, 0, 0, 0.14);
+    }
+    &.pos-mid-right {
+      left: 56.8%;
+      top: 15px;
+      width: 34.2%;
+      height: 132px;
+      box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.24), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    }
+    &.pos-outer-right {
+      left: 64.8%;
+      top: 0px;
+      width: 35.2%;
+      height: 132px;
+      box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.75);
     }
   }
 }

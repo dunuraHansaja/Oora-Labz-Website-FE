@@ -228,17 +228,50 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Auto-rotate every 4 seconds (4000ms) and reset timer on manual interaction
+  let autoRotateTimer = null;
+
+  function startAutoRotate() {
+    stopAutoRotate();
+    autoRotateTimer = setInterval(() => {
+      stepCarousel(1);
+    }, 4000);
+  }
+
+  function stopAutoRotate() {
+    if (autoRotateTimer) {
+      clearInterval(autoRotateTimer);
+      autoRotateTimer = null;
+    }
+  }
+
   if (prevBtn) {
     prevBtn.addEventListener("click", () => {
       stepCarousel(-1);
+      startAutoRotate();
     });
   }
 
   if (nextBtn) {
     nextBtn.addEventListener("click", () => {
       stepCarousel(1);
+      startAutoRotate();
     });
   }
+
+  if (deckStage) {
+    deckStage.addEventListener("click", () => {
+      startAutoRotate();
+    });
+  }
+
+  if (dotsContainer) {
+    dotsContainer.addEventListener("click", () => {
+      startAutoRotate();
+    });
+  }
+
+  startAutoRotate();
 
   // 3b. About Page Testimonial Carousel
   const aboutTestimonials = [
