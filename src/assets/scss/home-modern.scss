@@ -1119,3 +1119,49 @@ body.home-modern-page h6 {
       inset 0 1px 0 rgba(255, 255, 255, 0.9);
   }
 }
+
+/* ==========================================================================
+   11. FLOATING RIGHT-CORNER "LET'S BUILD WHAT'S NEXT" HELP CARD & ICON
+   ========================================================================== */
+
+.floating-cta-widget {
+  pointer-events: none;
+
+  >* {
+    pointer-events: auto;
+  }
+}
+
+.floating-cta-card {
+  transform-origin: bottom right;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.28s;
+
+  &.widget-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none !important;
+    transform: scale(0.82) translateY(14px);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.floating-cta-launcher {
+  transform-origin: center;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.28s;
+
+  &.widget-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none !important;
+    transform: scale(0.6);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

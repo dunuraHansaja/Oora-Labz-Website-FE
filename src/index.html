@@ -869,37 +869,66 @@
   </section>
 
 
-    <!-- ========================================================================= -->
-  <!-- 8. CTA BANNER ("LET'S BUILD WHAT'S NEXT")                                -->
   <!-- ========================================================================= -->
-  <section class="py-14 sm:py-20 relative bg-[#F4EDE1]" id="contact">
-    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- 8. FLOATING RIGHT-CORNER "LET'S BUILD WHAT'S NEXT" WIDGET                 -->
+  <!-- ========================================================================= -->
+  <div id="floatingCtaWidget" class="floating-cta-widget fixed bottom-5 right-5 z-[95] flex flex-col items-end">
+    
+    <!-- Expanded Small Card Box -->
+    <div id="floatingCtaCard" class="floating-cta-card w-[290px] sm:w-[330px] rounded-[24px] p-5 sm:p-6 bg-gradient-to-br from-[#F4EAE0] via-[#E9D8C7] to-[#DEC8B2] border border-[#D2BDA8] shadow-[0_20px_50px_rgba(35,30,26,0.22)] relative overflow-hidden">
       
-      <div class="rounded-[30px] sm:rounded-[40px] p-8 sm:p-12 lg:p-12 bg-gradient-to-r from-[#EFE3D5] via-[#E6D4C2] to-[#DCC7B3] border border-[#D5C2AF] shadow-[0_16px_40px_rgba(74,56,42,0.09)] flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden group" data-aos="zoom-in">
-        
-        <!-- Fluid glowing wave accent in background -->
-        <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-white/30 blur-2xl pointer-events-none"></div>
+      <!-- Subtle warm glow in background -->
+      <div class="absolute -right-10 -bottom-10 w-36 h-36 rounded-full bg-white/35 blur-xl pointer-events-none"></div>
 
-        <div class="flex flex-col gap-1.5 max-w-xl text-center lg:text-left z-10">
-          <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#231E1A] tracking-tight leading-tight">
-            Let's Build What's Next
-          </h2>
-          <p class="text-sm sm:text-base text-[#524133] font-medium leading-relaxed">
-            Have an idea or a business need? Let's turn it into a practical, scalable solution together.
-          </p>
+      <!-- Close / Minimize Button -->
+      <button
+        type="button"
+        id="floatingCtaCloseBtn"
+        aria-label="Minimize card"
+        title="Minimize"
+        class="w-7 h-7 rounded-full bg-[#231E1A]/10 hover:bg-[#231E1A] text-[#231E1A] hover:text-white flex items-center justify-center text-sm transition-all duration-200 absolute top-3.5 right-3.5 z-20 cursor-pointer"
+      >
+        <i class="ri-close-line text-base"></i>
+      </button>
+
+      <div class="relative z-10 flex flex-col gap-2.5 pr-5">
+        <div class="inline-flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#5D422E] animate-pulse"></span>
+          <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6E5644]">
+            LET'S TALK
+          </span>
         </div>
 
-        <div class="flex-shrink-0 z-10">
-          <a href="about-contact.html" class="bg-[#231E1A] text-white hover:bg-[#3B322C] text-sm sm:text-base font-medium py-3.5 px-8 rounded-full shadow-lg hover:shadow-xl inline-flex items-center gap-2 transition-all duration-300 transform hover:-translate-y-0.5">
+        <h3 class="text-xl sm:text-[22px] font-extrabold text-[#231E1A] tracking-tight leading-snug">
+          Let's Build What's Next
+        </h3>
+
+        <p class="text-xs text-[#524133] font-medium leading-relaxed">
+          Have an idea or a business need? Let's turn it into a practical, scalable solution together.
+        </p>
+
+        <div class="pt-1.5">
+          <a href="contact.html" class="bg-[#231E1A] text-white hover:bg-[#3B322C] text-xs sm:text-sm font-semibold py-2.5 px-5 rounded-full shadow-md hover:shadow-lg inline-flex items-center gap-2 transition-all duration-300 transform hover:-translate-y-0.5">
             <span>Get in Touch</span>
             <i class="ri-arrow-right-line"></i>
           </a>
         </div>
-
       </div>
-
     </div>
-  </section>
+
+    <!-- Minimized Chatbot-Style Corner Icon Button -->
+    <button
+      type="button"
+      id="floatingCtaLauncher"
+      aria-label="Open Let's Build What's Next"
+      title="Let's Build What's Next"
+      class="floating-cta-launcher widget-hidden w-[52px] h-[52px] sm:w-14 sm:h-14 rounded-full bg-[#231E1A] hover:bg-[#3B322C] text-white border-2 border-[#E6D4C2] shadow-[0_12px_30px_rgba(35,30,26,0.30)] flex items-center justify-center relative cursor-pointer transition-all duration-300 hover:scale-105"
+    >
+      <i class="ri-chat-smile-3-line text-2xl"></i>
+      <span class="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-[#C29B77] border-2 border-[#FAF5EF]"></span>
+    </button>
+
+  </div>
 
 
   <!-- ========================================================================= -->

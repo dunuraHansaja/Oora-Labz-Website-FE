@@ -688,5 +688,23 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => openServiceModalById(initialHash), 250);
     }
   }
+
+  // 7. Floating Right-Corner "Let's Build What's Next" Card & Minimized Icon
+  const floatingCtaCard = document.getElementById("floatingCtaCard");
+  const floatingCtaCloseBtn = document.getElementById("floatingCtaCloseBtn");
+  const floatingCtaLauncher = document.getElementById("floatingCtaLauncher");
+
+  if (floatingCtaCard && floatingCtaCloseBtn && floatingCtaLauncher) {
+    floatingCtaCloseBtn.addEventListener("click", () => {
+      floatingCtaCard.classList.add("widget-hidden");
+      floatingCtaLauncher.classList.remove("widget-hidden");
+    });
+
+    floatingCtaLauncher.addEventListener("click", () => {
+      floatingCtaLauncher.classList.add("widget-hidden");
+      floatingCtaCard.classList.remove("widget-hidden");
+    });
+  }
 });
+
 
