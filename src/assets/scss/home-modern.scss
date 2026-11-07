@@ -51,10 +51,18 @@ body.home-modern-page h6 {
 }
 
 .hero-custom-bg {
-  background-image: url('../images/home-modern/hero-bg.jpg');
+  background-image: url('../images/home-modern/h-home-bg-test.png');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center bottom;
+  background-position: right bottom !important;
+
+  @media (max-width: 1023px) {
+    background-position: 85% bottom !important;
+  }
+
+  @media (max-width: 639px) {
+    background-position: 80% bottom !important;
+  }
 }
 
 .innovative-custom-bg {
@@ -118,37 +126,49 @@ body.home-modern-page h6 {
    ========================================================================== */
 
 @keyframes floatSmooth {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   50% {
     transform: translateY(-9px) rotate(0.8deg);
   }
 }
 
 @keyframes floatSmoothReverse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   50% {
     transform: translateY(9px) rotate(-0.8deg);
   }
 }
 
 @keyframes floatSlow {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-14px);
   }
 }
 
 @keyframes subtlePulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.8;
     transform: scale(1);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.03);
@@ -156,9 +176,12 @@ body.home-modern-page h6 {
 }
 
 @keyframes holographicGlow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 10px 25px -4px rgba(116, 90, 67, 0.12), 0 0 12px rgba(220, 190, 166, 0.25);
   }
+
   50% {
     box-shadow: 0 16px 32px -4px rgba(116, 90, 67, 0.18), 0 0 22px rgba(220, 190, 166, 0.45);
   }
@@ -397,8 +420,8 @@ body.home-modern-page h6 {
   pointer-events: none !important;
   transform: translateY(8px);
   transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 0.22s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    visibility 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-dropdown-parent:hover .nav-dropdown-menu,
@@ -425,12 +448,10 @@ body.home-modern-page h6 {
   }
 
   .navbar-glass-pill {
-    background: linear-gradient(
-      90deg,
-      rgba(244, 239, 233, 0.72) 0%,
-      rgba(235, 226, 217, 0.66) 50%,
-      rgba(232, 224, 215, 0.72) 100%
-    );
+    background: linear-gradient(90deg,
+        rgba(244, 239, 233, 0.72) 0%,
+        rgba(235, 226, 217, 0.66) 50%,
+        rgba(232, 224, 215, 0.72) 100%);
     backdrop-filter: blur(20px) saturate(155%);
     -webkit-backdrop-filter: blur(20px) saturate(155%);
     border: 1px solid rgba(255, 255, 255, 0.85);
@@ -447,12 +468,10 @@ body.home-modern-page h6 {
     box-shadow: none !important;
 
     .navbar-glass-pill {
-      background: linear-gradient(
-        90deg,
-        rgba(244, 239, 233, 0.84) 0%,
-        rgba(235, 226, 217, 0.78) 50%,
-        rgba(232, 224, 215, 0.84) 100%
-      );
+      background: linear-gradient(90deg,
+          rgba(244, 239, 233, 0.84) 0%,
+          rgba(235, 226, 217, 0.78) 50%,
+          rgba(232, 224, 215, 0.84) 100%);
       border-color: rgba(255, 255, 255, 0.92);
       box-shadow:
         0 10px 30px -4px rgba(42, 32, 26, 0.13),
@@ -526,12 +545,12 @@ body.home-modern-page h6 {
   padding: 30px 34px;
   text-align: center;
   transition: left 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-              top 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-              width 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-              height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-              background-color 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    top 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: left, top, width, height, background-color, box-shadow;
   user-select: none;
 
@@ -686,13 +705,16 @@ body.home-modern-page h6 {
   .testimonial-deck-wrapper {
     gap: 12px;
   }
+
   .testimonial-deck-stage {
     height: 206px;
   }
+
   .testimonial-nav-btn {
     width: 32px;
     height: 32px;
   }
+
   .testimonial-fan-card {
     border-radius: 14px;
     padding: 16px 14px;
@@ -703,24 +725,28 @@ body.home-modern-page h6 {
       width: 35.2%;
       height: 164px;
     }
+
     &.pos-mid-left {
       left: 9.5%;
       top: 20px;
       width: 34.2%;
       height: 164px;
     }
+
     &.pos-front {
       left: 17.4%;
       top: 36px;
       width: 65.2%;
       height: 168px;
     }
+
     &.pos-mid-right {
       left: 56.8%;
       top: 20px;
       width: 34.2%;
       height: 164px;
     }
+
     &.pos-outer-right {
       left: 64.8%;
       top: 0px;
@@ -734,13 +760,16 @@ body.home-modern-page h6 {
   .testimonial-deck-wrapper {
     gap: 6px;
   }
+
   .testimonial-deck-stage {
     height: 168px;
   }
+
   .testimonial-nav-btn {
     width: 26px;
     height: 26px;
   }
+
   .testimonial-fan-card {
     border-radius: 12px;
     padding: 10px 10px;
@@ -752,6 +781,7 @@ body.home-modern-page h6 {
       height: 132px;
       box-shadow: -4px 5px 4px rgba(0, 0, 0, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.75);
     }
+
     &.pos-mid-left {
       left: 9.5%;
       top: 15px;
@@ -759,6 +789,7 @@ body.home-modern-page h6 {
       height: 132px;
       box-shadow: -4px 5px 4px rgba(0, 0, 0, 0.24), inset 0 1px 1px rgba(255, 255, 255, 0.8);
     }
+
     &.pos-front {
       left: 17.4%;
       top: 28px;
@@ -766,6 +797,7 @@ body.home-modern-page h6 {
       height: 136px;
       box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.22), 0 5px 5px rgba(0, 0, 0, 0.14);
     }
+
     &.pos-mid-right {
       left: 56.8%;
       top: 15px;
@@ -773,6 +805,7 @@ body.home-modern-page h6 {
       height: 132px;
       box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.24), inset 0 1px 1px rgba(255, 255, 255, 0.8);
     }
+
     &.pos-outer-right {
       left: 64.8%;
       top: 0px;
@@ -802,4 +835,287 @@ body.home-modern-page h6 {
 .why-check-item:hover {
   background: rgba(255, 255, 255, 0.7);
   transform: translateX(4px);
+}
+
+/* ==========================================================================
+   8. OUR WORK INTERACTIVE GLASS BOX LOGO SHOWCASE
+   ========================================================================== */
+
+.our-work-full-section {
+  position: relative;
+  width: 100%;
+  overflow-x: clip;
+  user-select: none;
+}
+
+.our-work-bg-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: -8px;
+}
+
+.our-work-scene-inner {
+  position: relative;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (max-width: 1023px) {
+    width: 138%;
+  }
+
+  @media (max-width: 639px) {
+    width: 178%;
+  }
+}
+
+.our-work-bg-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+.our-work-top-fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 16%;
+  background: linear-gradient(180deg,
+      #F4EDE1 0%,
+      rgba(244, 237, 225, 0.65) 38%,
+      rgba(244, 237, 225, 0) 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.our-work-icons-stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.our-work-glass-box {
+  position: absolute;
+  width: 4.6%;
+  max-width: 92px;
+  aspect-ratio: 1 / 1;
+  border-radius: 15%;
+  overflow: hidden;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 15;
+  box-shadow: 0 6px 20px rgba(42, 30, 20, 0.08);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @media (max-width: 639px) {
+    width: 4.9%;
+    box-shadow: 0 4px 12px rgba(42, 30, 20, 0.10);
+
+    &.our-work-box-1 {
+      left: 23.6% !important;
+      top: 15.0% !important;
+    }
+
+    &.our-work-box-2 {
+      left: 30.8% !important;
+      top: 29.5% !important;
+    }
+
+    &.our-work-box-3 {
+      left: 26.8% !important;
+      top: 54.0% !important;
+    }
+
+    &.our-work-box-4 {
+      left: 38.6% !important;
+      top: 5.0% !important;
+    }
+
+    &.our-work-box-5 {
+      left: 56.5% !important;
+      top: 5.0% !important;
+    }
+
+    &.our-work-box-6 {
+      left: 64.3% !important;
+      top: 29.5% !important;
+    }
+
+    &.our-work-box-7 {
+      left: 71.5% !important;
+      top: 15.5% !important;
+    }
+
+    &.our-work-box-8 {
+      left: 68.3% !important;
+      top: 54.0% !important;
+    }
+  }
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    transform: translateY(-4px) scale(1.06);
+    box-shadow: 0 14px 30px rgba(42, 30, 20, 0.22),
+      0 0 0 1.5px rgba(255, 255, 255, 0.78);
+    z-index: 25;
+
+    .our-work-box-color {
+      opacity: 1;
+    }
+
+    .our-work-box-default {
+      opacity: 0;
+    }
+  }
+}
+
+.our-work-box-default {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.our-work-box-color {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   9. FROSTED GLASS SERVICE DETAIL POP-UP MODAL
+   ========================================================================== */
+
+.service-modal-backdrop {
+  background: rgba(28, 22, 17, 0.42);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  &.modal-open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+
+    .service-modal-glass-panel {
+      transform: scale(1) translateY(0) !important;
+    }
+  }
+}
+
+.service-modal-glass-panel {
+  background: linear-gradient(135deg,
+      rgba(250, 245, 239, 0.84) 0%,
+      rgba(244, 237, 225, 0.72) 55%,
+      rgba(238, 226, 211, 0.78) 100%);
+  backdrop-filter: blur(26px) saturate(165%);
+  -webkit-backdrop-filter: blur(26px) saturate(165%);
+  border: 1.5px solid rgba(255, 255, 255, 0.78);
+  box-shadow: 0 32px 80px rgba(28, 20, 14, 0.32),
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.92),
+    0 0 0 1px rgba(198, 176, 154, 0.35);
+}
+
+.service-modal-dark-card {
+  background: linear-gradient(145deg,
+      rgba(45, 36, 29, 0.94) 0%,
+      rgba(58, 46, 37, 0.92) 50%,
+      rgba(31, 25, 21, 0.96) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 198, 170, 0.28);
+  box-shadow: 0 22px 48px rgba(24, 18, 14, 0.3),
+    inset 0 1px 1px rgba(255, 235, 215, 0.18);
+}
+
+.service-modal-check-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 14px rgba(58, 44, 32, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.92);
+    transform: translateX(3px);
+  }
+}
+
+/* ==========================================================================
+   10. CONTACT US PAGE STYLES
+   ========================================================================== */
+
+.contact-hero-custom-bg {
+  background-image: url('../images/home-modern/contact-hero-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.contact-info-card {
+  background: linear-gradient(135deg, rgba(246, 237, 226, 0.92) 0%, rgba(242, 230, 217, 0.85) 100%);
+  border: 1px solid rgba(226, 210, 193, 0.85);
+  box-shadow: 0 8px 24px rgba(74, 56, 42, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+  &:hover {
+    border-color: rgba(194, 168, 142, 0.95);
+    box-shadow: 0 12px 28px rgba(74, 56, 42, 0.09),
+      inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  }
+}
+
+.contact-form-bronze-card {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(166, 122, 86, 0.42) 0%, transparent 55%),
+    linear-gradient(145deg, #7B573C 0%, #593E2A 52%, #392619 100%);
+  border: 1px solid rgba(216, 186, 158, 0.28);
+}
+
+.contact-sand-field {
+  background: rgba(224, 206, 189, 0.88);
+  border: 1px solid rgba(245, 232, 220, 0.45);
+  color: #2B1F17;
+  box-shadow: inset 0 1px 2px rgba(42, 28, 18, 0.08);
+
+  &::placeholder {
+    color: #4A382B;
+    opacity: 0.85;
+  }
+
+  &:focus {
+    background: rgba(238, 224, 210, 0.96);
+    border-color: rgba(255, 248, 240, 0.85);
+    box-shadow: 0 0 0 3px rgba(247, 239, 230, 0.22);
+  }
+}
+
+.contact-why-card {
+  background: linear-gradient(135deg, rgba(246, 237, 226, 0.9) 0%, rgba(242, 230, 217, 0.82) 100%);
+  border: 1px solid rgba(226, 210, 193, 0.85);
+  box-shadow: 0 10px 28px rgba(74, 56, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+
+  &:hover {
+    border-color: rgba(194, 168, 142, 0.95);
+    box-shadow: 0 16px 34px rgba(74, 56, 42, 0.10),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
 }

@@ -40,14 +40,32 @@ document.addEventListener("DOMContentLoaded", function () {
   const path = (window.location.pathname || "").toLowerCase();
   const navHome = document.getElementById("navLinkHome");
   const navAbout = document.getElementById("navLinkAbout");
+  const navServices = document.getElementById("navLinkServices");
+  const navProducts = document.getElementById("navLinkProducts");
+  const navContact = document.getElementById("navLinkContact");
 
-  if (navHome && navAbout) {
-    if (path.includes("about-contact") || path.includes("about")) {
-      navHome.className = "text-[#4A3E36] hover:text-[#231E1A] font-medium text-sm py-2 transition-colors";
-      navAbout.className = "bg-[#231E1A] text-white px-5 py-2 rounded-full font-medium text-sm inline-block shadow-sm";
+  const defaultNavClass = "text-[#4A3E36] hover:text-[#231E1A] font-medium text-sm py-2 transition-colors";
+  const defaultNavDropdownClass = "flex items-center gap-1.5 text-[#4A3E36] hover:text-[#231E1A] font-medium text-sm py-2 transition-colors cursor-pointer";
+  const activeNavClass = "bg-[#231E1A] text-white px-5 py-2 rounded-full font-medium text-sm inline-block shadow-sm";
+  const activeNavDropdownClass = "bg-[#231E1A] text-white px-5 py-2 rounded-full font-medium text-sm inline-flex items-center gap-1.5 shadow-sm cursor-pointer";
+
+  if (navHome) {
+    navHome.className = defaultNavClass;
+    if (navAbout) navAbout.className = defaultNavClass;
+    if (navServices) navServices.className = defaultNavClass;
+    if (navProducts) navProducts.className = defaultNavDropdownClass;
+    if (navContact) navContact.className = defaultNavClass;
+
+    if (path.includes("contact.html") || (path.includes("contact") && !path.includes("about-contact"))) {
+      if (navContact) navContact.className = activeNavClass;
+    } else if (path.includes("about-contact") || path.includes("about")) {
+      if (navAbout) navAbout.className = activeNavClass;
+    } else if (path.includes("service")) {
+      if (navServices) navServices.className = activeNavClass;
+    } else if (path.includes("product")) {
+      if (navProducts) navProducts.className = activeNavDropdownClass;
     } else {
-      navHome.className = "bg-[#231E1A] text-white px-5 py-2 rounded-full font-medium text-sm inline-block shadow-sm";
-      navAbout.className = "text-[#4A3E36] hover:text-[#231E1A] font-medium text-sm py-2 transition-colors";
+      navHome.className = activeNavClass;
     }
   }
 
@@ -402,6 +420,273 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 900);
       }
     });
+  }
+
+  // 6. Services Page Frosted Glass Pop-up Modal
+  const serviceModalData = [
+    {
+      id: "custom-software",
+      number: "01",
+      eyebrow: "CUSTOM SOFTWARE • WEB & SCALABLE SYSTEMS",
+      title: "Custom Software Development",
+      desc: "Off-the-shelf software rarely fits every business perfectly. We engineer bespoke web and desktop applications shaped entirely around how your organization actually works — from initial discovery and system architecture through to deployment, integration, and long-term scale.",
+      checks: [
+        "Requirements & Technical Architecture",
+        "Full-Stack Web & Desktop Apps",
+        "Legacy System Modernization",
+        "Third-Party API & Tool Integration",
+        "Automated QA Testing, Documentation & Release Management"
+      ],
+      icon: "ri-code-s-slash-line",
+      cardHeading: "Built Around Your Workflow",
+      cardDesc: "Whether you need a customer-facing SaaS portal, a high-throughput backend, or a complete system rebuild, our engineering team works as an extension of yours with transparent milestones and regular demos.",
+      tags: ["Web Portals", "Microservices", "REST & GraphQL APIs", "Enterprise Security"],
+      ctaText: "Discuss Custom Software"
+    },
+    {
+      id: "business-applications",
+      number: "02",
+      eyebrow: "BUSINESS APPLICATIONS • ERP, CRM & AUTOMATION",
+      title: "Business Applications & Automation",
+      desc: "Manual processes slow teams down and create room for error. We deliver centralized CRM, ERP, inventory, and internal management systems that streamline day-to-day operations, replacing disconnected spreadsheets with automated workflows your team actually enjoys using.",
+      checks: [
+        "Custom CRM, ERP & Operations Portals",
+        "Workflow & Approval Automation",
+        "Document & Records Digitalization",
+        "Seamless Sync with Existing Software",
+        "Granular Role-Based Access Control & Audit Trails"
+      ],
+      icon: "ri-stack-line",
+      cardHeading: "Replace Spreadsheets with Connected Systems",
+      cardDesc: "We've built platforms like OOLA CRM, FINLOO, and LOOGA — and we bring that same product-grade thinking to every custom ERP, CRM, and internal management tool we deliver for clients.",
+      tags: ["Custom ERP & CRM", "Inventory & Billing", "Approval Workflows", "Role-Based Access"],
+      ctaText: "Automate Your Operations"
+    },
+    {
+      id: "ai-solutions",
+      number: "03",
+      eyebrow: "AI & INTELLIGENT SOLUTIONS • CHATBOTS, ML & AGENTS",
+      title: "AI & Intelligent Solutions",
+      desc: "Artificial intelligence works best when applied to a real, well-understood business problem. We help you identify where AI can genuinely move the needle, then build practical, production-ready tools — from 24/7 customer support chatbots and AI agents to predictive analytics and NLP document automation.",
+      checks: [
+        "AI Readiness & Use-Case Discovery",
+        "Conversational AI Chatbots & Agents",
+        "Predictive Analytics & Forecasting",
+        "NLP & Intelligent Document Processing",
+        "Seamless LLM & Machine Learning Integration into Existing Apps"
+      ],
+      icon: "ri-sparkling-fill",
+      cardHeading: "Pragmatic, Measurable AI",
+      cardDesc: "We start focused, prove ROI quickly, and scale what works. Every AI solution is grounded in your domain data and security policies — delivering explainable, reliable results your team can trust.",
+      tags: ["AI Assistants", "RAG Knowledge Bases", "Workflow Agents", "Predictive ML"],
+      ctaText: "Explore AI Solutions"
+    },
+    {
+      id: "data-bi",
+      number: "04",
+      eyebrow: "DATA & BI • DASHBOARDS & REPORTS",
+      title: "Data & Business Intelligence",
+      desc: "Good decisions start with clear visibility. Our Data & Business Intelligence service turns scattered, siloed information into a unified analytics foundation — with automated pipelines, interactive dashboards, and real-time reporting that show exactly how your business is performing.",
+      checks: [
+        "Data Pipeline & Warehouse Architecture",
+        "Interactive BI & Executive Dashboards",
+        "Real-Time KPI & Performance Tracking",
+        "Data Cleaning, Migration & Unification",
+        "Automated Scheduled Reports & Custom Alerting"
+      ],
+      icon: "ri-bar-chart-grouped-fill",
+      cardHeading: "One Reliable Source of Truth",
+      cardDesc: "We design every dashboard around the exact questions your leadership and operations teams need answered — turning scattered data across departments into clear, real-time visual insights.",
+      tags: ["Executive Dashboards", "ETL Data Pipelines", "KPI Monitoring", "Automated Reports"],
+      ctaText: "Unlock Your Data Insights"
+    },
+    {
+      id: "ui-ux",
+      number: "05",
+      eyebrow: "UI/UX DIGITAL EXPERIENCES • MODERN RESPONSIVE DESIGNS",
+      title: "UI/UX & Digital Experiences",
+      desc: "Great software is judged as much by how it feels as by how it works. Our UI/UX service covers everything from user research and journey mapping to interactive prototypes and complete design systems — ensuring every product we craft is intuitive, accessible, and unmistakably on-brand.",
+      checks: [
+        "User Research & Journey Mapping",
+        "Wireframing & Interactive Prototyping",
+        "Responsive Web & Mobile UI Design",
+        "Scalable Component Design Systems",
+        "Usability Testing, Accessibility & Conversion Optimization"
+      ],
+      icon: "ri-layout-masonry-line",
+      cardHeading: "Design That Drives Adoption",
+      cardDesc: "By prototyping early and validating flows with real users before production code is written, we eliminate friction, reduce training time, and create digital products customers love using.",
+      tags: ["Figma Prototypes", "Design Systems", "Mobile-First UX", "WCAG Accessibility"],
+      ctaText: "Elevate Your Product UX"
+    },
+    {
+      id: "cloud-it",
+      number: "06",
+      eyebrow: "CLOUD & IT SOLUTIONS • DEVOPS & CLOUD SCALE",
+      title: "Cloud & IT Solutions",
+      desc: "As your business grows, your infrastructure needs to keep pace without becoming a bottleneck. Our Cloud & IT Solutions service covers cloud migration, DevOps automation, secure hosting architecture, and ongoing system monitoring so your applications stay fast, secure, and always available.",
+      checks: [
+        "Cloud Migration (AWS, Azure & GCP)",
+        "CI/CD Pipeline & DevOps Automation",
+        "High-Availability Hosting Architecture",
+        "Automated Backups & Disaster Recovery",
+        "Cloud Cost Optimization, Security Hardening & Uptime Monitoring"
+      ],
+      icon: "ri-cloud-line",
+      cardHeading: "Resilient, Right-Sized Cloud Infrastructure",
+      cardDesc: "We architect cloud environments that match your workload today while auto-scaling effortlessly tomorrow — with security, automated backups, and cost optimization built in from day one.",
+      tags: ["AWS / Azure / GCP", "CI/CD DevOps", "Docker & Containers", "24/7 Monitoring"],
+      ctaText: "Scale Your Infrastructure"
+    }
+  ];
+
+  const serviceModal = document.getElementById("serviceDetailModal");
+  const serviceModalClose = document.getElementById("serviceModalClose");
+  const serviceModalPrev = document.getElementById("serviceModalPrev");
+  const serviceModalNext = document.getElementById("serviceModalNext");
+  const serviceModalDots = document.getElementById("serviceModalDots");
+  const serviceTriggers = document.querySelectorAll("[data-service-modal]");
+  let activeServiceIdx = 0;
+
+  function renderServiceModal(index) {
+    const len = serviceModalData.length;
+    activeServiceIdx = ((index % len) + len) % len;
+    const item = serviceModalData[activeServiceIdx];
+    if (!item || !serviceModal) return;
+
+    const numEl = document.getElementById("modalServiceNumber");
+    const eyeEl = document.getElementById("modalServiceEyebrow");
+    const titleEl = document.getElementById("modalServiceTitle");
+    const descEl = document.getElementById("modalServiceDesc");
+    const checksEl = document.getElementById("modalServiceChecks");
+    const iconEl = document.getElementById("modalServiceIcon");
+    const cardHeadEl = document.getElementById("modalCardHeading");
+    const cardDescEl = document.getElementById("modalCardDesc");
+    const cardTagsEl = document.getElementById("modalCardTags");
+    const ctaTextEl = document.getElementById("modalCardCtaText");
+
+    if (numEl) numEl.textContent = item.number;
+    if (eyeEl) eyeEl.textContent = item.eyebrow;
+    if (titleEl) titleEl.textContent = item.title;
+    if (descEl) descEl.textContent = item.desc;
+    if (iconEl) iconEl.className = item.icon;
+    if (cardHeadEl) cardHeadEl.textContent = item.cardHeading;
+    if (cardDescEl) cardDescEl.textContent = item.cardDesc;
+    if (ctaTextEl) ctaTextEl.textContent = item.ctaText;
+
+    if (checksEl) {
+      checksEl.innerHTML = item.checks
+        .map((check, i) => {
+          const spanClass = i === item.checks.length - 1 && item.checks.length % 2 === 1 ? "sm:col-span-2" : "";
+          return `
+            <div class="service-modal-check-card rounded-2xl p-3.5 sm:p-4 flex items-center gap-3.5 ${spanClass}">
+              <div class="w-8 h-8 rounded-full bg-[#231E1A] text-white flex items-center justify-center shrink-0 text-sm">
+                <i class="ri-check-line"></i>
+              </div>
+              <span class="text-xs sm:text-sm font-semibold text-[#231E1A]">${check}</span>
+            </div>
+          `;
+        })
+        .join("");
+    }
+
+    if (cardTagsEl) {
+      cardTagsEl.innerHTML = item.tags
+        .map(
+          tag =>
+            `<span class="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] font-medium text-[#EFE4D8]">${tag}</span>`
+        )
+        .join("");
+    }
+
+    if (serviceModalDots) {
+      serviceModalDots.innerHTML = serviceModalData
+        .map(
+          (s, idx) =>
+            `<button type="button" data-service-idx="${idx}" aria-label="View ${s.title}" class="h-2 rounded-full transition-all duration-300 cursor-pointer ${
+              idx === activeServiceIdx ? "w-7 bg-[#231E1A]" : "w-2 bg-[#C8B7A6] hover:bg-[#8A7562]"
+            }"></button>`
+        )
+        .join("");
+
+      serviceModalDots.querySelectorAll("[data-service-idx]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          renderServiceModal(parseInt(btn.getAttribute("data-service-idx"), 10));
+        });
+      });
+    }
+  }
+
+  function openServiceModalById(serviceId) {
+    if (!serviceModal) return;
+    const idx = serviceModalData.findIndex(s => s.id === serviceId);
+    renderServiceModal(idx >= 0 ? idx : 0);
+    serviceModal.classList.add("modal-open");
+    serviceModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeServiceModal() {
+    if (!serviceModal) return;
+    serviceModal.classList.remove("modal-open");
+    serviceModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (window.location.hash && serviceModalData.some(s => `#${s.id}` === window.location.hash)) {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+  }
+
+  if (serviceModal && serviceTriggers.length > 0) {
+    serviceTriggers.forEach(card => {
+      card.addEventListener("click", () => {
+        const id = card.getAttribute("data-service-modal");
+        openServiceModalById(id);
+      });
+      card.addEventListener("keydown", e => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          const id = card.getAttribute("data-service-modal");
+          openServiceModalById(id);
+        }
+      });
+    });
+
+    if (serviceModalClose) {
+      serviceModalClose.addEventListener("click", closeServiceModal);
+    }
+
+    serviceModal.addEventListener("click", e => {
+      if (e.target === serviceModal) {
+        closeServiceModal();
+      }
+    });
+
+    if (serviceModalPrev) {
+      serviceModalPrev.addEventListener("click", () => {
+        renderServiceModal(activeServiceIdx - 1);
+      });
+    }
+
+    if (serviceModalNext) {
+      serviceModalNext.addEventListener("click", () => {
+        renderServiceModal(activeServiceIdx + 1);
+      });
+    }
+
+    document.addEventListener("keydown", e => {
+      if (!serviceModal.classList.contains("modal-open")) return;
+      if (e.key === "Escape") closeServiceModal();
+      if (e.key === "ArrowLeft") renderServiceModal(activeServiceIdx - 1);
+      if (e.key === "ArrowRight") renderServiceModal(activeServiceIdx + 1);
+    });
+
+    // Auto-open popup if navigated via URL hash (e.g. from Home Page service cards)
+    const initialHash = (window.location.hash || "").replace(/^#/, "");
+    if (initialHash && serviceModalData.some(s => s.id === initialHash)) {
+      const overviewEl = document.getElementById("services-overview");
+      if (overviewEl) overviewEl.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => openServiceModalById(initialHash), 250);
+    }
   }
 });
 

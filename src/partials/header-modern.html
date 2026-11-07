@@ -16,98 +16,33 @@
           </a>
         </li>
 
-        <!-- Services Dropdown (hover only) -->
-        <li class="relative nav-dropdown-parent group">
-          <button class="flex items-center gap-1.5 text-[#4A3E36] hover:text-[#231E1A] font-medium text-sm py-2 transition-colors cursor-pointer" type="button" aria-haspopup="true">
-            <span>Services</span>
-            <i class="ri-arrow-down-s-line text-xs transition-transform duration-200 group-hover:rotate-180"></i>
-          </button>
-          
-          <div class="nav-dropdown-menu absolute top-full -left-4 pt-3 w-72 z-50 invisible opacity-0 pointer-events-none group-hover:visible group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 ease-out">
-            <div class="bg-white/95 backdrop-blur-xl border border-[#E6DDD3] rounded-2xl p-2.5 shadow-xl shadow-[#2E2015]/10">
-              <a href="custom-software-development.html" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F5EFE7] transition-colors group/item">
-                <div class="w-8 h-8 rounded-lg bg-[#FAF4ED] text-[#211B16] flex items-center justify-center text-sm font-bold group-hover/item:bg-[#211B16] group-hover/item:text-white transition-colors">
-                  <i class="ri-code-s-slash-line"></i>
-                </div>
-                <div>
-                  <div class="text-xs font-bold text-[#211B16]">Custom Software</div>
-                  <div class="text-[11px] text-[#7A6A5E]">Web & scalable systems</div>
-                </div>
-              </a>
-
-              <a href="business-applications-automation.html" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F5EFE7] transition-colors group/item">
-                <div class="w-8 h-8 rounded-lg bg-[#FAF4ED] text-[#211B16] flex items-center justify-center text-sm font-bold group-hover/item:bg-[#211B16] group-hover/item:text-white transition-colors">
-                  <i class="ri-stack-line"></i>
-                </div>
-                <div>
-                  <div class="text-xs font-bold text-[#211B16]">Business Applications</div>
-                  <div class="text-[11px] text-[#7A6A5E]">ERP, CRM & automation</div>
-                </div>
-              </a>
-
-              <a href="ai-intelligent-solutions.html" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F5EFE7] transition-colors group/item">
-                <div class="w-8 h-8 rounded-lg bg-[#FAF4ED] text-[#211B16] flex items-center justify-center text-sm font-bold group-hover/item:bg-[#211B16] group-hover/item:text-white transition-colors">
-                  <i class="ri-sparkling-fill"></i>
-                </div>
-                <div>
-                  <div class="text-xs font-bold text-[#211B16]">AI & Intelligent Solutions</div>
-                  <div class="text-[11px] text-[#7A6A5E]">Chatbots, ML & agents</div>
-                </div>
-              </a>
-
-              <a href="data-business-intelligence.html" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F5EFE7] transition-colors group/item">
-                <div class="w-8 h-8 rounded-lg bg-[#FAF4ED] text-[#211B16] flex items-center justify-center text-sm font-bold group-hover/item:bg-[#211B16] group-hover/item:text-white transition-colors">
-                  <i class="ri-bar-chart-grouped-fill"></i>
-                </div>
-                <div>
-                  <div class="text-xs font-bold text-[#211B16]">Data & BI</div>
-                  <div class="text-[11px] text-[#7A6A5E]">Dashboards & reports</div>
-                </div>
-              </a>
-
-              <a href="ui-ux-digital-experiences.html" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F5EFE7] transition-colors group/item">
-                <div class="w-8 h-8 rounded-lg bg-[#FAF4ED] text-[#211B16] flex items-center justify-center text-sm font-bold group-hover/item:bg-[#211B16] group-hover/item:text-white transition-colors">
-                  <i class="ri-layout-masonry-line"></i>
-                </div>
-                <div>
-                  <div class="text-xs font-bold text-[#211B16]">UI/UX Digital Experiences</div>
-                  <div class="text-[11px] text-[#7A6A5E]">Modern responsive designs</div>
-                </div>
-              </a>
-
-              <a href="cloud-it-solutions.html" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F5EFE7] transition-colors group/item">
-                <div class="w-8 h-8 rounded-lg bg-[#FAF4ED] text-[#211B16] flex items-center justify-center text-sm font-bold group-hover/item:bg-[#211B16] group-hover/item:text-white transition-colors">
-                  <i class="ri-cloud-line"></i>
-                </div>
-                <div>
-                  <div class="text-xs font-bold text-[#211B16]">Cloud & IT Solutions</div>
-                  <div class="text-[11px] text-[#7A6A5E]">DevOps & cloud scale</div>
-                </div>
-              </a>
-            </div>
-          </div>
+        <!-- Services Link -->
+        <li>
+          <a href="services.html" id="navLinkServices" class="text-[#4A3E36] hover:text-[#231E1A] font-medium text-sm py-2 transition-colors">
+            Services
+          </a>
         </li>
 
-        <!-- Products Dropdown (hover only) -->
+        <!-- Products Dropdown (click navigates to overview, hover reveals dropdown) -->
         <li class="relative nav-dropdown-parent group">
-          <button class="flex items-center gap-1.5 text-[#4A3E36] hover:text-[#231E1A] font-medium text-sm py-2 transition-colors cursor-pointer" type="button" aria-haspopup="true">
+          <a href="products.html" id="navLinkProducts" class="flex items-center gap-1.5 text-[#4A3E36] hover:text-[#231E1A] font-medium text-sm py-2 transition-colors cursor-pointer">
             <span>Products</span>
             <i class="ri-arrow-down-s-line text-xs transition-transform duration-200 group-hover:rotate-180"></i>
-          </button>
+          </a>
           
           <div class="nav-dropdown-menu absolute top-full -left-4 pt-3 w-64 z-50 invisible opacity-0 pointer-events-none group-hover:visible group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 ease-out">
             <div class="bg-white/95 backdrop-blur-xl border border-[#E6DDD3] rounded-2xl p-2.5 shadow-xl shadow-[#2E2015]/10">
-              <a href="#products" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#F5EFE7] transition-colors">
+              <a href="products.html#oosend" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#F5EFE7] transition-colors">
                 <div class="w-8 h-8 rounded-lg bg-[#FAF4ED] text-[#211B16] flex items-center justify-center text-sm font-bold">
                   <i class="ri-mail-send-line"></i>
                 </div>
                 <div>
                   <div class="text-xs font-bold text-[#211B16]">OOSEND</div>
-                  <div class="text-[11px] text-[#7A6A5E]">Bulk Email & WhatsApp</div>
+                  <div class="text-[11px] text-[#7A6A5E]">Bulk Email &amp; WhatsApp</div>
                 </div>
               </a>
 
-              <a href="#products" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#F5EFE7] transition-colors">
+              <a href="products.html#finloo" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#F5EFE7] transition-colors">
                 <div class="w-8 h-8 rounded-lg bg-[#FAF4ED] text-[#211B16] flex items-center justify-center text-sm font-bold">
                   <i class="ri-coins-line"></i>
                 </div>
@@ -117,7 +52,7 @@
                 </div>
               </a>
 
-              <a href="#products" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#F5EFE7] transition-colors">
+              <a href="products.html#looga" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#F5EFE7] transition-colors">
                 <div class="w-8 h-8 rounded-lg bg-[#FAF4ED] text-[#211B16] flex items-center justify-center text-sm font-bold">
                   <i class="ri-box-3-line"></i>
                 </div>
@@ -127,7 +62,7 @@
                 </div>
               </a>
 
-              <a href="#products" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#F5EFE7] transition-colors">
+              <a href="products.html#oola" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#F5EFE7] transition-colors">
                 <div class="w-8 h-8 rounded-lg bg-[#FAF4ED] text-[#211B16] flex items-center justify-center text-sm font-bold">
                   <i class="ri-group-line"></i>
                 </div>
@@ -136,24 +71,31 @@
                   <div class="text-[11px] text-[#7A6A5E]">CRM Platform</div>
                 </div>
               </a>
+
+              <a href="products.html#metoo" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#F5EFE7] transition-colors">
+                <div class="w-8 h-8 rounded-lg bg-[#FAF4ED] text-[#211B16] flex items-center justify-center text-sm font-bold">
+                  <i class="ri-stack-line"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-[#211B16]">METOO</div>
+                  <div class="text-[11px] text-[#7A6A5E]">Metadata Management System</div>
+                </div>
+              </a>
             </div>
           </div>
         </li>
 
         <li>
-          <a href="index.html#projects" id="navLinkProjects" class="text-[#4A3E36] hover:text-[#231E1A] font-medium text-sm py-2 transition-colors">Projects</a>
-        </li>
-        <li>
           <a href="about-contact.html" id="navLinkAbout" class="text-[#4A3E36] hover:text-[#231E1A] font-medium text-sm py-2 transition-colors">About</a>
         </li>
         <li>
-          <a href="about-contact.html#contact" id="navLinkContact" class="text-[#4A3E36] hover:text-[#231E1A] font-medium text-sm py-2 transition-colors">Contact</a>
+          <a href="contact.html" id="navLinkContact" class="text-[#4A3E36] hover:text-[#231E1A] font-medium text-sm py-2 transition-colors">Contact</a>
         </li>
       </ul>
 
       <!-- Right Action CTA Button -->
       <div class="relative z-10 hidden sm:flex items-center">
-        <a href="about-contact.html" class="bg-[#231E1A] text-white hover:bg-[#3B322C] text-xs sm:text-sm font-medium py-2.5 px-6 rounded-full inline-flex items-center gap-1.5 transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+        <a href="contact.html" class="bg-[#231E1A] text-white hover:bg-[#3B322C] text-xs sm:text-sm font-medium py-2.5 px-6 rounded-full inline-flex items-center gap-1.5 transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
           <span>Get a Quote</span>
           <i class="ri-arrow-right-up-line text-sm"></i>
         </a>
@@ -179,15 +121,14 @@
       <nav class="flex flex-col gap-2 mt-6">
         <a href="index.html" class="px-4 py-2.5 rounded-full bg-[#211B16] text-white font-semibold text-sm">Home</a>
         <a href="services.html" class="px-4 py-2.5 rounded-full text-[#55483F] hover:bg-[#EAE1D6] font-medium text-sm">Services</a>
-        <a href="#products" class="px-4 py-2.5 rounded-full text-[#55483F] hover:bg-[#EAE1D6] font-medium text-sm">Products</a>
-        <a href="#projects" class="px-4 py-2.5 rounded-full text-[#55483F] hover:bg-[#EAE1D6] font-medium text-sm">Projects</a>
+        <a href="products.html" class="px-4 py-2.5 rounded-full text-[#55483F] hover:bg-[#EAE1D6] font-medium text-sm">Products</a>
         <a href="about-contact.html" class="px-4 py-2.5 rounded-full text-[#55483F] hover:bg-[#EAE1D6] font-medium text-sm">About</a>
-        <a href="about-contact.html" class="px-4 py-2.5 rounded-full text-[#55483F] hover:bg-[#EAE1D6] font-medium text-sm">Contact</a>
+        <a href="contact.html" class="px-4 py-2.5 rounded-full text-[#55483F] hover:bg-[#EAE1D6] font-medium text-sm">Contact</a>
       </nav>
     </div>
 
     <div class="pt-6 border-t border-[#E6DDD3]">
-      <a href="about-contact.html" class="w-full bg-[#211B16] text-white py-3 rounded-full flex items-center justify-center gap-2 text-sm font-semibold">
+      <a href="contact.html" class="w-full bg-[#211B16] text-white py-3 rounded-full flex items-center justify-center gap-2 text-sm font-semibold">
         <span>Get a Quote</span>
         <i class="ri-arrow-right-up-line"></i>
       </a>
