@@ -73,6 +73,7 @@ body.home-modern-page h6 {
 
 /* Service Cards Hover State - Transitions to dark brown like Card 1 */
 .service-card-interactive {
+  box-shadow: 3px 6px 14px rgba(55, 42, 30, 0.13);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 
   &:hover {
@@ -80,6 +81,19 @@ body.home-modern-page h6 {
     border-color: transparent !important;
     box-shadow: 0 16px 36px rgba(42, 32, 26, 0.28) !important;
   }
+}
+
+/* Product Cards ("OUR PRODUCTS") with Directional Drop Shadow & Full-Width Bottom Arrow Bar */
+.product-card-modern {
+  box-shadow: 3px 6px 16px rgba(55, 42, 30, 0.13);
+
+  &:hover {
+    box-shadow: 4px 14px 28px rgba(55, 42, 30, 0.18);
+  }
+}
+
+.product-card-arrow-bar {
+  box-shadow: 0 4px 8px rgba(55, 42, 30, 0.15);
 }
 
 .bg-sand-gradient-subtle {
