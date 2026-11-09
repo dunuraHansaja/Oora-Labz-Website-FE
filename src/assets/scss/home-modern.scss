@@ -132,14 +132,39 @@ body.home-modern-page h6 {
 
   @media (max-width: 1023px) {
     background-position: 60% top;
-    aspect-ratio: 16 / 8.5;
-    max-height: 500px;
+    aspect-ratio: auto;
+    min-height: 480px;
+    max-height: none;
   }
 
   @media (max-width: 639px) {
     background-position: 64% top;
-    aspect-ratio: 16 / 10.5;
-    max-height: 400px;
+    aspect-ratio: auto;
+    min-height: 450px;
+    max-height: none;
+  }
+}
+
+.insta-latest-post-card {
+  background: linear-gradient(
+    145deg,
+    rgba(252, 248, 243, 0.86) 0%,
+    rgba(244, 235, 224, 0.78) 100%
+  );
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 24px 54px rgba(30, 22, 16, 0.22),
+    0 6px 18px rgba(74, 56, 42, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.92);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 28px 64px rgba(30, 22, 16, 0.28),
+      0 8px 22px rgba(74, 56, 42, 0.16),
+      inset 0 1px 1px rgba(255, 255, 255, 0.96);
   }
 }
 

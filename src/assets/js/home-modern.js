@@ -742,6 +742,109 @@ document.addEventListener("DOMContentLoaded", function () {
       floatingCtaCard.classList.remove("widget-hidden");
     });
   }
+
+  // 8. Oora Labz Instagram Latest Post Card (Single Latest Post Sync & Like Toggle)
+  const ooraInstagramConfig = {
+    profileUrl: "https://www.instagram.com/oora_labz?igsh=MTZnYzg1anFjaTh1eA==",
+    // Optional: Add a Behold.so JSON feed URL or Instagram Graph API endpoint to auto-fetch the latest post
+    // e.g. "https://feeds.behold.so/YOUR_FEED_ID" or Graph API media endpoint (limit=1)
+    feedApiUrl: "",
+    fallbackLatestPost: {
+      permalink: "https://www.instagram.com/oora_labz?igsh=MTZnYzg1anFjaTh1eA==",
+      mediaUrl: "assets/images/home-modern/hero-statue.png",
+      caption: "Building modern, reliable, and scalable software solutions crafted for real people. #OoraLabz #BuildingThingsForPeople",
+      timeLabel: "Latest Instagram Post",
+      likes: 128
+    }
+  };
+
+  const instaLatestImage = document.getElementById("instaLatestImage");
+  const instaLatestCaption = document.getElementById("instaLatestCaption");
+  const instaLatestTime = document.getElementById("instaLatestTime");
+  const instaLatestLink = document.getElementById("instaLatestLink");
+  const instaCommentLink = document.getElementById("instaCommentLink");
+  const instaShareLink = document.getElementById("instaShareLink");
+  const instaOpenPostLink = document.getElementById("instaOpenPostLink");
+  const instaLikeBtn = document.getElementById("instaLikeBtn");
+  const instaLikeIcon = document.getElementById("instaLikeIcon");
+  const instaLikeCount = document.getElementById("instaLikeCount");
+
+  function formatRelativeDate(isoDate) {
+    if (!isoDate) return "Latest Instagram Post";
+    const date = new Date(isoDate);
+    if (Number.isNaN(date.getTime())) return "Latest Instagram Post";
+    const diffSec = Math.floor((Date.now() - date.getTime()) / 1000);
+    if (diffSec < 3600) return `${Math.max(1, Math.floor(diffSec / 60))}m ago • Instagram`;
+    if (diffSec < 86400) return `${Math.floor(diffSec / 3600)}h ago • Instagram`;
+    if (diffSec < 86400 * 30) return `${Math.floor(diffSec / 86400)}d ago • Instagram`;
+    return date.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+  }
+
+  function applyLatestInstaPost(post) {
+    if (!post) return;
+    if (instaLatestImage && post.mediaUrl) {
+      instaLatestImage.src = post.mediaUrl;
+    }
+    if (instaLatestCaption && post.caption) {
+      instaLatestCaption.innerHTML = "";
+      const userSpan = document.createElement("span");
+      userSpan.className = "font-extrabold text-[#231E1A] mr-1";
+      userSpan.textContent = "oora_labz";
+      instaLatestCaption.appendChild(userSpan);
+      instaLatestCaption.appendChild(document.createTextNode(post.caption));
+    }
+    if (instaLatestTime && post.timeLabel) {
+      instaLatestTime.textContent = post.timeLabel;
+    }
+    if (post.permalink) {
+      [instaLatestLink, instaCommentLink, instaShareLink, instaOpenPostLink].forEach(el => {
+        if (el) el.href = post.permalink;
+      });
+    }
+    if (instaLikeCount && typeof post.likes === "number") {
+      instaLikeCount.textContent = String(post.likes);
+    }
+  }
+
+  if (instaLatestImage && ooraInstagramConfig.feedApiUrl) {
+    fetch(ooraInstagramConfig.feedApiUrl)
+      .then(res => (res.ok ? res.json() : Promise.reject(new Error("Feed fetch failed"))))
+      .then(payload => {
+        const posts = Array.isArray(payload) ? payload : payload.posts || payload.data || [];
+        const latest = posts[0]; // Only show the very last Instagram post
+        if (!latest) return;
+        const mediaUrl =
+          latest.sizes?.medium?.mediaUrl ||
+          latest.media_type === "VIDEO"
+            ? latest.thumbnail_url || latest.mediaUrl || latest.media_url
+            : latest.mediaUrl || latest.media_url || latest.thumbnail_url;
+        applyLatestInstaPost({
+          permalink: latest.permalink || ooraInstagramConfig.profileUrl,
+          mediaUrl: mediaUrl || ooraInstagramConfig.fallbackLatestPost.mediaUrl,
+          caption: latest.caption || latest.prunedCaption || ooraInstagramConfig.fallbackLatestPost.caption,
+          timeLabel: formatRelativeDate(latest.timestamp),
+          likes: typeof latest.likeCount === "number" ? latest.likeCount : ooraInstagramConfig.fallbackLatestPost.likes
+        });
+      })
+      .catch(() => {
+        applyLatestInstaPost(ooraInstagramConfig.fallbackLatestPost);
+      });
+  }
+
+  if (instaLikeBtn && instaLikeIcon && instaLikeCount) {
+    let liked = true;
+    instaLikeBtn.addEventListener("click", () => {
+      liked = !liked;
+      const current = parseInt(instaLikeCount.textContent || "128", 10);
+      if (liked) {
+        instaLikeIcon.className = "ri-heart-3-fill text-[#C84B31] text-lg";
+        instaLikeCount.textContent = String(current + 1);
+      } else {
+        instaLikeIcon.className = "ri-heart-3-line text-[#231E1A] text-lg";
+        instaLikeCount.textContent = String(Math.max(0, current - 1));
+      }
+    });
+  }
 });
 
 

@@ -767,9 +767,146 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 7. RESPONSIVE WAVE DIVIDER & SCENE BACKGROUND SECTION                     -->
+  <!-- 7. RESPONSIVE WAVE DIVIDER & INSTAGRAM LATEST POST CARD SECTION           -->
   <!-- ========================================================================= -->
-  <section class="why-choose-custom-bg relative w-full bg-[#FAF5EF] overflow-hidden"></section>
+  <section class="why-choose-custom-bg relative w-full bg-[#FAF5EF] overflow-hidden">
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center lg:justify-start pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-10">
+      
+      <!-- Latest Instagram Post Card (Single Latest Post View) -->
+      <article
+        id="ooraInstaLatestCard"
+        data-aos="fade-right"
+        class="insta-latest-post-card w-full max-w-[320px] sm:max-w-[355px] rounded-[26px] p-4 sm:p-4.5 relative z-10 transition-all duration-300"
+      >
+        <!-- Profile Header -->
+        <div class="flex items-center justify-between gap-2.5 mb-3">
+          <a
+            href="https://www.instagram.com/oora_labz?igsh=MTZnYzg1anFjaTh1eA=="
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2.5 group"
+          >
+            <div class="w-10 h-10 rounded-full p-[2px] bg-gradient-to-tr from-[#C29B77] via-[#745A43] to-[#231E1A] shrink-0 shadow-sm">
+              <div class="w-full h-full rounded-full bg-[#FAF5EF] flex items-center justify-center p-1.5">
+                <img
+                  src="assets/images/home-modern/oora-logo-mark.png"
+                  alt="Oora Labz"
+                  class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-1">
+                <span class="text-[13px] font-extrabold text-[#231E1A] leading-none group-hover:text-[#745A43] transition-colors">oora_labz</span>
+                <i class="ri-verified-badge-fill text-[#745A43] text-xs" title="Official Profile"></i>
+              </div>
+              <span id="instaLatestTime" class="text-[10.5px] font-medium text-[#7A6858] block mt-0.5">
+                Latest Instagram Post
+              </span>
+            </div>
+          </a>
+
+          <a
+            href="https://www.instagram.com/oora_labz?igsh=MTZnYzg1anFjaTh1eA=="
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#231E1A] hover:bg-[#3B322C] text-white text-[11px] font-semibold transition-all duration-200 shadow-sm"
+          >
+            <i class="ri-instagram-line text-xs"></i>
+            <span>Follow</span>
+          </a>
+        </div>
+
+        <!-- Latest Post Media Frame (Shows only the last post) -->
+        <a
+          id="instaLatestLink"
+          href="https://www.instagram.com/oora_labz?igsh=MTZnYzg1anFjaTh1eA=="
+          target="_blank"
+          rel="noopener noreferrer"
+          class="insta-post-media-frame block relative w-full aspect-[16/10] rounded-[18px] overflow-hidden bg-[#231E1A] group"
+        >
+          <img
+            id="instaLatestImage"
+            src="assets/images/home-modern/hero-statue.png"
+            alt="Oora Labz Latest Instagram Post"
+            class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#1A1512]/70 via-transparent to-black/15"></div>
+
+          <!-- Top-Left Badge: Latest Post -->
+          <div class="absolute top-2.5 left-2.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#231E1A]/80 backdrop-blur-md border border-white/20 text-[10px] font-bold uppercase tracking-[0.14em] text-[#FAF5EF]">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E0A96D] animate-pulse"></span>
+            <span>Latest Post</span>
+          </div>
+
+          <!-- Top-Right Instagram Reel/Post Icon -->
+          <div class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white text-xs">
+            <i class="ri-instagram-line"></i>
+          </div>
+
+          <!-- Hover Overlay CTA -->
+          <div class="absolute inset-0 bg-[#231E1A]/45 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span class="px-3.5 py-1.5 rounded-full bg-[#FAF5EF] text-[#231E1A] text-xs font-bold inline-flex items-center gap-1.5 shadow-md transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+              <span>View Post on Instagram</span>
+              <i class="ri-arrow-right-up-line"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- Post Actions Bar -->
+        <div class="flex items-center justify-between pt-3 pb-2">
+          <div class="flex items-center gap-3.5">
+            <button
+              type="button"
+              id="instaLikeBtn"
+              aria-label="Like post"
+              class="inline-flex items-center gap-1 text-[#231E1A] hover:text-[#C84B31] transition-colors cursor-pointer"
+            >
+              <i id="instaLikeIcon" class="ri-heart-3-fill text-[#C84B31] text-lg"></i>
+              <span id="instaLikeCount" class="text-xs font-bold text-[#231E1A]">128</span>
+            </button>
+            <a
+              id="instaCommentLink"
+              href="https://www.instagram.com/oora_labz?igsh=MTZnYzg1anFjaTh1eA=="
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Comment on Instagram"
+              class="text-[#231E1A] hover:text-[#745A43] transition-colors"
+            >
+              <i class="ri-chat-3-line text-lg"></i>
+            </a>
+            <a
+              id="instaShareLink"
+              href="https://www.instagram.com/oora_labz?igsh=MTZnYzg1anFjaTh1eA=="
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Share on Instagram"
+              class="text-[#231E1A] hover:text-[#745A43] transition-colors"
+            >
+              <i class="ri-send-plane-line text-lg"></i>
+            </a>
+          </div>
+
+          <a
+            id="instaOpenPostLink"
+            href="https://www.instagram.com/oora_labz?igsh=MTZnYzg1anFjaTh1eA=="
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1 text-[11px] font-bold text-[#745A43] hover:text-[#231E1A] transition-colors"
+          >
+            <span>Open Post</span>
+            <i class="ri-external-link-line text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Latest Post Caption -->
+        <p id="instaLatestCaption" class="text-xs text-[#3D322A] leading-relaxed line-clamp-2">
+          <span class="font-extrabold text-[#231E1A] mr-1">oora_labz</span>Building modern, reliable, and scalable software solutions crafted for real people. <span class="text-[#745A43] font-semibold">#OoraLabz #BuildingThingsForPeople</span>
+        </p>
+      </article>
+
+    </div>
+  </section>
 
 
   <!-- ========================================================================= -->
