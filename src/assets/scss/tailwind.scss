@@ -10,20 +10,16 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: white;
-  background-color: #000000;
+  color: #231E1A;
+  background-color: #FAF5EF;
 }
 
 
 // loader 
 .banter-loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
+  position: relative;
   width: 72px;
   height: 72px;
-  margin-left: -36px;
-  margin-top: -36px;
 }
 
 .banter-loader__box {
@@ -41,9 +37,10 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background: #009688;
-  background: linear-gradient(180deg, rgba(0, 150, 136, 1) 0%, rgba(122, 188, 155, 1) 50%);
+  background: #745A43;
+  background: linear-gradient(145deg, #2D221B 0%, #745A43 52%, #C29B77 100%);
   border-radius: 7px;
+  box-shadow: 0 4px 12px rgba(116, 90, 67, 0.28), inset 0 1px 1px rgba(255, 255, 255, 0.35);
 }
 
 .banter-loader__box:nth-child(3n) {
