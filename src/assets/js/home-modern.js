@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 2. Active Header Navigation Link Highlighting
   const path = (window.location.pathname || "").toLowerCase();
+  const page = path.split("/").pop() || "index.html";
   const navHome = document.getElementById("navLinkHome");
   const navAbout = document.getElementById("navLinkAbout");
   const navServices = document.getElementById("navLinkServices");
@@ -49,6 +50,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const activeNavClass = "bg-[#231E1A] text-white px-5 py-2 rounded-full font-medium text-sm inline-block shadow-sm";
   const activeNavDropdownClass = "bg-[#231E1A] text-white px-5 py-2 rounded-full font-medium text-sm inline-flex items-center gap-1.5 shadow-sm cursor-pointer";
 
+  let activeSection = "home";
+  if (page.includes("about") || path.includes("about-contact")) {
+    activeSection = "about";
+  } else if (page.startsWith("contact") || page === "contact.html") {
+    activeSection = "contact";
+  } else if (page.includes("service")) {
+    activeSection = "services";
+  } else if (page.includes("product")) {
+    activeSection = "products";
+  } else {
+    activeSection = "home";
+  }
+
   if (navHome) {
     navHome.className = defaultNavClass;
     if (navAbout) navAbout.className = defaultNavClass;
@@ -56,17 +70,40 @@ document.addEventListener("DOMContentLoaded", function () {
     if (navProducts) navProducts.className = defaultNavDropdownClass;
     if (navContact) navContact.className = defaultNavClass;
 
-    if (path.includes("contact.html") || (path.includes("contact") && !path.includes("about-contact"))) {
-      if (navContact) navContact.className = activeNavClass;
-    } else if (path.includes("about-contact") || path.includes("about")) {
-      if (navAbout) navAbout.className = activeNavClass;
-    } else if (path.includes("service")) {
-      if (navServices) navServices.className = activeNavClass;
-    } else if (path.includes("product")) {
-      if (navProducts) navProducts.className = activeNavDropdownClass;
-    } else {
+    if (activeSection === "about" && navAbout) {
+      navAbout.className = activeNavClass;
+    } else if (activeSection === "contact" && navContact) {
+      navContact.className = activeNavClass;
+    } else if (activeSection === "services" && navServices) {
+      navServices.className = activeNavClass;
+    } else if (activeSection === "products" && navProducts) {
+      navProducts.className = activeNavDropdownClass;
+    } else if (navHome) {
       navHome.className = activeNavClass;
     }
+  }
+
+  // Update active state for mobile drawer navigation links
+  if (drawer) {
+    const mobileNavLinks = drawer.querySelectorAll("nav a");
+    const activeMobileClass = "px-4 py-2.5 rounded-full bg-[#211B16] text-white font-semibold text-sm";
+    const defaultMobileClass = "px-4 py-2.5 rounded-full text-[#55483F] hover:bg-[#EAE1D6] font-medium text-sm";
+
+    mobileNavLinks.forEach(link => {
+      link.className = defaultMobileClass;
+      const href = (link.getAttribute("href") || "").toLowerCase();
+      if (activeSection === "about" && href.includes("about")) {
+        link.className = activeMobileClass;
+      } else if (activeSection === "contact" && (href === "contact.html" || href.endsWith("/contact"))) {
+        link.className = activeMobileClass;
+      } else if (activeSection === "services" && href.includes("service")) {
+        link.className = activeMobileClass;
+      } else if (activeSection === "products" && href.includes("product")) {
+        link.className = activeMobileClass;
+      } else if (activeSection === "home" && (href.includes("index") || href === "/")) {
+        link.className = activeMobileClass;
+      }
+    });
   }
 
   // 3. Header Scroll Effect (Glass backdrop on scroll)

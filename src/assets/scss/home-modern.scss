@@ -65,10 +65,82 @@ body.home-modern-page h6 {
   }
 }
 
-.innovative-custom-bg {
-  background-image: url('../images/home-modern/innovative-bg.jpg');
+.services-hero-custom-bg {
+  background-image: url('../images/home-modern/serv (3).png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: left bottom !important;
+
+  @media (max-width: 1023px) {
+    background-position: 25% bottom !important;
+  }
+
+  @media (max-width: 639px) {
+    background-position: 20% bottom !important;
+  }
+}
+
+.about-hero-custom-bg {
+  background-image: url('../images/home-modern/about (3).png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left bottom !important;
+
+  @media (max-width: 1023px) {
+    background-position: 25% bottom !important;
+  }
+
+  @media (max-width: 639px) {
+    background-position: 20% bottom !important;
+  }
+}
+
+.products-hero-custom-bg {
+  background-image: url('../images/home-modern/contact us (3).png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right bottom !important;
+
+  @media (max-width: 1023px) {
+    background-position: 80% bottom !important;
+  }
+
+  @media (max-width: 639px) {
+    background-position: 85% bottom !important;
+  }
+}
+
+.innovative-custom-bg {
+  background-image: url('../images/home-modern/cvb_1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left bottom;
+
+  @media (max-width: 1023px) {
+    background-position: 18% bottom;
+  }
+}
+
+.why-choose-custom-bg {
+  background-image: url('../images/home-modern/new.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  width: 100%;
+  aspect-ratio: 16 / 7.2;
+  max-height: 640px;
+
+  @media (max-width: 1023px) {
+    background-position: 60% top;
+    aspect-ratio: 16 / 8.5;
+    max-height: 500px;
+  }
+
+  @media (max-width: 639px) {
+    background-position: 64% top;
+    aspect-ratio: 16 / 10.5;
+    max-height: 400px;
+  }
 }
 
 /* Service Cards Hover State - Transitions to dark brown like Card 1 */
@@ -1077,10 +1149,18 @@ body.home-modern-page h6 {
    ========================================================================== */
 
 .contact-hero-custom-bg {
-  background-image: url('../images/home-modern/contact-hero-bg.jpg');
+  background-image: url('../images/home-modern/contact_1.png');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center bottom;
+  background-position: right bottom !important;
+
+  @media (max-width: 1023px) {
+    background-position: 80% bottom !important;
+  }
+
+  @media (max-width: 639px) {
+    background-position: 85% bottom !important;
+  }
 }
 
 .contact-info-card {

@@ -245,15 +245,20 @@
   <!-- ========================================================================= -->
   <!-- 3. TURNING IDEAS INTO REAL BUSINESS IMPACT                                -->
   <!-- ========================================================================= -->
-  <section class="innovative-custom-bg relative pt-20 sm:pt-28 lg:pt-36 pb-20 sm:pb-28 lg:pb-36 overflow-hidden bg-[#FAF5EF] bg-[80%_center] sm:bg-[85%_center] lg:bg-right" id="about">
+  <section class="innovative-custom-bg relative pt-20 sm:pt-28 lg:pt-36 pb-20 sm:pb-28 lg:pb-36 overflow-hidden bg-[#FAF5EF]" id="about">
+    <!-- Soft top blend from #FAF5EF into the section sky -->
+    <div class="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-[#FAF5EF] via-[#FAF5EF]/60 to-transparent pointer-events-none z-[5]"></div>
     <!-- Subtle mobile readability overlay -->
-    <div class="absolute inset-0 bg-gradient-to-r from-[#FAF5EF]/95 via-[#FAF5EF]/80 to-transparent lg:hidden pointer-events-none"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#FAF5EF]/95 via-[#FAF5EF]/85 to-transparent sm:bg-gradient-to-l sm:from-[#FAF5EF]/95 sm:via-[#FAF5EF]/80 sm:to-transparent lg:hidden pointer-events-none"></div>
 
     <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[460px] lg:min-h-[540px]">
         
-        <!-- Left Column: Content & Statistics -->
-        <div class="lg:col-span-7 xl:col-span-6 flex flex-col gap-6" data-aos="fade-right">
+        <!-- Left side empty spacer so the background statue & laptop artwork displays cleanly -->
+        <div class="hidden lg:block lg:col-span-6 xl:col-span-6 pointer-events-none"></div>
+
+        <!-- Right Column: Content & Statistics -->
+        <div class="lg:col-span-6 xl:col-span-6 flex flex-col gap-6 lg:pl-6 xl:pl-10" data-aos="fade-left">
           
           <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453]">
             OUR INNOVATIVE SOLUTIONS
@@ -306,9 +311,6 @@
           </div>
 
         </div>
-
-        <!-- Right side empty spacer so the background statue & laptop artwork displays cleanly -->
-        <div class="hidden lg:block lg:col-span-5 xl:col-span-6 pointer-events-none"></div>
 
       </div>
     </div>
@@ -764,75 +766,10 @@
     </div>
   </section>
 
-  <!-- Fluid Wave Divider transitioning into Why Choose -->
-  <div class="wave-divider">
-    <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="!h-[40px] sm:!h-[60px]">
-      <path d="M0,16L80,24C160,32,320,48,480,48C640,48,800,32,960,26.7C1120,21,1280,26,1360,29.3L1440,32L1440,60L1360,60C1280,60,1120,60,960,60C800,60,640,60,480,60C320,60,160,60,80,60L0,60Z" fill="#F4EDE1"/>
-    </svg>
-  </div>
-
-
-<!-- ========================================================================= -->
-  <!-- 7. WHY CHOOSE OORA LABZ ("A TECHNOLOGY PARTNER YOU CAN RELY ON")          -->
   <!-- ========================================================================= -->
-  <section class="py-16 lg:py-24 relative bg-[#F4EDE1]">
-    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-        
-        <!-- Left: Exact Greek Statue VR Landscape Banner Card -->
-        <div class="lg:col-span-6" data-aos="fade-right">
-          <div class="rounded-[28px] overflow-hidden shadow-[0_16px_36px_rgba(74,56,42,0.14)] border border-[#DFD0C2] group">
-            <img src="assets/images/home-modern/exact/why-exact.png" alt="A Technology Partner You Can Rely On" class="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-700 ease-out" />
-          </div>
-        </div>
-
-        <!-- Right: Why Choose Bullet Points -->
-        <div class="lg:col-span-6 flex flex-col gap-6" data-aos="fade-left">
-          
-          <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453]">
-            WHY CHOOSE OORA LABZ
-          </span>
-
-          <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#231E1A] leading-tight">
-            A Technology Partner<br/>You Can Rely On
-          </h2>
-
-          <!-- Checkmark items matching exact bullet styling -->
-          <ul class="flex flex-col gap-3 text-sm sm:text-base text-[#47392F]">
-            <li class="flex items-center gap-3">
-              <span class="w-5 h-5 rounded-full bg-[#745A43] text-white flex items-center justify-center text-xs flex-shrink-0">
-                <i class="ri-check-line font-bold"></i>
-              </span>
-              <span class="font-medium text-[#382E27]">Business-focused and people-centric approach</span>
-            </li>
-
-            <li class="flex items-center gap-3">
-              <span class="w-5 h-5 rounded-full bg-[#745A43] text-white flex items-center justify-center text-xs flex-shrink-0">
-                <i class="ri-check-line font-bold"></i>
-              </span>
-              <span class="font-medium text-[#382E27]">Reliable, scalable, and secure solutions</span>
-            </li>
-
-            <li class="flex items-center gap-3">
-              <span class="w-5 h-5 rounded-full bg-[#745A43] text-white flex items-center justify-center text-xs flex-shrink-0">
-                <i class="ri-check-line font-bold"></i>
-              </span>
-              <span class="font-medium text-[#382E27]">End-to-end support and long-term partnership</span>
-            </li>
-
-            <li class="flex items-center gap-3">
-              <span class="w-5 h-5 rounded-full bg-[#745A43] text-white flex items-center justify-center text-xs flex-shrink-0">
-                <i class="ri-check-line font-bold"></i>
-              </span>
-              <span class="font-medium text-[#382E27]">A team that turns ideas into working solutions</span>
-            </li>
-          </ul>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <!-- 7. RESPONSIVE WAVE DIVIDER & SCENE BACKGROUND SECTION                     -->
+  <!-- ========================================================================= -->
+  <section class="why-choose-custom-bg relative w-full bg-[#FAF5EF] overflow-hidden"></section>
 
 
   <!-- ========================================================================= -->

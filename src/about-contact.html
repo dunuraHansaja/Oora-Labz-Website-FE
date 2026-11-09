@@ -40,15 +40,18 @@
   <!-- ========================================================================= -->
   <!-- 1. HERO SECTION                                                          -->
   <!-- ========================================================================= -->
-  <section class="hero-custom-bg relative pt-32 sm:pt-40 lg:pt-48 pb-20 sm:pb-28 lg:pb-36 overflow-hidden bg-[#FAF5EF] bg-[80%_center] sm:bg-[85%_center] lg:bg-right">
+  <section class="about-hero-custom-bg relative pt-32 sm:pt-40 lg:pt-48 pb-20 sm:pb-28 lg:pb-36 overflow-hidden bg-[#FAF5EF]">
     <!-- Subtle mobile readability overlay -->
-    <div class="absolute inset-0 bg-gradient-to-r from-[#FAF5EF]/95 via-[#FAF5EF]/80 to-transparent lg:hidden pointer-events-none"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#FAF5EF]/95 via-[#FAF5EF]/85 to-transparent sm:bg-gradient-to-l sm:from-[#FAF5EF]/95 sm:via-[#FAF5EF]/80 sm:to-transparent lg:hidden pointer-events-none"></div>
 
     <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[460px] lg:min-h-[520px]">
         
-        <!-- Left Hero Content -->
-        <div class="lg:col-span-7 xl:col-span-6 flex flex-col gap-5 sm:gap-6" data-aos="fade-up" data-aos-duration="800">
+        <!-- Left side empty spacer so the background statue artwork displays cleanly on the left -->
+        <div class="hidden lg:block lg:col-span-5 xl:col-span-6 pointer-events-none"></div>
+
+        <!-- Right Hero Content -->
+        <div class="lg:col-span-7 xl:col-span-6 flex flex-col gap-5 sm:gap-6 lg:pl-6 xl:pl-10" data-aos="fade-up" data-aos-duration="800">
           
           <!-- Eyebrow Tag -->
           <div class="inline-flex">
@@ -80,9 +83,6 @@
           </div>
 
         </div>
-
-        <!-- Right side empty spacer so the background statue artwork displays cleanly -->
-        <div class="hidden lg:block lg:col-span-5 xl:col-span-6 pointer-events-none"></div>
 
       </div>
     </div>
