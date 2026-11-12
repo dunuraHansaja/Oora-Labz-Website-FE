@@ -120,8 +120,8 @@ document.addEventListener("DOMContentLoaded", function () {
     handleScroll();
   }
 
-  // 3. Testimonial 3D 5-Card Rotating Fan Carousel
-  const testimonials = [
+  // 3. Testimonial 3D 5-Card Rotating Fan Carousel (includes all comments from About page)
+  const baseTestimonials = [
     {
       quote: "Oora Labz delivered a solution that really improved our operations. The team was professional, responsive, and easy to work with.",
       name: "Nimal Perera",
@@ -147,6 +147,40 @@ document.addEventListener("DOMContentLoaded", function () {
       avatar: "assets/images/team/team3.png"
     }
   ];
+
+  function getAllTestimonialsForHome() {
+    let savedReviews = [];
+    try {
+      const raw = localStorage.getItem("oora_about_reviews_v1");
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) savedReviews = parsed;
+      }
+    } catch (_) {
+      // Ignore storage errors
+    }
+
+    const combined = [...baseTestimonials];
+    savedReviews.forEach(r => {
+      const quoteText = (r.comment || r.quote || "").trim();
+      const authorName = (r.name || "Client").trim();
+      if (!quoteText) return;
+      const alreadyExists = combined.some(
+        t => t.name.toLowerCase() === authorName.toLowerCase() && t.quote.toLowerCase() === quoteText.toLowerCase()
+      );
+      if (!alreadyExists) {
+        combined.push({
+          quote: quoteText,
+          name: authorName,
+          role: (r.role || "Client").trim(),
+          avatar: r.avatar || "assets/images/home-modern/oora-logo-mark.png"
+        });
+      }
+    });
+    return combined;
+  }
+
+  const testimonials = getAllTestimonialsForHome();
 
   let currentSlide = 2; // Default to Roshan Fernando as in mockup
   const deckStage = document.getElementById("testimonialDeckStage");
@@ -255,6 +289,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Populate all 5 fan card slots on initial load so saved reviews appear immediately
+  if (fanCards.length) {
+    fanCards.forEach(card => {
+      const slot = parseInt(card.getAttribute("data-slot"), 10);
+      populateCardContent(card, currentSlide + slot);
+    });
+  }
+
   // Generate dots
   if (dotsContainer) {
     dotsContainer.innerHTML = "";
@@ -328,74 +370,146 @@ document.addEventListener("DOMContentLoaded", function () {
 
   startAutoRotate();
 
-  // 3b. About Page Testimonial Carousel
-  const aboutTestimonials = [
+  // 3b. About Page Write a Review & Comments Section
+  const aboutCommentsList = document.getElementById("aboutCommentsList");
+  const aboutReviewForm = document.getElementById("aboutReviewForm");
+  const aboutReviewCount = document.getElementById("aboutReviewCount");
+  const reviewFormFeedback = document.getElementById("reviewFormFeedback");
+
+  const defaultAboutReviews = [
     {
-      title: "“Clear communication from start to finish”",
-      quote: "They kept us updated at every stage and delivered exactly what was agreed — no surprises, no chasing for updates. It felt like working with an extension of our own team.",
       name: "Verified Client",
       role: "SME Operations Lead",
-      avatar: "assets/images/team/lady.png"
+      title: "Clear communication from start to finish",
+      comment: "They kept us updated at every stage and delivered exactly what was agreed — no surprises, no chasing for updates. It felt like working with an extension of our own team.",
+      date: "Recent Review"
     },
     {
-      title: "“Delivered ahead of time and on budget”",
-      quote: "Working with Oora Labz transformed our customer workflows. Their custom platform reduced our turnaround time by over 40% and gave us full visibility.",
       name: "Nimal Perera",
       role: "Operations Manager",
-      avatar: "assets/images/team/team1.png"
+      title: "Delivered ahead of time and on budget",
+      comment: "Working with Oora Labz transformed our customer workflows. Their custom platform reduced our turnaround time by over 40% and gave us full visibility.",
+      date: "Recent Review"
     },
     {
-      title: "“Strategic thinking meets solid engineering”",
-      quote: "From architecture to deployment, the engineering rigor was remarkable. They didn't just build to spec—they improved our platform along the way.",
       name: "Dilini Rajapakse",
       role: "Chief Technology Officer",
-      avatar: "assets/images/team/team3.png"
+      title: "Strategic thinking meets solid engineering",
+      comment: "From architecture to deployment, the engineering rigor was remarkable. They didn't just build to spec—they improved our platform along the way.",
+      date: "Recent Review"
     }
   ];
 
-  let aboutSlide = 0;
-  const aboutTitleElem = document.getElementById("aboutTestimonialTitle");
-  const aboutQuoteElem = document.getElementById("aboutTestimonialQuote");
-  const aboutNameElem = document.getElementById("aboutTestimonialName");
-  const aboutRoleElem = document.getElementById("aboutTestimonialRole");
-  const aboutAvatarElem = document.getElementById("aboutTestimonialAvatar");
-  const aboutPrevBtn = document.getElementById("aboutTestimonialPrev");
-  const aboutNextBtn = document.getElementById("aboutTestimonialNext");
-  const aboutCardElem = document.getElementById("aboutTestimonialCard");
-
-  function renderAboutSlide(idx) {
-    if (!aboutQuoteElem || !aboutNameElem) return;
-    const item = aboutTestimonials[idx];
-    if (aboutCardElem) {
-      aboutCardElem.style.opacity = "0";
-      aboutCardElem.style.transform = "translateY(8px)";
-    }
-    setTimeout(() => {
-      if (aboutTitleElem) aboutTitleElem.textContent = item.title;
-      if (aboutQuoteElem) aboutQuoteElem.textContent = item.quote;
-      if (aboutNameElem) aboutNameElem.textContent = item.name;
-      if (aboutRoleElem) aboutRoleElem.textContent = item.role;
-      if (aboutAvatarElem) aboutAvatarElem.src = item.avatar;
-
-      if (aboutCardElem) {
-        aboutCardElem.style.opacity = "1";
-        aboutCardElem.style.transform = "translateY(0)";
+  function loadAboutReviews() {
+    try {
+      const saved = localStorage.getItem("oora_about_reviews_v1");
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
       }
-    }, 200);
+    } catch (_) {
+      // Ignore storage errors
+    }
+    return defaultAboutReviews.slice();
   }
 
-  if (aboutPrevBtn) {
-    aboutPrevBtn.addEventListener("click", () => {
-      aboutSlide = (aboutSlide - 1 + aboutTestimonials.length) % aboutTestimonials.length;
-      renderAboutSlide(aboutSlide);
+  function saveAboutReviews(list) {
+    try {
+      localStorage.setItem("oora_about_reviews_v1", JSON.stringify(list));
+    } catch (_) {
+      // Ignore storage errors
+    }
+  }
+
+  function renderAboutReviews(reviews) {
+    if (!aboutCommentsList) return;
+    aboutCommentsList.innerHTML = "";
+
+    const latestThree = reviews.slice(0, 3);
+    if (aboutReviewCount) aboutReviewCount.textContent = String(reviews.length);
+
+    latestThree.forEach(item => {
+      const card = document.createElement("article");
+      card.className = "bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[24px] p-5 sm:p-6 shadow-[0_12px_28px_rgba(74,56,42,0.06)] transition-all duration-300 hover:shadow-[0_16px_34px_rgba(74,56,42,0.09)]";
+
+      const topRow = document.createElement("div");
+      topRow.className = "flex items-center justify-between gap-3 mb-3";
+
+      const authorWrap = document.createElement("div");
+      authorWrap.className = "flex items-center gap-3";
+
+      const avatar = document.createElement("div");
+      avatar.className = "w-10 h-10 rounded-full bg-[#231E1A] text-[#FAF5EF] flex items-center justify-center text-sm font-bold shrink-0";
+      avatar.textContent = (item.name || "C").trim().charAt(0).toUpperCase();
+
+      const authorMeta = document.createElement("div");
+      const authorName = document.createElement("h4");
+      authorName.className = "text-sm font-bold text-[#231E1A] leading-tight";
+      authorName.textContent = item.name || "Client";
+
+      const authorRole = document.createElement("p");
+      authorRole.className = "text-xs text-[#745A43] mt-0.5";
+      authorRole.textContent = [item.role, item.date].filter(Boolean).join(" • ");
+
+      authorMeta.appendChild(authorName);
+      authorMeta.appendChild(authorRole);
+      authorWrap.appendChild(avatar);
+      authorWrap.appendChild(authorMeta);
+
+      topRow.appendChild(authorWrap);
+      card.appendChild(topRow);
+
+      if (item.title) {
+        const titleEl = document.createElement("h5");
+        titleEl.className = "text-sm sm:text-base font-bold text-[#231E1A] mb-1.5";
+        titleEl.textContent = item.title;
+        card.appendChild(titleEl);
+      }
+
+      const commentEl = document.createElement("p");
+      commentEl.className = "text-xs sm:text-sm text-[#615145] leading-relaxed";
+      commentEl.textContent = item.comment || "";
+      card.appendChild(commentEl);
+
+      aboutCommentsList.appendChild(card);
     });
   }
 
-  if (aboutNextBtn) {
-    aboutNextBtn.addEventListener("click", () => {
-      aboutSlide = (aboutSlide + 1) % aboutTestimonials.length;
-      renderAboutSlide(aboutSlide);
-    });
+  if (aboutCommentsList) {
+    let aboutReviews = loadAboutReviews();
+    renderAboutReviews(aboutReviews);
+
+    if (aboutReviewForm) {
+      aboutReviewForm.addEventListener("submit", e => {
+        e.preventDefault();
+        const nameInput = document.getElementById("reviewName");
+        const roleInput = document.getElementById("reviewRole");
+        const titleInput = document.getElementById("reviewTitle");
+        const commentInput = document.getElementById("reviewComment");
+
+        const name = (nameInput?.value || "").trim();
+        const comment = (commentInput?.value || "").trim();
+        if (!name || !comment) return;
+
+        const newReview = {
+          name,
+          role: (roleInput?.value || "").trim() || "Client",
+          title: (titleInput?.value || "").trim(),
+          comment,
+          date: "Just now"
+        };
+
+        aboutReviews = [newReview, ...aboutReviews];
+        saveAboutReviews(aboutReviews);
+        renderAboutReviews(aboutReviews);
+        aboutReviewForm.reset();
+
+        if (reviewFormFeedback) {
+          reviewFormFeedback.classList.remove("hidden");
+          setTimeout(() => reviewFormFeedback.classList.add("hidden"), 4000);
+        }
+      });
+    }
   }
 
   // 4. Interactive Counter Animation on Scroll
