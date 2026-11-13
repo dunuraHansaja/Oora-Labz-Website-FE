@@ -79,13 +79,8 @@
           <div class="flex flex-wrap items-center gap-4 pt-1">
             <a href="#story"
               class="bg-[#231E1A] text-white hover:bg-[#3B322C] px-7 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-              <span>Get Started</span>
-              <i class="ri-arrow-right-line text-base"></i>
-            </a>
-
-            <a href="#contact"
-              class="border border-[#CEBCAC] text-[#231E1A] hover:bg-[#231E1A] hover:text-white hover:border-[#231E1A] px-7 py-3 rounded-full text-sm font-semibold transition-all duration-300 transform hover:-translate-y-0.5">
-              <span>Contact Us</span>
+              <span>Explore More</span>
+              <i class="ri-arrow-down-line text-base"></i>
             </a>
           </div>
 
@@ -270,7 +265,106 @@
 
 
   <!-- ========================================================================= -->
-  <!-- 4. WHY BUSINESSES CHOOSE OORA LABS                                       -->
+  <!-- 4. WRITE A REVIEW & COMMENTS SECTION                                      -->
+  <!-- ========================================================================= -->
+  <section class="py-16 sm:py-20 lg:py-24 relative bg-[#FAF5EF]" id="reviews">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-12" data-aos="fade-up">
+        <div>
+          <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453] block mb-2">
+            CLIENT FEEDBACK
+          </span>
+          <h2 class="text-2xl sm:text-3xl lg:text-[38px] font-bold text-[#231E1A] leading-tight">
+            Write a Review &amp; Comments
+          </h2>
+        </div>
+
+        <!-- Comments Count Pill -->
+        <div
+          class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/80 backdrop-blur-md border border-[#E8DDD1] shadow-sm self-start sm:self-auto">
+          <i class="ri-chat-3-line text-[#745A43] text-base"></i>
+          <div class="text-xs sm:text-sm font-bold text-[#231E1A]">
+            <span id="aboutReviewCount">3</span>
+            <span class="text-[#7A6453] font-medium ml-1">Comments</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Left: Write a Review Form -->
+        <div class="lg:col-span-5" data-aos="fade-right">
+          <div
+            class="bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[28px] p-6 sm:p-8 shadow-[0_16px_36px_rgba(74,56,42,0.08)]">
+            <div class="flex items-center gap-2.5 mb-2">
+              <span class="w-9 h-9 rounded-xl bg-[#F4EDE4] text-[#745A43] flex items-center justify-center text-lg">
+                <i class="ri-edit-2-line"></i>
+              </span>
+              <h3 class="text-lg sm:text-xl font-bold text-[#231E1A]">Write a Review</h3>
+            </div>
+            <p class="text-xs sm:text-sm text-[#615145] mb-5 leading-relaxed">
+              Worked with Oora Labz? Share your experience and leave a comment below.
+            </p>
+
+            <form id="aboutReviewForm" class="flex flex-col gap-4">
+
+              <!-- Name & Role -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div>
+                  <label for="reviewName" class="block text-xs font-bold text-[#231E1A] mb-1">Your Name *</label>
+                  <input type="text" id="reviewName" required placeholder="e.g. Kasun Silva"
+                    class="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF5EF] border border-[#E2D6C8] text-sm text-[#231E1A] placeholder-[#9B8B7D] focus:outline-none focus:border-[#745A43] transition-colors" />
+                </div>
+                <div>
+                  <label for="reviewRole" class="block text-xs font-bold text-[#231E1A] mb-1">Role / Company</label>
+                  <input type="text" id="reviewRole" placeholder="e.g. Founder, Apex"
+                    class="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF5EF] border border-[#E2D6C8] text-sm text-[#231E1A] placeholder-[#9B8B7D] focus:outline-none focus:border-[#745A43] transition-colors" />
+                </div>
+              </div>
+
+              <!-- Headline -->
+              <div>
+                <label for="reviewTitle" class="block text-xs font-bold text-[#231E1A] mb-1">Review Title</label>
+                <input type="text" id="reviewTitle" placeholder="Summarize your experience"
+                  class="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF5EF] border border-[#E2D6C8] text-sm text-[#231E1A] placeholder-[#9B8B7D] focus:outline-none focus:border-[#745A43] transition-colors" />
+              </div>
+
+              <!-- Comment -->
+              <div>
+                <label for="reviewComment" class="block text-xs font-bold text-[#231E1A] mb-1">Your Comment *</label>
+                <textarea id="reviewComment" rows="3" required placeholder="Share how Oora Labz helped your business..."
+                  class="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF5EF] border border-[#E2D6C8] text-sm text-[#231E1A] placeholder-[#9B8B7D] focus:outline-none focus:border-[#745A43] transition-colors resize-none"></textarea>
+              </div>
+
+              <button type="submit"
+                class="w-full bg-[#231E1A] hover:bg-[#3B322C] text-white font-semibold text-sm py-3 px-6 rounded-full shadow-md hover:shadow-lg inline-flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer">
+                <span>Post Review</span>
+                <i class="ri-send-plane-fill text-sm"></i>
+              </button>
+
+              <p id="reviewFormFeedback" class="hidden text-xs font-semibold text-[#2E6F40] text-center pt-1">
+                Thank you! Your review has been added to the comments.
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right: Comments / Reviews Feed -->
+        <div class="lg:col-span-7 flex flex-col gap-4" data-aos="fade-left">
+          <div id="aboutCommentsList" class="flex flex-col gap-4">
+            <!-- Reviews & comments rendered dynamically via JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 5. WHY BUSINESSES CHOOSE OORA LABS                                       -->
   <!-- ========================================================================= -->
   <section class="py-16 sm:py-20 lg:py-28 relative bg-[#FAF5EF]" id="why-choose">
     <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -370,105 +464,6 @@
                 <span>That experience shapes every client project we take on.</span>
               </li>
             </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========================================================================= -->
-  <!-- 6. WRITE A REVIEW & COMMENTS SECTION                                      -->
-  <!-- ========================================================================= -->
-  <section class="py-16 sm:py-20 lg:py-24 relative bg-[#FAF5EF]" id="reviews">
-    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Section Header -->
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-12" data-aos="fade-up">
-        <div>
-          <span class="text-xs font-bold tracking-[0.25em] uppercase text-[#7A6453] block mb-2">
-            CLIENT FEEDBACK
-          </span>
-          <h2 class="text-2xl sm:text-3xl lg:text-[38px] font-bold text-[#231E1A] leading-tight">
-            Write a Review &amp; Comments
-          </h2>
-        </div>
-
-        <!-- Comments Count Pill -->
-        <div
-          class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/80 backdrop-blur-md border border-[#E8DDD1] shadow-sm self-start sm:self-auto">
-          <i class="ri-chat-3-line text-[#745A43] text-base"></i>
-          <div class="text-xs sm:text-sm font-bold text-[#231E1A]">
-            <span id="aboutReviewCount">3</span>
-            <span class="text-[#7A6453] font-medium ml-1">Comments</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-        <!-- Left: Write a Review Form -->
-        <div class="lg:col-span-5" data-aos="fade-right">
-          <div
-            class="bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[28px] p-6 sm:p-8 shadow-[0_16px_36px_rgba(74,56,42,0.08)]">
-            <div class="flex items-center gap-2.5 mb-2">
-              <span class="w-9 h-9 rounded-xl bg-[#F4EDE4] text-[#745A43] flex items-center justify-center text-lg">
-                <i class="ri-edit-2-line"></i>
-              </span>
-              <h3 class="text-lg sm:text-xl font-bold text-[#231E1A]">Write a Review</h3>
-            </div>
-            <p class="text-xs sm:text-sm text-[#615145] mb-5 leading-relaxed">
-              Worked with Oora Labz? Share your experience and leave a comment below.
-            </p>
-
-            <form id="aboutReviewForm" class="flex flex-col gap-4">
-
-              <!-- Name & Role -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                <div>
-                  <label for="reviewName" class="block text-xs font-bold text-[#231E1A] mb-1">Your Name *</label>
-                  <input type="text" id="reviewName" required placeholder="e.g. Kasun Silva"
-                    class="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF5EF] border border-[#E2D6C8] text-sm text-[#231E1A] placeholder-[#9B8B7D] focus:outline-none focus:border-[#745A43] transition-colors" />
-                </div>
-                <div>
-                  <label for="reviewRole" class="block text-xs font-bold text-[#231E1A] mb-1">Role / Company</label>
-                  <input type="text" id="reviewRole" placeholder="e.g. Founder, Apex"
-                    class="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF5EF] border border-[#E2D6C8] text-sm text-[#231E1A] placeholder-[#9B8B7D] focus:outline-none focus:border-[#745A43] transition-colors" />
-                </div>
-              </div>
-
-              <!-- Headline -->
-              <div>
-                <label for="reviewTitle" class="block text-xs font-bold text-[#231E1A] mb-1">Review Title</label>
-                <input type="text" id="reviewTitle" placeholder="Summarize your experience"
-                  class="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF5EF] border border-[#E2D6C8] text-sm text-[#231E1A] placeholder-[#9B8B7D] focus:outline-none focus:border-[#745A43] transition-colors" />
-              </div>
-
-              <!-- Comment -->
-              <div>
-                <label for="reviewComment" class="block text-xs font-bold text-[#231E1A] mb-1">Your Comment *</label>
-                <textarea id="reviewComment" rows="3" required placeholder="Share how Oora Labz helped your business..."
-                  class="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF5EF] border border-[#E2D6C8] text-sm text-[#231E1A] placeholder-[#9B8B7D] focus:outline-none focus:border-[#745A43] transition-colors resize-none"></textarea>
-              </div>
-
-              <button type="submit"
-                class="w-full bg-[#231E1A] hover:bg-[#3B322C] text-white font-semibold text-sm py-3 px-6 rounded-full shadow-md hover:shadow-lg inline-flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer">
-                <span>Post Review</span>
-                <i class="ri-send-plane-fill text-sm"></i>
-              </button>
-
-              <p id="reviewFormFeedback" class="hidden text-xs font-semibold text-[#2E6F40] text-center pt-1">
-                Thank you! Your review has been added to the comments.
-              </p>
-            </form>
-          </div>
-        </div>
-
-        <!-- Right: Comments / Reviews Feed -->
-        <div class="lg:col-span-7 flex flex-col gap-4" data-aos="fade-left">
-          <div id="aboutCommentsList" class="flex flex-col gap-4">
-            <!-- Reviews & comments rendered dynamically via JS -->
           </div>
         </div>
 
