@@ -933,26 +933,31 @@ body {
 
 // scrollbar css 
 
+html {
+  scrollbar-color: #6B4C35 #1F1915;
+  scrollbar-width: thin;
+}
+
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 7px;
+  height: 7px;
 }
 
 /* Track (the background) */
 ::-webkit-scrollbar-track {
-  background: #1D2822;
-  border-radius: 8px;
+  background: #1F1915;
 }
 
 /* Handle (the actual scroll thumb) */
 ::-webkit-scrollbar-thumb {
-  background: #009688;
-  border-radius: 8px;
+  background: #6B4C35;
+  border-radius: 9999px;
+  border: 1.5px solid #1F1915;
 }
 
 /* On hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #999;
+  background: #8F694B;
 }
 
 @layer base {
