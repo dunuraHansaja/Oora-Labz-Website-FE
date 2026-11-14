@@ -1294,3 +1294,73 @@ body.home-modern-page h6 {
   backdrop-filter: blur(42px);
   transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+// ============================================================================
+// Professional Hero CTA Button Hover Effects
+// ============================================================================
+.hero-btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.24), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+
+  i {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -4px rgba(35, 30, 26, 0.32), 0 4px 8px -2px rgba(35, 30, 26, 0.15);
+
+    &::before {
+      left: 140%;
+    }
+
+    i.ri-arrow-right-line {
+      transform: translateX(3px);
+    }
+
+    i.ri-arrow-down-line {
+      transform: translateY(3px);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px -2px rgba(35, 30, 26, 0.25);
+  }
+}
+
+.hero-btn-secondary {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    transform: translateY(-2px);
+    background-color: #231E1A;
+    color: #FFFFFF !important;
+    border-color: #231E1A !important;
+    box-shadow: 0 8px 20px -4px rgba(35, 30, 26, 0.2);
+
+    span {
+      color: #FFFFFF !important;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px -2px rgba(35, 30, 26, 0.15);
+  }
+}
