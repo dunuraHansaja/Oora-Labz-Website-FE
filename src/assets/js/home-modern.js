@@ -579,7 +579,7 @@ document.addEventListener("DOMContentLoaded", function () {
       id: "custom-software",
       number: "01",
       eyebrow: "CUSTOM SOFTWARE • WEB & SCALABLE SYSTEMS",
-      title: "Custom Software Development",
+      title: "Custom Software Developments",
       desc: "Off-the-shelf software rarely fits every business perfectly. We engineer bespoke web and desktop applications shaped entirely around how your organization actually works — from initial discovery and system architecture through to deployment, integration, and long-term scale.",
       checks: [
         "Requirements & Technical Architecture",
@@ -598,7 +598,7 @@ document.addEventListener("DOMContentLoaded", function () {
       id: "business-applications",
       number: "02",
       eyebrow: "BUSINESS APPLICATIONS • ERP, CRM & AUTOMATION",
-      title: "Business Applications & Automation",
+      title: "Business Applications",
       desc: "Manual processes slow teams down and create room for error. We deliver centralized CRM, ERP, inventory, and internal management systems that streamline day-to-day operations, replacing disconnected spreadsheets with automated workflows your team actually enjoys using.",
       checks: [
         "Custom CRM, ERP & Operations Portals",
@@ -671,8 +671,27 @@ document.addEventListener("DOMContentLoaded", function () {
       ctaText: "Elevate Your Product UX"
     },
     {
-      id: "cloud-it",
+      id: "mobile-apps",
       number: "06",
+      eyebrow: "MOBILE APPLICATIONS • IOS, ANDROID & CROSS-PLATFORM",
+      title: "Mobile Application Development",
+      desc: "Put your business in your customers' and employees' pockets. We design and engineer fast, intuitive mobile applications for iOS and Android — combining sleek native feel, offline capability, real-time synchronization, and seamless backend API integration.",
+      checks: [
+        "Native & Cross-Platform Development (iOS & Android)",
+        "Customer-Facing Apps & Enterprise Field Tools",
+        "Offline-First Sync & Push Notification Engines",
+        "Biometric Authentication & Secure Mobile Payments",
+        "App Store & Google Play Publishing & Lifecycle Updates"
+      ],
+      icon: "ri-smartphone-line",
+      cardHeading: "Engineered for Performance on Every Device",
+      cardDesc: "From consumer apps to on-the-ground field service and delivery companions, we build mobile experiences that remain fast, responsive, and reliable even on spotty connections.",
+      tags: ["iOS & Android", "Flutter & React Native", "Offline Sync", "Push Notifications"],
+      ctaText: "Build Your Mobile App"
+    },
+    {
+      id: "cloud-it",
+      number: "07",
       eyebrow: "CLOUD & IT SOLUTIONS • DEVOPS & CLOUD SCALE",
       title: "Cloud & IT Solutions",
       desc: "As your business grows, your infrastructure needs to keep pace without becoming a bottleneck. Our Cloud & IT Solutions service covers cloud migration, DevOps automation, secure hosting architecture, and ongoing system monitoring so your applications stay fast, secure, and always available.",
@@ -688,6 +707,82 @@ document.addEventListener("DOMContentLoaded", function () {
       cardDesc: "We architect cloud environments that match your workload today while auto-scaling effortlessly tomorrow — with security, automated backups, and cost optimization built in from day one.",
       tags: ["AWS / Azure / GCP", "CI/CD DevOps", "Docker & Containers", "24/7 Monitoring"],
       ctaText: "Scale Your Infrastructure"
+    },
+    {
+      id: "it-consulting",
+      number: "08",
+      eyebrow: "IT CONSULTING • STRATEGY, AUDITS & ARCHITECTURE",
+      title: "IT Consulting & Technology Services",
+      desc: "Make confident technology investments backed by experienced engineering leadership. We partner with your team to audit existing systems, resolve technical bottlenecks, select the right stack, and design a clear, phased digital transformation roadmap.",
+      checks: [
+        "Technology Roadmapping & Digital Strategy",
+        "System Architecture & Codebase Audits",
+        "Vendor, Platform & Tech-Stack Evaluation",
+        "Security, Compliance & Scalability Assessments",
+        "Fractional CTO & Technical Advisory Support"
+      ],
+      icon: "ri-compass-3-line",
+      cardHeading: "Clarity Before You Commit Code or Budget",
+      cardDesc: "We translate complex technical trade-offs into plain business outcomes — helping you avoid costly rewrites, choose the right architecture, and ship with confidence.",
+      tags: ["Tech Roadmaps", "System Audits", "Architecture Design", "Security Review"],
+      ctaText: "Book a Strategy Session"
+    },
+    {
+      id: "automation-digital",
+      number: "09",
+      eyebrow: "AUTOMATION & DIGITAL TRANSFORMATION • RPA & PAPERLESS WORKFLOWS",
+      title: "Automation & Digital Transformations",
+      desc: "Eliminate repetitive manual tasks and modernize legacy operations from end to end. We connect your tools, automate multi-step business rules, implement robotic process automation (RPA), and transition paper-heavy departments into fast, traceable digital workflows.",
+      checks: [
+        "End-to-End Business Process Automation (BPA & RPA)",
+        "Paperless Office & Digital Approval Pipelines",
+        "Automated Bulk SMS, WhatsApp & Email Notification Systems",
+        "Cross-Platform Webhook & API Orchestration",
+        "Legacy Spreadsheet & Manual Workflow Replacement"
+      ],
+      icon: "ri-loop-right-line",
+      cardHeading: "Hours of Manual Work Reduced to Seconds",
+      cardDesc: "By automating routine data entry, approvals, and customer notifications, your team can focus on high-value work while every process runs consistently and leaves a clear audit trail.",
+      tags: ["Process Automation", "Paperless Workflows", "API Orchestration", "Automated Alerts"],
+      ctaText: "Start Your Digital Transformation"
+    },
+    {
+      id: "ecommerce-solutions",
+      number: "10",
+      eyebrow: "E-COMMERCE SOLUTIONS • ONLINE STORES & MARKETPLACES",
+      title: "E-Commerce Solutions",
+      desc: "Launch and scale high-converting online stores and multi-vendor marketplaces tailored to your brand. We build fast, mobile-first e-commerce platforms complete with local and international payment gateways, real-time inventory sync, and automated order fulfillment.",
+      checks: [
+        "Custom B2C, B2B & Multi-Vendor Storefronts",
+        "Local & Global Payment Gateway Integration",
+        "Real-Time Inventory, POS & Warehouse Synchronization",
+        "Order Management, Shipping & Delivery Tracking",
+        "Conversion Rate Optimization, Promotions & Customer Loyalty"
+      ],
+      icon: "ri-shopping-bag-3-line",
+      cardHeading: "Seamless Shopping from Discovery to Delivery",
+      cardDesc: "Whether launching a flagship direct-to-consumer store or connecting your retail POS to an online catalog, we engineer storefronts built for speed, security, and repeat purchases.",
+      tags: ["Custom Storefronts", "Payment Gateways", "POS & Inventory Sync", "Order Fulfillment"],
+      ctaText: "Launch Your Online Store"
+    },
+    {
+      id: "support-maintenance",
+      number: "11",
+      eyebrow: "SUPPORT & MAINTENANCE • SLAs, SECURITY & UPTIME",
+      title: "Support & System Maintenance",
+      desc: "Software is a living asset that requires continuous care after launch. Our dedicated support and maintenance retainers keep your mission-critical systems secure, updated, and performing at their peak — backed by proactive monitoring and guaranteed SLA response times.",
+      checks: [
+        "SLA-Backed Technical Support & Incident Response",
+        "Proactive Uptime, Error & Performance Monitoring",
+        "Regular Security Patching, Dependency & OS Updates",
+        "Database Tuning, Backup Verification & Health Checks",
+        "Continuous Feature Enhancements & UX Refinements"
+      ],
+      icon: "ri-customer-service-2-line",
+      cardHeading: "Long-Term Peace of Mind After Go-Live",
+      cardDesc: "You never have to worry about outgrowing your software or being left without support. Our engineering team stays on call to keep your systems fast, secure, and evolving with your business.",
+      tags: ["SLA Support", "Security Patching", "Performance Tuning", "Continuous Updates"],
+      ctaText: "Get a Support Plan"
     }
   ];
 

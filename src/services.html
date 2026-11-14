@@ -140,219 +140,457 @@
         </p>
       </div>
 
-      <!-- 6 Service Cards Grid (3 Columns x 2 Rows) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+      <!-- 11 Service Cards Grid (3 Columns on Desktop, Responsive on Tablet/Mobile) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
 
-        <!-- 1. Custom Software -->
+        <!-- 1. Custom Software Developments -->
         <div role="button" tabindex="0" data-service-modal="custom-software"
-          class="service-card-interactive bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[26px] p-7 flex flex-col justify-between group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
+          class="service-card-interactive bg-[#FDFBF9] border border-[#EFE7DEC0] rounded-[28px] p-5 flex items-center justify-between gap-3.5 sm:gap-4 group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
           data-aos="fade-up" data-aos-delay="50">
-          <div class="flex flex-col gap-4">
-            <div class="flex items-center justify-between">
+          <!-- Left Content -->
+          <div class="flex-1 min-w-0 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
               <div
-                class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-white/15 group-hover:border group-hover:border-white/20 group-hover:text-white">
+                class="w-12 h-12 rounded-[16px] bg-[#ECE3D8] text-[#17120E] flex items-center justify-center text-xl sm:text-[22px] shrink-0 transition-all duration-300 group-hover:bg-white/15 group-hover:text-white">
                 <i class="ri-code-s-slash-line font-bold"></i>
               </div>
-              <span
-                class="text-xs font-bold tracking-widest uppercase text-[#9A8574] group-hover:text-white/70 transition-colors">01</span>
+              <div class="min-w-0">
+                <div class="text-[11px] sm:text-xs font-medium text-[#9A8574] mb-0.5 group-hover:text-[#DFD0C4] transition-colors">
+                  Web &amp; Scalable Systems
+                </div>
+                <h3 class="text-[16px] sm:text-[17.5px] font-bold text-[#1E1713] leading-snug group-hover:text-white transition-colors duration-300">
+                  Custom Software Developments
+                </h3>
+              </div>
             </div>
-            <div>
-              <div class="text-xs font-semibold text-[#8A725E] mb-1 group-hover:text-[#DFD0C4] transition-colors">Web
-                &amp; scalable systems</div>
-              <h3 class="text-xl font-bold text-[#231E1A] mb-2 group-hover:text-white transition-colors duration-300">
-                Custom Software
-              </h3>
-              <p
-                class="text-xs sm:text-sm text-[#66574C] leading-relaxed group-hover:text-[#DFD0C4] transition-colors duration-300">
-                Bespoke web and desktop applications engineered around your exact business workflows and built to scale.
-              </p>
-            </div>
+            <p
+              class="text-xs sm:text-[12.5px] text-[#8C7E73] leading-relaxed group-hover:text-[#E5D7C9] transition-colors duration-300">
+              Bespoke web and desktop applications engineered around your exact business workflows and built to scale.
+            </p>
           </div>
-          <div class="flex items-center justify-between pt-6">
-            <span class="text-xs font-semibold text-[#745A43] group-hover:text-white transition-colors">View
-              Details</span>
+
+          <!-- Vertical Divider -->
+          <div class="w-px self-stretch my-1 bg-[#E8DDD1] group-hover:bg-white/20 transition-colors duration-300 shrink-0"></div>
+
+          <!-- Right Action Column -->
+          <div class="flex flex-col items-center justify-center gap-1.5 pl-1 shrink-0 min-w-[68px] sm:min-w-[74px]">
             <div
-              class="w-9 h-9 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-white group-hover:text-[#231E1A] group-hover:shadow-sm flex items-center justify-center text-sm transition-all duration-300 group-hover:translate-x-1">
-              <i class="ri-arrow-right-up-line"></i>
+              class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#ECE3D8] text-[#17120E] group-hover:bg-white group-hover:text-[#17120E] group-hover:shadow-sm flex items-center justify-center text-sm sm:text-base transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <i class="ri-arrow-right-up-line font-bold"></i>
             </div>
+            <span class="text-[10.5px] sm:text-[11px] font-bold text-[#8A725E] group-hover:text-white transition-colors whitespace-nowrap">
+              View Details
+            </span>
           </div>
         </div>
 
         <!-- 2. Business Applications -->
         <div role="button" tabindex="0" data-service-modal="business-applications"
-          class="service-card-interactive bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[26px] p-7 flex flex-col justify-between group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
+          class="service-card-interactive bg-[#FDFBF9] border border-[#EFE7DEC0] rounded-[28px] p-5 flex items-center justify-between gap-3.5 sm:gap-4 group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
           data-aos="fade-up" data-aos-delay="100">
-          <div class="flex flex-col gap-4">
-            <div class="flex items-center justify-between">
+          <!-- Left Content -->
+          <div class="flex-1 min-w-0 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
               <div
-                class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-white/15 group-hover:border group-hover:border-white/20 group-hover:text-white">
-                <i class="ri-stack-line"></i>
+                class="w-12 h-12 rounded-[16px] bg-[#ECE3D8] text-[#17120E] flex items-center justify-center text-xl sm:text-[22px] shrink-0 transition-all duration-300 group-hover:bg-white/15 group-hover:text-white">
+                <i class="ri-stack-line font-bold"></i>
               </div>
-              <span
-                class="text-xs font-bold tracking-widest uppercase text-[#9A8574] group-hover:text-white/70 transition-colors">02</span>
+              <div class="min-w-0">
+                <div class="text-[11px] sm:text-xs font-medium text-[#9A8574] mb-0.5 group-hover:text-[#DFD0C4] transition-colors">
+                  ERP, CRM &amp; Automation
+                </div>
+                <h3 class="text-[16px] sm:text-[17.5px] font-bold text-[#1E1713] leading-snug group-hover:text-white transition-colors duration-300">
+                  Business Applications
+                </h3>
+              </div>
             </div>
-            <div>
-              <div class="text-xs font-semibold text-[#8A725E] mb-1 group-hover:text-[#DFD0C4] transition-colors">ERP,
-                CRM &amp; automation</div>
-              <h3 class="text-xl font-bold text-[#231E1A] mb-2 group-hover:text-white transition-colors duration-300">
-                Business Applications
-              </h3>
-              <p
-                class="text-xs sm:text-sm text-[#66574C] leading-relaxed group-hover:text-[#DFD0C4] transition-colors duration-300">
-                Connected CRM, ERP, inventory, billing, and workflow automation systems that eliminate manual
-                bottlenecks.
-              </p>
-            </div>
+            <p
+              class="text-xs sm:text-[12.5px] text-[#8C7E73] leading-relaxed group-hover:text-[#E5D7C9] transition-colors duration-300">
+              Connected CRM, ERP, inventory, billing, and workflow automation systems that eliminate manual bottlenecks.
+            </p>
           </div>
-          <div class="flex items-center justify-between pt-6">
-            <span class="text-xs font-semibold text-[#745A43] group-hover:text-white transition-colors">View
-              Details</span>
+
+          <!-- Vertical Divider -->
+          <div class="w-px self-stretch my-1 bg-[#E8DDD1] group-hover:bg-white/20 transition-colors duration-300 shrink-0"></div>
+
+          <!-- Right Action Column -->
+          <div class="flex flex-col items-center justify-center gap-1.5 pl-1 shrink-0 min-w-[68px] sm:min-w-[74px]">
             <div
-              class="w-9 h-9 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-white group-hover:text-[#231E1A] group-hover:shadow-sm flex items-center justify-center text-sm transition-all duration-300 group-hover:translate-x-1">
-              <i class="ri-arrow-right-up-line"></i>
+              class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#ECE3D8] text-[#17120E] group-hover:bg-white group-hover:text-[#17120E] group-hover:shadow-sm flex items-center justify-center text-sm sm:text-base transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <i class="ri-arrow-right-up-line font-bold"></i>
             </div>
+            <span class="text-[10.5px] sm:text-[11px] font-bold text-[#8A725E] group-hover:text-white transition-colors whitespace-nowrap">
+              View Details
+            </span>
           </div>
         </div>
 
         <!-- 3. AI & Intelligent Solutions -->
         <div role="button" tabindex="0" data-service-modal="ai-solutions"
-          class="service-card-interactive bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[26px] p-7 flex flex-col justify-between group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
+          class="service-card-interactive bg-[#FDFBF9] border border-[#EFE7DEC0] rounded-[28px] p-5 flex items-center justify-between gap-3.5 sm:gap-4 group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
           data-aos="fade-up" data-aos-delay="150">
-          <div class="flex flex-col gap-4">
-            <div class="flex items-center justify-between">
+          <!-- Left Content -->
+          <div class="flex-1 min-w-0 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
               <div
-                class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-white/15 group-hover:border group-hover:border-white/20 group-hover:text-white">
+                class="w-12 h-12 rounded-[16px] bg-[#ECE3D8] text-[#17120E] flex items-center justify-center text-xl sm:text-[22px] shrink-0 transition-all duration-300 group-hover:bg-white/15 group-hover:text-white">
                 <i class="ri-sparkling-fill"></i>
               </div>
-              <span
-                class="text-xs font-bold tracking-widest uppercase text-[#9A8574] group-hover:text-white/70 transition-colors">03</span>
+              <div class="min-w-0">
+                <div class="text-[11px] sm:text-xs font-medium text-[#9A8574] mb-0.5 group-hover:text-[#DFD0C4] transition-colors">
+                  Chatbots, ML &amp; Agents
+                </div>
+                <h3 class="text-[16px] sm:text-[17.5px] font-bold text-[#1E1713] leading-snug group-hover:text-white transition-colors duration-300">
+                  AI &amp; Intelligent Solutions
+                </h3>
+              </div>
             </div>
-            <div>
-              <div class="text-xs font-semibold text-[#8A725E] mb-1 group-hover:text-[#DFD0C4] transition-colors">
-                Chatbots, ML &amp; agents</div>
-              <h3 class="text-xl font-bold text-[#231E1A] mb-2 group-hover:text-white transition-colors duration-300">
-                AI &amp; Intelligent Solutions
-              </h3>
-              <p
-                class="text-xs sm:text-sm text-[#66574C] leading-relaxed group-hover:text-[#DFD0C4] transition-colors duration-300">
-                Practical AI agents, conversational chatbots, predictive models, and intelligent document automation.
-              </p>
-            </div>
+            <p
+              class="text-xs sm:text-[12.5px] text-[#8C7E73] leading-relaxed group-hover:text-[#E5D7C9] transition-colors duration-300">
+              Practical AI agents, conversational chatbots, predictive models, and intelligent document automation.
+            </p>
           </div>
-          <div class="flex items-center justify-between pt-6">
-            <span class="text-xs font-semibold text-[#745A43] group-hover:text-white transition-colors">View
-              Details</span>
+
+          <!-- Vertical Divider -->
+          <div class="w-px self-stretch my-1 bg-[#E8DDD1] group-hover:bg-white/20 transition-colors duration-300 shrink-0"></div>
+
+          <!-- Right Action Column -->
+          <div class="flex flex-col items-center justify-center gap-1.5 pl-1 shrink-0 min-w-[68px] sm:min-w-[74px]">
             <div
-              class="w-9 h-9 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-white group-hover:text-[#231E1A] group-hover:shadow-sm flex items-center justify-center text-sm transition-all duration-300 group-hover:translate-x-1">
-              <i class="ri-arrow-right-up-line"></i>
+              class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#ECE3D8] text-[#17120E] group-hover:bg-white group-hover:text-[#17120E] group-hover:shadow-sm flex items-center justify-center text-sm sm:text-base transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <i class="ri-arrow-right-up-line font-bold"></i>
             </div>
+            <span class="text-[10.5px] sm:text-[11px] font-bold text-[#8A725E] group-hover:text-white transition-colors whitespace-nowrap">
+              View Details
+            </span>
           </div>
         </div>
 
-        <!-- 4. Data & BI -->
+        <!-- 4. Data & Business Intelligence -->
         <div role="button" tabindex="0" data-service-modal="data-bi"
-          class="service-card-interactive bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[26px] p-7 flex flex-col justify-between group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
+          class="service-card-interactive bg-[#FDFBF9] border border-[#EFE7DEC0] rounded-[28px] p-5 flex items-center justify-between gap-3.5 sm:gap-4 group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
           data-aos="fade-up" data-aos-delay="200">
-          <div class="flex flex-col gap-4">
-            <div class="flex items-center justify-between">
+          <!-- Left Content -->
+          <div class="flex-1 min-w-0 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
               <div
-                class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-white/15 group-hover:border group-hover:border-white/20 group-hover:text-white">
+                class="w-12 h-12 rounded-[16px] bg-[#ECE3D8] text-[#17120E] flex items-center justify-center text-xl sm:text-[22px] shrink-0 transition-all duration-300 group-hover:bg-white/15 group-hover:text-white">
                 <i class="ri-bar-chart-grouped-fill"></i>
               </div>
-              <span
-                class="text-xs font-bold tracking-widest uppercase text-[#9A8574] group-hover:text-white/70 transition-colors">04</span>
+              <div class="min-w-0">
+                <div class="text-[11px] sm:text-xs font-medium text-[#9A8574] mb-0.5 group-hover:text-[#DFD0C4] transition-colors">
+                  Dashboards &amp; Reports
+                </div>
+                <h3 class="text-[16px] sm:text-[17.5px] font-bold text-[#1E1713] leading-snug group-hover:text-white transition-colors duration-300">
+                  Data &amp; Business Intelligence
+                </h3>
+              </div>
             </div>
-            <div>
-              <div class="text-xs font-semibold text-[#8A725E] mb-1 group-hover:text-[#DFD0C4] transition-colors">
-                Dashboards &amp; reports</div>
-              <h3 class="text-xl font-bold text-[#231E1A] mb-2 group-hover:text-white transition-colors duration-300">
-                Data &amp; BI
-              </h3>
-              <p
-                class="text-xs sm:text-sm text-[#66574C] leading-relaxed group-hover:text-[#DFD0C4] transition-colors duration-300">
-                Interactive executive dashboards, centralized data pipelines, and real-time KPI reporting for smarter
-                decisions.
-              </p>
-            </div>
+            <p
+              class="text-xs sm:text-[12.5px] text-[#8C7E73] leading-relaxed group-hover:text-[#E5D7C9] transition-colors duration-300">
+              Interactive executive dashboards, centralized data pipelines, and real-time KPI reporting for smarter decisions.
+            </p>
           </div>
-          <div class="flex items-center justify-between pt-6">
-            <span class="text-xs font-semibold text-[#745A43] group-hover:text-white transition-colors">View
-              Details</span>
+
+          <!-- Vertical Divider -->
+          <div class="w-px self-stretch my-1 bg-[#E8DDD1] group-hover:bg-white/20 transition-colors duration-300 shrink-0"></div>
+
+          <!-- Right Action Column -->
+          <div class="flex flex-col items-center justify-center gap-1.5 pl-1 shrink-0 min-w-[68px] sm:min-w-[74px]">
             <div
-              class="w-9 h-9 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-white group-hover:text-[#231E1A] group-hover:shadow-sm flex items-center justify-center text-sm transition-all duration-300 group-hover:translate-x-1">
-              <i class="ri-arrow-right-up-line"></i>
+              class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#ECE3D8] text-[#17120E] group-hover:bg-white group-hover:text-[#17120E] group-hover:shadow-sm flex items-center justify-center text-sm sm:text-base transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <i class="ri-arrow-right-up-line font-bold"></i>
             </div>
+            <span class="text-[10.5px] sm:text-[11px] font-bold text-[#8A725E] group-hover:text-white transition-colors whitespace-nowrap">
+              View Details
+            </span>
           </div>
         </div>
 
-        <!-- 5. UI/UX Digital Experiences -->
+        <!-- 5. UI/UX & Digital Experiences -->
         <div role="button" tabindex="0" data-service-modal="ui-ux"
-          class="service-card-interactive bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[26px] p-7 flex flex-col justify-between group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
+          class="service-card-interactive bg-[#FDFBF9] border border-[#EFE7DEC0] rounded-[28px] p-5 flex items-center justify-between gap-3.5 sm:gap-4 group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
           data-aos="fade-up" data-aos-delay="250">
-          <div class="flex flex-col gap-4">
-            <div class="flex items-center justify-between">
+          <!-- Left Content -->
+          <div class="flex-1 min-w-0 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
               <div
-                class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-white/15 group-hover:border group-hover:border-white/20 group-hover:text-white">
-                <i class="ri-layout-masonry-line"></i>
+                class="w-12 h-12 rounded-[16px] bg-[#ECE3D8] text-[#17120E] flex items-center justify-center text-xl sm:text-[22px] shrink-0 transition-all duration-300 group-hover:bg-white/15 group-hover:text-white">
+                <i class="ri-macbook-line font-bold"></i>
               </div>
-              <span
-                class="text-xs font-bold tracking-widest uppercase text-[#9A8574] group-hover:text-white/70 transition-colors">05</span>
+              <div class="min-w-0">
+                <div class="text-[11px] sm:text-xs font-medium text-[#9A8574] mb-0.5 group-hover:text-[#DFD0C4] transition-colors">
+                  Modern Responsive Designs
+                </div>
+                <h3 class="text-[16px] sm:text-[17.5px] font-bold text-[#1E1713] leading-snug group-hover:text-white transition-colors duration-300">
+                  UI/UX &amp; Digital Experiences
+                </h3>
+              </div>
             </div>
-            <div>
-              <div class="text-xs font-semibold text-[#8A725E] mb-1 group-hover:text-[#DFD0C4] transition-colors">Modern
-                responsive designs</div>
-              <h3 class="text-xl font-bold text-[#231E1A] mb-2 group-hover:text-white transition-colors duration-300">
-                UI/UX Digital Experiences
-              </h3>
-              <p
-                class="text-xs sm:text-sm text-[#66574C] leading-relaxed group-hover:text-[#DFD0C4] transition-colors duration-300">
-                User research, interactive wireframes, design systems, and polished interfaces across web and mobile.
-              </p>
-            </div>
+            <p
+              class="text-xs sm:text-[12.5px] text-[#8C7E73] leading-relaxed group-hover:text-[#E5D7C9] transition-colors duration-300">
+              User research, interactive wireframes, design systems, and polished interfaces across web and mobile.
+            </p>
           </div>
-          <div class="flex items-center justify-between pt-6">
-            <span class="text-xs font-semibold text-[#745A43] group-hover:text-white transition-colors">View
-              Details</span>
+
+          <!-- Vertical Divider -->
+          <div class="w-px self-stretch my-1 bg-[#E8DDD1] group-hover:bg-white/20 transition-colors duration-300 shrink-0"></div>
+
+          <!-- Right Action Column -->
+          <div class="flex flex-col items-center justify-center gap-1.5 pl-1 shrink-0 min-w-[68px] sm:min-w-[74px]">
             <div
-              class="w-9 h-9 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-white group-hover:text-[#231E1A] group-hover:shadow-sm flex items-center justify-center text-sm transition-all duration-300 group-hover:translate-x-1">
-              <i class="ri-arrow-right-up-line"></i>
+              class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#ECE3D8] text-[#17120E] group-hover:bg-white group-hover:text-[#17120E] group-hover:shadow-sm flex items-center justify-center text-sm sm:text-base transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <i class="ri-arrow-right-up-line font-bold"></i>
             </div>
+            <span class="text-[10.5px] sm:text-[11px] font-bold text-[#8A725E] group-hover:text-white transition-colors whitespace-nowrap">
+              View Details
+            </span>
           </div>
         </div>
 
-        <!-- 6. Cloud & IT Solutions -->
-        <div role="button" tabindex="0" data-service-modal="cloud-it"
-          class="service-card-interactive bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[26px] p-7 flex flex-col justify-between group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
+        <!-- 6. Mobile Application Development -->
+        <div role="button" tabindex="0" data-service-modal="mobile-apps"
+          class="service-card-interactive bg-[#FDFBF9] border border-[#EFE7DEC0] rounded-[28px] p-5 flex items-center justify-between gap-3.5 sm:gap-4 group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
           data-aos="fade-up" data-aos-delay="300">
-          <div class="flex flex-col gap-4">
-            <div class="flex items-center justify-between">
+          <!-- Left Content -->
+          <div class="flex-1 min-w-0 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
               <div
-                class="w-12 h-12 rounded-2xl bg-[#F4EDE4] text-[#231E1A] flex items-center justify-center text-xl transition-all duration-300 group-hover:bg-white/15 group-hover:border group-hover:border-white/20 group-hover:text-white">
-                <i class="ri-cloud-line"></i>
+                class="w-12 h-12 rounded-[16px] bg-[#ECE3D8] text-[#17120E] flex items-center justify-center text-xl sm:text-[22px] shrink-0 transition-all duration-300 group-hover:bg-white/15 group-hover:text-white">
+                <i class="ri-smartphone-line font-bold"></i>
               </div>
-              <span
-                class="text-xs font-bold tracking-widest uppercase text-[#9A8574] group-hover:text-white/70 transition-colors">06</span>
+              <div class="min-w-0">
+                <div class="text-[11px] sm:text-xs font-medium text-[#9A8574] mb-0.5 group-hover:text-[#DFD0C4] transition-colors">
+                  iOS, Android &amp; Cross-Platform
+                </div>
+                <h3 class="text-[16px] sm:text-[17.5px] font-bold text-[#1E1713] leading-snug group-hover:text-white transition-colors duration-300">
+                  Mobile Application Development
+                </h3>
+              </div>
             </div>
-            <div>
-              <div class="text-xs font-semibold text-[#8A725E] mb-1 group-hover:text-[#DFD0C4] transition-colors">DevOps
-                &amp; cloud scale</div>
-              <h3 class="text-xl font-bold text-[#231E1A] mb-2 group-hover:text-white transition-colors duration-300">
-                Cloud &amp; IT Solutions
-              </h3>
-              <p
-                class="text-xs sm:text-sm text-[#66574C] leading-relaxed group-hover:text-[#DFD0C4] transition-colors duration-300">
-                Cloud migration, CI/CD automation, secure hosting architecture, and proactive 24/7 infrastructure
-                monitoring.
-              </p>
-            </div>
+            <p
+              class="text-xs sm:text-[12.5px] text-[#8C7E73] leading-relaxed group-hover:text-[#E5D7C9] transition-colors duration-300">
+              Fast, reliable native and cross-platform mobile apps engineered with React Native, Flutter, iOS, and Android.
+            </p>
           </div>
-          <div class="flex items-center justify-between pt-6">
-            <span class="text-xs font-semibold text-[#745A43] group-hover:text-white transition-colors">View
-              Details</span>
+
+          <!-- Vertical Divider -->
+          <div class="w-px self-stretch my-1 bg-[#E8DDD1] group-hover:bg-white/20 transition-colors duration-300 shrink-0"></div>
+
+          <!-- Right Action Column -->
+          <div class="flex flex-col items-center justify-center gap-1.5 pl-1 shrink-0 min-w-[68px] sm:min-w-[74px]">
             <div
-              class="w-9 h-9 rounded-full bg-[#EFE6DB] text-[#231E1A] group-hover:bg-white group-hover:text-[#231E1A] group-hover:shadow-sm flex items-center justify-center text-sm transition-all duration-300 group-hover:translate-x-1">
-              <i class="ri-arrow-right-up-line"></i>
+              class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#ECE3D8] text-[#17120E] group-hover:bg-white group-hover:text-[#17120E] group-hover:shadow-sm flex items-center justify-center text-sm sm:text-base transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <i class="ri-arrow-right-up-line font-bold"></i>
             </div>
+            <span class="text-[10.5px] sm:text-[11px] font-bold text-[#8A725E] group-hover:text-white transition-colors whitespace-nowrap">
+              View Details
+            </span>
+          </div>
+        </div>
+
+        <!-- 7. Cloud & IT Solutions -->
+        <div role="button" tabindex="0" data-service-modal="cloud-it"
+          class="service-card-interactive bg-[#FDFBF9] border border-[#EFE7DEC0] rounded-[28px] p-5 flex items-center justify-between gap-3.5 sm:gap-4 group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
+          data-aos="fade-up" data-aos-delay="350">
+          <!-- Left Content -->
+          <div class="flex-1 min-w-0 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-12 h-12 rounded-[16px] bg-[#ECE3D8] text-[#17120E] flex items-center justify-center text-xl sm:text-[22px] shrink-0 transition-all duration-300 group-hover:bg-white/15 group-hover:text-white">
+                <i class="ri-cloud-line font-bold"></i>
+              </div>
+              <div class="min-w-0">
+                <div class="text-[11px] sm:text-xs font-medium text-[#9A8574] mb-0.5 group-hover:text-[#DFD0C4] transition-colors">
+                  DevOps &amp; Cloud Scale
+                </div>
+                <h3 class="text-[16px] sm:text-[17.5px] font-bold text-[#1E1713] leading-snug group-hover:text-white transition-colors duration-300">
+                  Cloud &amp; IT Solutions
+                </h3>
+              </div>
+            </div>
+            <p
+              class="text-xs sm:text-[12.5px] text-[#8C7E73] leading-relaxed group-hover:text-[#E5D7C9] transition-colors duration-300">
+              Cloud migration, CI/CD automation, secure hosting architecture, and proactive 24/7 infrastructure monitoring.
+            </p>
+          </div>
+
+          <!-- Vertical Divider -->
+          <div class="w-px self-stretch my-1 bg-[#E8DDD1] group-hover:bg-white/20 transition-colors duration-300 shrink-0"></div>
+
+          <!-- Right Action Column -->
+          <div class="flex flex-col items-center justify-center gap-1.5 pl-1 shrink-0 min-w-[68px] sm:min-w-[74px]">
+            <div
+              class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#ECE3D8] text-[#17120E] group-hover:bg-white group-hover:text-[#17120E] group-hover:shadow-sm flex items-center justify-center text-sm sm:text-base transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <i class="ri-arrow-right-up-line font-bold"></i>
+            </div>
+            <span class="text-[10.5px] sm:text-[11px] font-bold text-[#8A725E] group-hover:text-white transition-colors whitespace-nowrap">
+              View Details
+            </span>
+          </div>
+        </div>
+
+        <!-- 8. IT Consulting & Technology Services -->
+        <div role="button" tabindex="0" data-service-modal="it-consulting"
+          class="service-card-interactive bg-[#FDFBF9] border border-[#EFE7DEC0] rounded-[28px] p-5 flex items-center justify-between gap-3.5 sm:gap-4 group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
+          data-aos="fade-up" data-aos-delay="400">
+          <!-- Left Content -->
+          <div class="flex-1 min-w-0 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-12 h-12 rounded-[16px] bg-[#ECE3D8] text-[#17120E] flex items-center justify-center text-xl sm:text-[22px] shrink-0 transition-all duration-300 group-hover:bg-white/15 group-hover:text-white">
+                <i class="ri-compass-3-line font-bold"></i>
+              </div>
+              <div class="min-w-0">
+                <div class="text-[11px] sm:text-xs font-medium text-[#9A8574] mb-0.5 group-hover:text-[#DFD0C4] transition-colors">
+                  Strategy, Audits &amp; Roadmaps
+                </div>
+                <h3 class="text-[16px] sm:text-[17.5px] font-bold text-[#1E1713] leading-snug group-hover:text-white transition-colors duration-300">
+                  IT Consulting &amp; Technology Services
+                </h3>
+              </div>
+            </div>
+            <p
+              class="text-xs sm:text-[12.5px] text-[#8C7E73] leading-relaxed group-hover:text-[#E5D7C9] transition-colors duration-300">
+              Clear-eyed technology audits, architecture roadmaps, and stack advisory grounded in your business goals.
+            </p>
+          </div>
+
+          <!-- Vertical Divider -->
+          <div class="w-px self-stretch my-1 bg-[#E8DDD1] group-hover:bg-white/20 transition-colors duration-300 shrink-0"></div>
+
+          <!-- Right Action Column -->
+          <div class="flex flex-col items-center justify-center gap-1.5 pl-1 shrink-0 min-w-[68px] sm:min-w-[74px]">
+            <div
+              class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#ECE3D8] text-[#17120E] group-hover:bg-white group-hover:text-[#17120E] group-hover:shadow-sm flex items-center justify-center text-sm sm:text-base transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <i class="ri-arrow-right-up-line font-bold"></i>
+            </div>
+            <span class="text-[10.5px] sm:text-[11px] font-bold text-[#8A725E] group-hover:text-white transition-colors whitespace-nowrap">
+              View Details
+            </span>
+          </div>
+        </div>
+
+        <!-- 9. Automation & Digital Transformations -->
+        <div role="button" tabindex="0" data-service-modal="automation-digital"
+          class="service-card-interactive bg-[#FDFBF9] border border-[#EFE7DEC0] rounded-[28px] p-5 flex items-center justify-between gap-3.5 sm:gap-4 group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
+          data-aos="fade-up" data-aos-delay="450">
+          <!-- Left Content -->
+          <div class="flex-1 min-w-0 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-12 h-12 rounded-[16px] bg-[#ECE3D8] text-[#17120E] flex items-center justify-center text-xl sm:text-[22px] shrink-0 transition-all duration-300 group-hover:bg-white/15 group-hover:text-white">
+                <i class="ri-loop-right-line font-bold"></i>
+              </div>
+              <div class="min-w-0">
+                <div class="text-[11px] sm:text-xs font-medium text-[#9A8574] mb-0.5 group-hover:text-[#DFD0C4] transition-colors">
+                  RPA &amp; Paperless Workflows
+                </div>
+                <h3 class="text-[16px] sm:text-[17.5px] font-bold text-[#1E1713] leading-snug group-hover:text-white transition-colors duration-300">
+                  Automation &amp; Digital Transformations
+                </h3>
+              </div>
+            </div>
+            <p
+              class="text-xs sm:text-[12.5px] text-[#8C7E73] leading-relaxed group-hover:text-[#E5D7C9] transition-colors duration-300">
+              End-to-end process automation, RPA workflows, bulk messaging systems, and paperless digital operations.
+            </p>
+          </div>
+
+          <!-- Vertical Divider -->
+          <div class="w-px self-stretch my-1 bg-[#E8DDD1] group-hover:bg-white/20 transition-colors duration-300 shrink-0"></div>
+
+          <!-- Right Action Column -->
+          <div class="flex flex-col items-center justify-center gap-1.5 pl-1 shrink-0 min-w-[68px] sm:min-w-[74px]">
+            <div
+              class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#ECE3D8] text-[#17120E] group-hover:bg-white group-hover:text-[#17120E] group-hover:shadow-sm flex items-center justify-center text-sm sm:text-base transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <i class="ri-arrow-right-up-line font-bold"></i>
+            </div>
+            <span class="text-[10.5px] sm:text-[11px] font-bold text-[#8A725E] group-hover:text-white transition-colors whitespace-nowrap">
+              View Details
+            </span>
+          </div>
+        </div>
+
+        <!-- 10. E-Commerce Solutions -->
+        <div role="button" tabindex="0" data-service-modal="ecommerce-solutions"
+          class="service-card-interactive bg-[#FDFBF9] border border-[#EFE7DEC0] rounded-[28px] p-5 flex items-center justify-between gap-3.5 sm:gap-4 group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
+          data-aos="fade-up" data-aos-delay="500">
+          <!-- Left Content -->
+          <div class="flex-1 min-w-0 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-12 h-12 rounded-[16px] bg-[#ECE3D8] text-[#17120E] flex items-center justify-center text-xl sm:text-[22px] shrink-0 transition-all duration-300 group-hover:bg-white/15 group-hover:text-white">
+                <i class="ri-shopping-bag-3-line font-bold"></i>
+              </div>
+              <div class="min-w-0">
+                <div class="text-[11px] sm:text-xs font-medium text-[#9A8574] mb-0.5 group-hover:text-[#DFD0C4] transition-colors">
+                  Online Stores &amp; Marketplaces
+                </div>
+                <h3 class="text-[16px] sm:text-[17.5px] font-bold text-[#1E1713] leading-snug group-hover:text-white transition-colors duration-300">
+                  E-Commerce Solutions
+                </h3>
+              </div>
+            </div>
+            <p
+              class="text-xs sm:text-[12.5px] text-[#8C7E73] leading-relaxed group-hover:text-[#E5D7C9] transition-colors duration-300">
+              Custom online storefronts with secure payment gateways, real-time inventory sync, and multi-channel order management.
+            </p>
+          </div>
+
+          <!-- Vertical Divider -->
+          <div class="w-px self-stretch my-1 bg-[#E8DDD1] group-hover:bg-white/20 transition-colors duration-300 shrink-0"></div>
+
+          <!-- Right Action Column -->
+          <div class="flex flex-col items-center justify-center gap-1.5 pl-1 shrink-0 min-w-[68px] sm:min-w-[74px]">
+            <div
+              class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#ECE3D8] text-[#17120E] group-hover:bg-white group-hover:text-[#17120E] group-hover:shadow-sm flex items-center justify-center text-sm sm:text-base transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <i class="ri-arrow-right-up-line font-bold"></i>
+            </div>
+            <span class="text-[10.5px] sm:text-[11px] font-bold text-[#8A725E] group-hover:text-white transition-colors whitespace-nowrap">
+              View Details
+            </span>
+          </div>
+        </div>
+
+        <!-- 11. Support & System Maintenance -->
+        <div role="button" tabindex="0" data-service-modal="support-maintenance"
+          class="service-card-interactive bg-[#FDFBF9] border border-[#EFE7DEC0] rounded-[28px] p-5 flex items-center justify-between gap-3.5 sm:gap-4 group cursor-pointer hover:border-transparent hover:-translate-y-1.5 transition-all duration-300 text-left"
+          data-aos="fade-up" data-aos-delay="550">
+          <!-- Left Content -->
+          <div class="flex-1 min-w-0 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-12 h-12 rounded-[16px] bg-[#ECE3D8] text-[#17120E] flex items-center justify-center text-xl sm:text-[22px] shrink-0 transition-all duration-300 group-hover:bg-white/15 group-hover:text-white">
+                <i class="ri-customer-service-2-line font-bold"></i>
+              </div>
+              <div class="min-w-0">
+                <div class="text-[11px] sm:text-xs font-medium text-[#9A8574] mb-0.5 group-hover:text-[#DFD0C4] transition-colors">
+                  SLAs, Security &amp; Uptime
+                </div>
+                <h3 class="text-[16px] sm:text-[17.5px] font-bold text-[#1E1713] leading-snug group-hover:text-white transition-colors duration-300">
+                  Support &amp; System Maintenance
+                </h3>
+              </div>
+            </div>
+            <p
+              class="text-xs sm:text-[12.5px] text-[#8C7E73] leading-relaxed group-hover:text-[#E5D7C9] transition-colors duration-300">
+              Responsive technical support, security patching, performance tuning, and SLA-backed uptime assurance after go-live.
+            </p>
+          </div>
+
+          <!-- Vertical Divider -->
+          <div class="w-px self-stretch my-1 bg-[#E8DDD1] group-hover:bg-white/20 transition-colors duration-300 shrink-0"></div>
+
+          <!-- Right Action Column -->
+          <div class="flex flex-col items-center justify-center gap-1.5 pl-1 shrink-0 min-w-[68px] sm:min-w-[74px]">
+            <div
+              class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#ECE3D8] text-[#17120E] group-hover:bg-white group-hover:text-[#17120E] group-hover:shadow-sm flex items-center justify-center text-sm sm:text-base transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <i class="ri-arrow-right-up-line font-bold"></i>
+            </div>
+            <span class="text-[10.5px] sm:text-[11px] font-bold text-[#8A725E] group-hover:text-white transition-colors whitespace-nowrap">
+              View Details
+            </span>
           </div>
         </div>
 

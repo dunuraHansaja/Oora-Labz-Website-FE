@@ -1391,3 +1391,39 @@ body.home-modern-page h6 {
     box-shadow: 0 3px 8px -2px rgba(35, 30, 26, 0.15);
   }
 }
+
+.see-more-pill-btn {
+  position: relative;
+  background: #FDFBF9;
+  border: 1px solid #DFD2C3;
+  box-shadow: 0 8px 22px -4px rgba(55, 42, 30, 0.11),
+    inset 0 1px 0 #FFFFFF;
+  transition: all 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+
+  .see-more-pill-icon {
+    background: #231E1A;
+    color: #FFFFFF;
+    transition: all 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  &:hover {
+    background: linear-gradient(135deg, #6B5240 0%, #4D382B 100%);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px -6px rgba(42, 32, 26, 0.28);
+
+    .see-more-pill-text {
+      color: #FFFFFF;
+    }
+
+    .see-more-pill-icon {
+      background: #FFFFFF;
+      color: #17120E;
+      transform: translateX(2px);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
