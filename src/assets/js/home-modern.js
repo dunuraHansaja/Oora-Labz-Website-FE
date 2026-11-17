@@ -3,6 +3,21 @@
  */
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Strip ".html" and "index.html" from browser address bar
+  try {
+    const p = window.location.pathname;
+    if (p.endsWith(".html") || p.includes(".html")) {
+      let clean = p.replace(/\/index\.html$/, "/");
+      if (clean.endsWith(".html")) {
+        clean = clean.slice(0, -5);
+      }
+      const target = (clean || "/") + window.location.search + window.location.hash;
+      if (target !== window.location.pathname + window.location.search + window.location.hash) {
+        window.history.replaceState(null, "", target);
+      }
+    }
+  } catch (_) {}
+
   // 1. Mobile Menu Drawer
   const toggleBtn = document.getElementById("modernMenuToggle");
   const closeBtn = document.getElementById("modernDrawerClose");
@@ -120,107 +135,164 @@ document.addEventListener("DOMContentLoaded", function () {
     handleScroll();
   }
 
-  // 3. Testimonial 3D 5-Card Rotating Fan Carousel (includes all comments from About page)
-  const baseTestimonials = [
-    {
-      quote: "Oora Labz delivered a solution that really improved our operations. The team was professional, responsive, and easy to work with.",
-      name: "Nimal Perera",
-      role: "Operations Manager",
-      avatar: "assets/images/team/team1.png"
-    },
-    {
-      quote: "Working with Oora Labz transformed our customer workflows. Their custom platform reduced our turnaround time by over 40%.",
-      name: "Kavinda Silva",
-      role: "Head of Product",
-      avatar: "assets/images/team/team2.png"
-    },
-    {
-      quote: "From inception to launch, their team was communicative, disciplined, and focused on our business gols. Atrue partner",
-      name: "Roshan Fernando",
-      role: "Managing Director",
-      avatar: "assets/images/home-modern/avatar-roshan-sharp.png"
-    },
-    {
-      quote: "The AI integrations they delivered were seamless and immediately actionable. Exceptional engineering and reliable delivery.",
-      name: "Dilini Rajapakse",
-      role: "Chief Technology Officer",
-      avatar: "assets/images/team/team3.png"
-    }
-  ];
+  // Shared Backend API Helper Functions (Reads strictly from .env without hardcoded credentials)
+  const getApiOrigin = () => {
+    const origin =
+      (typeof import.meta !== "undefined" &&
+        import.meta.env &&
+        (import.meta.env.VITE_API_ORIGIN || import.meta.env.VITE_API_BASE_URL)) ||
+      "";
+    return origin.replace(/\/+$/, "");
+  };
 
-  function getAllTestimonialsForHome() {
-    let savedReviews = [];
-    try {
-      const raw = localStorage.getItem("oora_about_reviews_v1");
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed)) savedReviews = parsed;
-      }
-    } catch (_) {
-      // Ignore storage errors
+  const getInquiryAuthCredentials = () => {
+    const email =
+      (typeof import.meta !== "undefined" &&
+        import.meta.env &&
+        (import.meta.env.VITE_INQUIRIES_AUTH_EMAIL || import.meta.env.VITE_API_AUTH_EMAIL)) ||
+      "";
+    const password =
+      (typeof import.meta !== "undefined" &&
+        import.meta.env &&
+        (import.meta.env.VITE_INQUIRIES_AUTH_PASSWORD || import.meta.env.VITE_API_AUTH_PASSWORD)) ||
+      "";
+    return { email, password };
+  };
+
+  const getCommentsAuthCredentials = () => {
+    const email =
+      (typeof import.meta !== "undefined" &&
+        import.meta.env &&
+        (import.meta.env.VITE_COMMENTS_AUTH_EMAIL || import.meta.env.VITE_API_AUTH_EMAIL)) ||
+      "";
+    const password =
+      (typeof import.meta !== "undefined" &&
+        import.meta.env &&
+        (import.meta.env.VITE_COMMENTS_AUTH_PASSWORD || import.meta.env.VITE_API_AUTH_PASSWORD)) ||
+      "";
+    return { email, password };
+  };
+
+  const tokenCache = new Map();
+
+  async function getSanctumToken(credentials, forceRefresh = false) {
+    const origin = getApiOrigin();
+    if (!origin) {
+      throw new Error("API origin is not configured in environment variables (VITE_API_ORIGIN).");
+    }
+    if (!credentials || !credentials.email || !credentials.password) {
+      throw new Error("API credentials are not configured in environment variables.");
     }
 
-    const combined = [...baseTestimonials];
-    savedReviews.forEach(r => {
-      const quoteText = (r.comment || r.quote || "").trim();
-      const authorName = (r.name || "Client").trim();
-      if (!quoteText) return;
-      const alreadyExists = combined.some(
-        t => t.name.toLowerCase() === authorName.toLowerCase() && t.quote.toLowerCase() === quoteText.toLowerCase()
-      );
-      if (!alreadyExists) {
-        combined.push({
-          quote: quoteText,
-          name: authorName,
-          role: (r.role || "Client").trim(),
-          avatar: r.avatar || "assets/images/home-modern/oora-logo-mark.png"
-        });
-      }
+    const cacheKey = `${origin}:${credentials.email}`;
+    const cached = tokenCache.get(cacheKey);
+    if (!forceRefresh && cached && Date.now() < cached.expiresAt) {
+      return cached.token;
+    }
+
+    const res = await fetch(`${origin}/api/v1/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        email: credentials.email,
+        password: credentials.password,
+      }),
     });
-    return combined;
+
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.token) {
+      throw new Error(data.message || `Authentication failed (HTTP ${res.status}).`);
+    }
+
+    tokenCache.set(cacheKey, {
+      token: data.token,
+      expiresAt: Date.now() + 45 * 60 * 1000,
+    });
+    return data.token;
   }
 
-  const testimonials = getAllTestimonialsForHome();
+  function resolveMediaUrl(rawUrl, origin) {
+    if (!rawUrl || typeof rawUrl !== "string") return "";
+    const cleanUrl = rawUrl.trim();
+    if (cleanUrl.startsWith("http://localhost") || cleanUrl.startsWith("http://127.0.0.1")) {
+      try {
+        const u = new URL(cleanUrl);
+        return `${origin}${u.pathname}${u.search}`;
+      } catch (_) {
+        return cleanUrl;
+      }
+    }
+    if (cleanUrl.startsWith("/")) {
+      return `${origin}${cleanUrl}`;
+    }
+    return cleanUrl;
+  }
 
-  let currentSlide = 2; // Default to Roshan Fernando as in mockup
+  // 3. Testimonial 3D 5-Card Rotating Fan Carousel (Dynamic from GET /api/v1/comments/display)
   const deckStage = document.getElementById("testimonialDeckStage");
   const dotsContainer = document.getElementById("testimonialDots");
   const prevBtn = document.getElementById("testimonialPrev");
   const nextBtn = document.getElementById("testimonialNext");
   const fanCards = deckStage ? Array.from(deckStage.querySelectorAll(".testimonial-fan-card")) : [];
 
+  let currentSlide = 0;
+  let dynamicTestimonials = [];
+  let autoRotateTimer = null;
+
   const slotToClass = {
     "-2": "pos-outer-left",
     "-1": "pos-mid-left",
     "0": "pos-front",
     "1": "pos-mid-right",
-    "2": "pos-outer-right"
+    "2": "pos-outer-right",
   };
 
-  function getModIndex(idx) {
-    const len = testimonials.length;
+  function getModIndex(idx, len) {
+    if (!len) return 0;
     return ((idx % len) + len) % len;
   }
 
   function populateCardContent(card, dataIndex) {
-    const item = testimonials[getModIndex(dataIndex)];
-    if (!item || !card) return;
+    if (!card) return;
     const avatar = card.querySelector(".fan-avatar");
     const name = card.querySelector(".fan-name");
     const role = card.querySelector(".fan-role");
     const quote = card.querySelector(".fan-quote");
 
-    if (avatar) {
-      avatar.src = item.avatar;
-      avatar.alt = item.name;
+    if (!dynamicTestimonials.length) {
+      if (name) name.textContent = "Client Review";
+      if (role) role.textContent = "Verified Feedback";
+      if (quote) quote.textContent = "Client feedback will appear here once published.";
+      if (avatar) avatar.src = "assets/images/home-modern/oora-logo-mark.png";
+      return;
     }
-    if (name) name.textContent = item.name;
-    if (role) role.textContent = item.role;
-    if (quote) quote.textContent = item.quote;
+
+    const item = dynamicTestimonials[getModIndex(dataIndex, dynamicTestimonials.length)];
+    if (!item) return;
+
+    if (avatar) {
+      if (item.avatar) {
+        avatar.src = item.avatar;
+      } else {
+        avatar.src = "assets/images/home-modern/oora-logo-mark.png";
+      }
+      avatar.alt = item.name || "Client";
+    }
+    if (name) name.textContent = item.name || "Client";
+    if (role) role.textContent = item.role || "Client";
+    if (quote) quote.textContent = item.quote || "";
   }
 
   function updateDots() {
     if (!dotsContainer) return;
+    const len = dynamicTestimonials.length;
+    if (len <= 1) {
+      dotsContainer.innerHTML = "";
+      return;
+    }
     const dots = dotsContainer.querySelectorAll(".testimonial-dot");
     dots.forEach((dot, i) => {
       if (i === currentSlide) {
@@ -231,16 +303,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Rotate deck by +1 (Next: right card comes to front, front goes left)
-  // or -1 (Prev: left card comes to front, front goes right)
-  function stepCarousel(direction) {
-    if (!fanCards.length) return;
+  function setupDots() {
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = "";
+    const len = dynamicTestimonials.length;
+    if (len <= 1) return;
 
-    currentSlide = getModIndex(currentSlide + direction);
+    for (let i = 0; i < len; i++) {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Slide ${i + 1}`);
+      dot.className =
+        i === currentSlide
+          ? "testimonial-dot w-[22px] h-[4px] bg-[#D8BE9C] transition-all duration-300 cursor-pointer"
+          : "testimonial-dot w-[8px] h-[4px] bg-[#F2E3CE] hover:bg-[#D8BE9C] transition-all duration-300 cursor-pointer";
+      dot.addEventListener("click", () => {
+        const diff = i - currentSlide;
+        if (diff !== 0) {
+          stepCarousel(diff);
+          startAutoRotate();
+        }
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function stepCarousel(direction) {
+    if (!fanCards.length || dynamicTestimonials.length <= 1) return;
+
+    currentSlide = getModIndex(currentSlide + direction, dynamicTestimonials.length);
 
     fanCards.forEach((card) => {
       const oldSlot = parseInt(card.getAttribute("data-slot"), 10);
-      let newSlot = oldSlot - direction; // Next (+1) shifts card slots -1 (right card slot 1 -> 0 front, 0 -> -1 left)
+      let newSlot = oldSlot - direction;
 
       card.classList.remove(
         "pos-outer-left",
@@ -271,68 +366,33 @@ document.addEventListener("DOMContentLoaded", function () {
     updateDots();
   }
 
-  // Click on any background card to bring it toward the front
-  fanCards.forEach((card) => {
-    card.addEventListener("click", () => {
-      const slot = parseInt(card.getAttribute("data-slot"), 10);
-      if (slot === 1) {
-        stepCarousel(1);
-      } else if (slot === -1) {
-        stepCarousel(-1);
-      } else if (slot === 2) {
-        stepCarousel(1);
-        setTimeout(() => stepCarousel(1), 240);
-      } else if (slot === -2) {
-        stepCarousel(-1);
-        setTimeout(() => stepCarousel(-1), 240);
-      }
-    });
-  });
-
-  // Populate all 5 fan card slots on initial load so saved reviews appear immediately
-  if (fanCards.length) {
-    fanCards.forEach(card => {
+  function refreshDeckCards() {
+    if (!fanCards.length) return;
+    fanCards.forEach((card) => {
       const slot = parseInt(card.getAttribute("data-slot"), 10);
       populateCardContent(card, currentSlide + slot);
     });
-  }
+    setupDots();
+    updateDots();
 
-  // Generate dots
-  if (dotsContainer) {
-    dotsContainer.innerHTML = "";
-    testimonials.forEach((_, i) => {
-      const dot = document.createElement("button");
-      dot.setAttribute("aria-label", "Go to testimonial " + (i + 1));
-      dot.className = i === currentSlide
-        ? "testimonial-dot w-[22px] h-[4px] bg-[#D8BE9C] transition-all duration-300 cursor-pointer"
-        : "testimonial-dot w-[8px] h-[4px] bg-[#F2E3CE] hover:bg-[#D8BE9C] transition-all duration-300 cursor-pointer";
-      dot.addEventListener("click", () => {
-        if (i === currentSlide) return;
-        const len = testimonials.length;
-        const forwardDiff = (i - currentSlide + len) % len;
-        const backwardDiff = (currentSlide - i + len) % len;
-        if (forwardDiff <= backwardDiff) {
-          for (let s = 0; s < forwardDiff; s++) {
-            setTimeout(() => stepCarousel(1), s * 220);
-          }
-        } else {
-          for (let s = 0; s < backwardDiff; s++) {
-            setTimeout(() => stepCarousel(-1), s * 220);
-          }
-        }
-      });
-      dotsContainer.appendChild(dot);
-    });
+    if (prevBtn && nextBtn) {
+      if (dynamicTestimonials.length <= 1) {
+        prevBtn.classList.add("opacity-40", "pointer-events-none");
+        nextBtn.classList.add("opacity-40", "pointer-events-none");
+      } else {
+        prevBtn.classList.remove("opacity-40", "pointer-events-none");
+        nextBtn.classList.remove("opacity-40", "pointer-events-none");
+      }
+    }
   }
-
-  // Auto-rotate every 4 seconds (4000ms) and reset timer on manual interaction
-  let autoRotateTimer = null;
 
   function startAutoRotate() {
     stopAutoRotate();
-    autoRotateTimer = setInterval(() => {
-      stepCarousel(1);
-    }, 4000);
+    if (dynamicTestimonials.length > 1) {
+      autoRotateTimer = setInterval(() => {
+        stepCarousel(1);
+      }, 5000);
+    }
   }
 
   function stopAutoRotate() {
@@ -342,95 +402,130 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  if (prevBtn) {
-    prevBtn.addEventListener("click", () => {
-      stepCarousel(-1);
-      startAutoRotate();
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
-      stepCarousel(1);
-      startAutoRotate();
-    });
-  }
-
   if (deckStage) {
-    deckStage.addEventListener("click", () => {
-      startAutoRotate();
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        stepCarousel(-1);
+        startAutoRotate();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        stepCarousel(1);
+        startAutoRotate();
+      });
+    }
+
+    fanCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const slot = parseInt(card.getAttribute("data-slot"), 10);
+        if (slot === 1) {
+          stepCarousel(1);
+          startAutoRotate();
+        } else if (slot === -1) {
+          stepCarousel(-1);
+          startAutoRotate();
+        } else if (slot === 2) {
+          stepCarousel(1);
+          setTimeout(() => stepCarousel(1), 220);
+          startAutoRotate();
+        } else if (slot === -2) {
+          stepCarousel(-1);
+          setTimeout(() => stepCarousel(-1), 220);
+          startAutoRotate();
+        }
+      });
     });
+
+    deckStage.addEventListener("mouseenter", stopAutoRotate);
+    deckStage.addEventListener("mouseleave", startAutoRotate);
+
+    refreshDeckCards();
+
+    // Fetch dynamic comments from GET /api/v1/comments/display
+    (async () => {
+      try {
+        const origin = getApiOrigin();
+        if (!origin) return;
+        const creds = getCommentsAuthCredentials();
+        const token = await getSanctumToken(creds);
+
+        const res = await fetch(`${origin}/api/v1/comments/display`, {
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const json = await res.json();
+        const records = Array.isArray(json.data) ? json.data : [];
+
+        if (records.length > 0) {
+          dynamicTestimonials = records.map((item) => {
+            const roleParts = [item.title, item.company].filter(Boolean);
+            return {
+              id: item.id,
+              name: item.name || "Client",
+              role: roleParts.join(" • ") || "Client",
+              quote: item.comment || "",
+              avatar: resolveMediaUrl(item.image_url, origin) || "assets/images/home-modern/oora-logo-mark.png",
+            };
+          });
+          currentSlide = 0;
+          refreshDeckCards();
+          startAutoRotate();
+        }
+      } catch (err) {
+        console.warn("Failed to load /api/v1/comments/display:", err);
+      }
+    })();
   }
 
-  if (dotsContainer) {
-    dotsContainer.addEventListener("click", () => {
-      startAutoRotate();
-    });
-  }
-
-  startAutoRotate();
-
-  // 3b. About Page Write a Review & Comments Section
+  // 3b. About Page Write a Review & Comments Section (Dynamic from GET /api/v1/comments/approved & POST /api/v1/comments)
   const aboutCommentsList = document.getElementById("aboutCommentsList");
   const aboutReviewForm = document.getElementById("aboutReviewForm");
   const aboutReviewCount = document.getElementById("aboutReviewCount");
   const reviewFormFeedback = document.getElementById("reviewFormFeedback");
 
-  const defaultAboutReviews = [
-    {
-      name: "Verified Client",
-      role: "SME Operations Lead",
-      title: "Clear communication from start to finish",
-      comment: "They kept us updated at every stage and delivered exactly what was agreed — no surprises, no chasing for updates. It felt like working with an extension of our own team.",
-      date: "Recent Review"
-    },
-    {
-      name: "Nimal Perera",
-      role: "Operations Manager",
-      title: "Delivered ahead of time and on budget",
-      comment: "Working with Oora Labz transformed our customer workflows. Their custom platform reduced our turnaround time by over 40% and gave us full visibility.",
-      date: "Recent Review"
-    },
-    {
-      name: "Dilini Rajapakse",
-      role: "Chief Technology Officer",
-      title: "Strategic thinking meets solid engineering",
-      comment: "From architecture to deployment, the engineering rigor was remarkable. They didn't just build to spec—they improved our platform along the way.",
-      date: "Recent Review"
+  function showReviewFeedback(type, message) {
+    if (!reviewFormFeedback) return;
+    reviewFormFeedback.classList.remove(
+      "hidden",
+      "text-emerald-700",
+      "text-red-600"
+    );
+    if (type === "success") {
+      reviewFormFeedback.classList.add("text-emerald-700");
+    } else {
+      reviewFormFeedback.classList.add("text-red-600");
     }
-  ];
-
-  function loadAboutReviews() {
-    try {
-      const saved = localStorage.getItem("oora_about_reviews_v1");
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
-      }
-    } catch (_) {
-      // Ignore storage errors
-    }
-    return defaultAboutReviews.slice();
+    reviewFormFeedback.textContent = message;
   }
 
-  function saveAboutReviews(list) {
-    try {
-      localStorage.setItem("oora_about_reviews_v1", JSON.stringify(list));
-    } catch (_) {
-      // Ignore storage errors
-    }
+  function hideReviewFeedback() {
+    if (!reviewFormFeedback) return;
+    reviewFormFeedback.classList.add("hidden");
+    reviewFormFeedback.textContent = "";
   }
 
-  function renderAboutReviews(reviews) {
+  function renderApprovedComments(records, origin) {
     if (!aboutCommentsList) return;
     aboutCommentsList.innerHTML = "";
 
-    const latestThree = reviews.slice(0, 3);
-    if (aboutReviewCount) aboutReviewCount.textContent = String(reviews.length);
+    if (!records || records.length === 0) {
+      const emptyCard = document.createElement("div");
+      emptyCard.className =
+        "bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[24px] p-6 text-center text-[#745A43] text-sm";
+      emptyCard.textContent =
+        "No approved reviews yet. Be the first to share your experience with Oora Labz!";
+      aboutCommentsList.appendChild(emptyCard);
+      return;
+    }
 
-    latestThree.forEach(item => {
+    records.forEach((item) => {
       const card = document.createElement("article");
-      card.className = "bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[24px] p-5 sm:p-6 shadow-[0_12px_28px_rgba(74,56,42,0.06)] transition-all duration-300 hover:shadow-[0_16px_34px_rgba(74,56,42,0.09)]";
+      card.className =
+        "bg-white/85 backdrop-blur-md border border-[#E8DDD1] rounded-[24px] p-5 sm:p-6 shadow-[0_12px_28px_rgba(74,56,42,0.06)] transition-all duration-300 hover:shadow-[0_16px_34px_rgba(74,56,42,0.09)]";
 
       const topRow = document.createElement("div");
       topRow.className = "flex items-center justify-between gap-3 mb-3";
@@ -438,33 +533,57 @@ document.addEventListener("DOMContentLoaded", function () {
       const authorWrap = document.createElement("div");
       authorWrap.className = "flex items-center gap-3";
 
-      const avatar = document.createElement("div");
-      avatar.className = "w-10 h-10 rounded-full bg-[#231E1A] text-[#FAF5EF] flex items-center justify-center text-sm font-bold shrink-0";
-      avatar.textContent = (item.name || "C").trim().charAt(0).toUpperCase();
+      const avatarWrap = document.createElement("div");
+      avatarWrap.className =
+        "w-12 h-12 rounded-full overflow-hidden bg-[#231E1A] text-[#FAF5EF] flex items-center justify-center text-sm font-bold shrink-0 shadow-xs";
+
+      const resolvedAvatar = resolveMediaUrl(item.image_url, origin);
+      if (resolvedAvatar) {
+        const img = document.createElement("img");
+        img.src = resolvedAvatar;
+        img.alt = item.name || "Client";
+        img.className = "w-full h-full object-cover comment-card-avatar-img";
+        img.onerror = () => {
+          img.remove();
+          avatarWrap.textContent = (item.name || "C").trim().charAt(0).toUpperCase();
+        };
+        avatarWrap.appendChild(img);
+      } else {
+        avatarWrap.textContent = (item.name || "C").trim().charAt(0).toUpperCase();
+      }
 
       const authorMeta = document.createElement("div");
       const authorName = document.createElement("h4");
       authorName.className = "text-sm font-bold text-[#231E1A] leading-tight";
       authorName.textContent = item.name || "Client";
 
+      const roleCompany = [item.title, item.company].filter(Boolean).join(" • ");
+      let formattedDate = "";
+      if (item.created_at) {
+        try {
+          const d = new Date(item.created_at);
+          if (!isNaN(d.getTime())) {
+            formattedDate = d.toLocaleDateString(undefined, {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            });
+          }
+        } catch (_) {}
+      }
+      const submeta = [roleCompany, formattedDate].filter(Boolean).join(" • ");
+
       const authorRole = document.createElement("p");
       authorRole.className = "text-xs text-[#745A43] mt-0.5";
-      authorRole.textContent = [item.role, item.date].filter(Boolean).join(" • ");
+      authorRole.textContent = submeta || "Verified Client";
 
       authorMeta.appendChild(authorName);
       authorMeta.appendChild(authorRole);
-      authorWrap.appendChild(avatar);
+      authorWrap.appendChild(avatarWrap);
       authorWrap.appendChild(authorMeta);
 
       topRow.appendChild(authorWrap);
       card.appendChild(topRow);
-
-      if (item.title) {
-        const titleEl = document.createElement("h5");
-        titleEl.className = "text-sm sm:text-base font-bold text-[#231E1A] mb-1.5";
-        titleEl.textContent = item.title;
-        card.appendChild(titleEl);
-      }
 
       const commentEl = document.createElement("p");
       commentEl.className = "text-xs sm:text-sm text-[#615145] leading-relaxed";
@@ -475,38 +594,132 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  async function fetchAndDisplayApprovedComments() {
+    if (!aboutCommentsList) return;
+    try {
+      const origin = getApiOrigin();
+      if (!origin) return;
+      const creds = getCommentsAuthCredentials();
+      const token = await getSanctumToken(creds);
+
+      const res = await fetch(`${origin}/api/v1/comments/approved`, {
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      const records = Array.isArray(json.data) ? json.data : [];
+
+      if (aboutReviewCount) {
+        const total =
+          json.meta && typeof json.meta.total === "number" ? json.meta.total : records.length;
+        aboutReviewCount.textContent = String(total);
+      }
+
+      renderApprovedComments(records, origin);
+    } catch (err) {
+      console.warn("Failed to load /api/v1/comments/approved:", err);
+    }
+  }
+
   if (aboutCommentsList) {
-    let aboutReviews = loadAboutReviews();
-    renderAboutReviews(aboutReviews);
+    fetchAndDisplayApprovedComments();
 
     if (aboutReviewForm) {
-      aboutReviewForm.addEventListener("submit", e => {
+      aboutReviewForm.addEventListener("submit", async (e) => {
         e.preventDefault();
+        hideReviewFeedback();
+
+        const submitBtn = aboutReviewForm.querySelector("button[type='submit']");
+        const originalBtnHtml = submitBtn ? submitBtn.innerHTML : "";
+
         const nameInput = document.getElementById("reviewName");
-        const roleInput = document.getElementById("reviewRole");
         const titleInput = document.getElementById("reviewTitle");
+        const companyInput = document.getElementById("reviewCompany");
         const commentInput = document.getElementById("reviewComment");
 
         const name = (nameInput?.value || "").trim();
+        const title = (titleInput?.value || "").trim();
+        const company = (companyInput?.value || "").trim();
         const comment = (commentInput?.value || "").trim();
-        if (!name || !comment) return;
 
-        const newReview = {
-          name,
-          role: (roleInput?.value || "").trim() || "Client",
-          title: (titleInput?.value || "").trim(),
-          comment,
-          date: "Just now"
-        };
+        if (!name || !title || !company || !comment) {
+          showReviewFeedback("error", "Please fill in all required fields.");
+          return;
+        }
 
-        aboutReviews = [newReview, ...aboutReviews];
-        saveAboutReviews(aboutReviews);
-        renderAboutReviews(aboutReviews);
-        aboutReviewForm.reset();
+        if (submitBtn) {
+          submitBtn.innerHTML = `<span>Posting...</span><i class="ri-loader-4-line animate-spin text-sm"></i>`;
+          submitBtn.disabled = true;
+        }
 
-        if (reviewFormFeedback) {
-          reviewFormFeedback.classList.remove("hidden");
-          setTimeout(() => reviewFormFeedback.classList.add("hidden"), 4000);
+        try {
+          const origin = getApiOrigin();
+          if (!origin) {
+            throw new Error("API origin is not configured (VITE_API_ORIGIN).");
+          }
+
+          const creds = getCommentsAuthCredentials();
+          if (!creds.email || !creds.password) {
+            throw new Error("Comments authentication credentials are not configured.");
+          }
+
+          const token = await getSanctumToken(creds);
+
+          const res = await fetch(`${origin}/api/v1/comments`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              name,
+              company,
+              title,
+              comment,
+            }),
+          });
+
+          const resData = await res.json().catch(() => ({}));
+          if (!res.ok) {
+            let errMsg = resData.message || `Failed to submit review (HTTP ${res.status}).`;
+            if (resData.errors && typeof resData.errors === "object") {
+              const firstErr = Object.values(resData.errors).flat()[0];
+              if (firstErr) errMsg = firstErr;
+            }
+            throw new Error(errMsg);
+          }
+
+          showReviewFeedback(
+            "success",
+            resData.message || "Comment submitted successfully and is pending approval."
+          );
+          aboutReviewForm.reset();
+
+          if (submitBtn) {
+            submitBtn.innerHTML = `<span>Submitted!</span><i class="ri-check-line font-bold text-sm"></i>`;
+          }
+
+          // Refresh approved comments feed
+          fetchAndDisplayApprovedComments();
+
+          setTimeout(() => {
+            if (submitBtn) {
+              submitBtn.innerHTML = originalBtnHtml;
+              submitBtn.disabled = false;
+            }
+          }, 3500);
+        } catch (err) {
+          console.error("Submit Comment Error:", err);
+          showReviewFeedback("error", err.message || "Unable to submit comment. Please try again.");
+          if (submitBtn) {
+            submitBtn.innerHTML = originalBtnHtml;
+            submitBtn.disabled = false;
+          }
         }
       });
     }
@@ -551,24 +764,129 @@ document.addEventListener("DOMContentLoaded", function () {
     runCounters();
   }
 
-  // 5. Contact Form Interactive Feedback
+  // 5. Contact Form API Submission (Auth Login -> Submit Inquiry)
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
+    const feedbackEl = document.getElementById("contactFormFeedback");
+
+    const showContactFeedback = (type, message) => {
+      if (!feedbackEl) return;
+      feedbackEl.classList.remove(
+        "hidden",
+        "bg-emerald-500/20",
+        "border",
+        "border-emerald-300/40",
+        "text-emerald-50",
+        "bg-red-500/20",
+        "border-red-300/40",
+        "text-red-100"
+      );
+      if (type === "success") {
+        feedbackEl.classList.add(
+          "bg-emerald-500/20",
+          "border",
+          "border-emerald-300/40",
+          "text-emerald-50"
+        );
+      } else {
+        feedbackEl.classList.add(
+          "bg-red-500/20",
+          "border",
+          "border-red-300/40",
+          "text-red-100"
+        );
+      }
+      feedbackEl.textContent = message;
+    };
+
+    const hideContactFeedback = () => {
+      if (!feedbackEl) return;
+      feedbackEl.classList.add("hidden");
+      feedbackEl.textContent = "";
+    };
+
+    contactForm.addEventListener("submit", async function (e) {
       e.preventDefault();
+      hideContactFeedback();
+
       const submitBtn = contactForm.querySelector("button[type='submit']");
+      const originalHtml = submitBtn ? submitBtn.innerHTML : "";
+
+      const formData = new FormData(contactForm);
+      const inquiryPayload = {
+        first_name: (formData.get("first_name") || formData.get("firstName") || "").toString().trim(),
+        last_name: (formData.get("last_name") || formData.get("lastName") || "").toString().trim(),
+        email: (formData.get("email") || "").toString().trim(),
+        contact_number: (formData.get("contact_number") || formData.get("phone") || "").toString().trim(),
+        subject: (formData.get("subject") || "").toString().trim(),
+        message: (formData.get("message") || "").toString().trim(),
+      };
+
       if (submitBtn) {
-        const originalHtml = submitBtn.innerHTML;
         submitBtn.innerHTML = `<span>Sending...</span><i class="ri-loader-4-line animate-spin text-base"></i>`;
         submitBtn.disabled = true;
-        setTimeout(() => {
+      }
+
+      try {
+        const origin = getApiOrigin();
+        if (!origin) {
+          throw new Error("API origin is not configured in environment variables (VITE_API_ORIGIN).");
+        }
+        const creds = getInquiryAuthCredentials();
+        if (!creds.email || !creds.password) {
+          throw new Error("Inquiry authentication credentials are not configured in environment variables.");
+        }
+
+        // Step 1: Authenticate to retrieve Bearer token
+        const token = await getSanctumToken(creds);
+
+        // Step 2: Submit inquiry with Bearer token
+        const inquiryResponse = await fetch(`${origin}/api/v1/inquiries`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(inquiryPayload),
+        });
+
+        const inquiryData = await inquiryResponse.json().catch(() => ({}));
+        if (!inquiryResponse.ok) {
+          let errMsg = inquiryData.message || `Failed to submit inquiry (HTTP ${inquiryResponse.status}).`;
+          if (inquiryData.errors && typeof inquiryData.errors === "object") {
+            const firstErr = Object.values(inquiryData.errors).flat()[0];
+            if (firstErr) errMsg = firstErr;
+          }
+          throw new Error(errMsg);
+        }
+
+        if (submitBtn) {
           submitBtn.innerHTML = `<span>Message Sent!</span><i class="ri-check-line text-emerald-600 font-bold text-base"></i>`;
-          contactForm.reset();
-          setTimeout(() => {
+        }
+        showContactFeedback(
+          "success",
+          inquiryData.message || "Thank you! Your inquiry has been submitted successfully."
+        );
+        contactForm.reset();
+
+        setTimeout(() => {
+          if (submitBtn) {
             submitBtn.innerHTML = originalHtml;
             submitBtn.disabled = false;
-          }, 3500);
-        }, 900);
+          }
+          hideContactFeedback();
+        }, 4000);
+      } catch (error) {
+        console.error("Contact Inquiry Error:", error);
+        showContactFeedback(
+          "error",
+          error.message || "Unable to submit your inquiry right now. Please try again."
+        );
+        if (submitBtn) {
+          submitBtn.innerHTML = originalHtml;
+          submitBtn.disabled = false;
+        }
       }
     });
   }
@@ -952,18 +1270,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 8. Oora Labz Instagram Latest Post Card (Single Latest Post Sync & Like Toggle)
+  // 8. Oora Labz Instagram Latest Post Card (Live Auto-Sync for Latest Post, Likes & Comments)
+  const instaUsername =
+    (typeof import.meta !== "undefined" &&
+      import.meta.env &&
+      import.meta.env.VITE_INSTAGRAM_USERNAME) ||
+    "oora_labz";
+  const customInstaFeedUrl =
+    (typeof import.meta !== "undefined" &&
+      import.meta.env &&
+      import.meta.env.VITE_INSTAGRAM_FEED_URL) ||
+    "";
+
   const ooraInstagramConfig = {
+    username: instaUsername,
     profileUrl: "https://www.instagram.com/oora_labz?igsh=MTZnYzg1anFjaTh1eA==",
-    // Optional: Add a Behold.so JSON feed URL or Instagram Graph API endpoint to auto-fetch the latest post
-    // e.g. "https://feeds.behold.so/YOUR_FEED_ID" or Graph API media endpoint (limit=1)
-    feedApiUrl: "",
+    feedApiUrl: customInstaFeedUrl,
     fallbackLatestPost: {
-      permalink: "https://www.instagram.com/oora_labz?igsh=MTZnYzg1anFjaTh1eA==",
-      mediaUrl: "assets/images/home-modern/hero-statue.png",
-      caption: "Building modern, reliable, and scalable software solutions crafted for real people. #OoraLabz #BuildingThingsForPeople",
+      permalink: "https://www.instagram.com/p/DdqDpVCj6yq/",
+      mediaUrl: "assets/images/home-modern/insta-latest-post.jpg",
+      caption:
+        "Your business history holds valuable insights if you have the right system to see them. See your past clearly. Build your future confidently. #OoraLabz #BuildThingsForPeople",
       timeLabel: "Latest Instagram Post",
-      likes: 128
+      likes: 5,
+      comments: 0
     }
   };
 
@@ -972,35 +1302,54 @@ document.addEventListener("DOMContentLoaded", function () {
   const instaLatestTime = document.getElementById("instaLatestTime");
   const instaLatestLink = document.getElementById("instaLatestLink");
   const instaCommentLink = document.getElementById("instaCommentLink");
+  const instaCommentCount = document.getElementById("instaCommentCount");
   const instaShareLink = document.getElementById("instaShareLink");
   const instaOpenPostLink = document.getElementById("instaOpenPostLink");
   const instaLikeBtn = document.getElementById("instaLikeBtn");
   const instaLikeIcon = document.getElementById("instaLikeIcon");
   const instaLikeCount = document.getElementById("instaLikeCount");
 
-  function formatRelativeDate(isoDate) {
-    if (!isoDate) return "Latest Instagram Post";
-    const date = new Date(isoDate);
+  function formatRelativeDate(dateInput) {
+    if (!dateInput) return "Latest Instagram Post";
+    const date = new Date(dateInput);
     if (Number.isNaN(date.getTime())) return "Latest Instagram Post";
     const diffSec = Math.floor((Date.now() - date.getTime()) / 1000);
-    if (diffSec < 3600) return `${Math.max(1, Math.floor(diffSec / 60))}m ago • Instagram`;
-    if (diffSec < 86400) return `${Math.floor(diffSec / 3600)}h ago • Instagram`;
-    if (diffSec < 86400 * 30) return `${Math.floor(diffSec / 86400)}d ago • Instagram`;
-    return date.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+    if (diffSec >= 0 && diffSec < 3600) {
+      return `${Math.max(1, Math.floor(diffSec / 60))}m ago • Instagram`;
+    }
+    if (diffSec >= 0 && diffSec < 86400) {
+      return `${Math.floor(diffSec / 3600)}h ago • Instagram`;
+    }
+    if (diffSec >= 0 && diffSec < 86400 * 30) {
+      return `${Math.floor(diffSec / 86400)}d ago • Instagram`;
+    }
+    return `${date.toLocaleDateString(undefined, {
+      month: "short",
+      day: "numeric",
+      year: "numeric"
+    })} • Instagram`;
   }
 
   function applyLatestInstaPost(post) {
     if (!post) return;
     if (instaLatestImage && post.mediaUrl) {
+      instaLatestImage.onerror = () => {
+        if (post.directMediaUrl && instaLatestImage.src !== post.directMediaUrl) {
+          instaLatestImage.src = post.directMediaUrl;
+        } else {
+          instaLatestImage.src = ooraInstagramConfig.fallbackLatestPost.mediaUrl;
+        }
+      };
       instaLatestImage.src = post.mediaUrl;
     }
     if (instaLatestCaption && post.caption) {
+      const cleanCaption = post.caption.replace(/\s+/g, " ").trim();
       instaLatestCaption.innerHTML = "";
       const userSpan = document.createElement("span");
       userSpan.className = "font-extrabold text-[#231E1A] mr-1";
-      userSpan.textContent = "oora_labz";
+      userSpan.textContent = ooraInstagramConfig.username;
       instaLatestCaption.appendChild(userSpan);
-      instaLatestCaption.appendChild(document.createTextNode(post.caption));
+      instaLatestCaption.appendChild(document.createTextNode(cleanCaption));
     }
     if (instaLatestTime && post.timeLabel) {
       instaLatestTime.textContent = post.timeLabel;
@@ -1013,38 +1362,95 @@ document.addEventListener("DOMContentLoaded", function () {
     if (instaLikeCount && typeof post.likes === "number") {
       instaLikeCount.textContent = String(post.likes);
     }
+    if (instaCommentCount && typeof post.comments === "number") {
+      instaCommentCount.textContent = String(post.comments);
+    }
   }
 
-  if (instaLatestImage && ooraInstagramConfig.feedApiUrl) {
-    fetch(ooraInstagramConfig.feedApiUrl)
-      .then(res => (res.ok ? res.json() : Promise.reject(new Error("Feed fetch failed"))))
-      .then(payload => {
-        const posts = Array.isArray(payload) ? payload : payload.posts || payload.data || [];
-        const latest = posts[0]; // Only show the very last Instagram post
-        if (!latest) return;
-        const mediaUrl =
-          latest.sizes?.medium?.mediaUrl ||
-          latest.media_type === "VIDEO"
-            ? latest.thumbnail_url || latest.mediaUrl || latest.media_url
-            : latest.mediaUrl || latest.media_url || latest.thumbnail_url;
-        applyLatestInstaPost({
-          permalink: latest.permalink || ooraInstagramConfig.profileUrl,
-          mediaUrl: mediaUrl || ooraInstagramConfig.fallbackLatestPost.mediaUrl,
-          caption: latest.caption || latest.prunedCaption || ooraInstagramConfig.fallbackLatestPost.caption,
-          timeLabel: formatRelativeDate(latest.timestamp),
-          likes: typeof latest.likeCount === "number" ? latest.likeCount : ooraInstagramConfig.fallbackLatestPost.likes
-        });
-      })
-      .catch(() => {
-        applyLatestInstaPost(ooraInstagramConfig.fallbackLatestPost);
-      });
+  function normalizeInstaPayload(payload) {
+    if (!payload || payload.error) return null;
+
+    // Direct normalized response from /api/instagram-latest or assets/php/instagram-latest.php
+    if (payload.shortcode && (payload.mediaUrl || payload.directMediaUrl)) {
+      return {
+        permalink: payload.permalink || `https://www.instagram.com/p/${payload.shortcode}/`,
+        mediaUrl: payload.mediaUrl || payload.directMediaUrl,
+        directMediaUrl: payload.directMediaUrl || payload.mediaUrl,
+        caption: payload.caption || ooraInstagramConfig.fallbackLatestPost.caption,
+        timeLabel: formatRelativeDate(payload.timestamp),
+        likes: typeof payload.likes === "number" ? payload.likes : ooraInstagramConfig.fallbackLatestPost.likes,
+        comments: typeof payload.comments === "number" ? payload.comments : ooraInstagramConfig.fallbackLatestPost.comments
+      };
+    }
+
+    // Behold.so / Graph API array response
+    const posts = Array.isArray(payload) ? payload : payload.posts || payload.data || [];
+    const latest = posts[0];
+    if (!latest) return null;
+
+    const mediaUrl =
+      latest.sizes?.medium?.mediaUrl ||
+      (latest.media_type === "VIDEO"
+        ? latest.thumbnail_url || latest.mediaUrl || latest.media_url
+        : latest.mediaUrl || latest.media_url || latest.thumbnail_url);
+
+    return {
+      permalink: latest.permalink || ooraInstagramConfig.profileUrl,
+      mediaUrl: mediaUrl || ooraInstagramConfig.fallbackLatestPost.mediaUrl,
+      directMediaUrl: mediaUrl || ooraInstagramConfig.fallbackLatestPost.mediaUrl,
+      caption: latest.caption || latest.prunedCaption || ooraInstagramConfig.fallbackLatestPost.caption,
+      timeLabel: formatRelativeDate(latest.timestamp),
+      likes:
+        typeof latest.likeCount === "number"
+          ? latest.likeCount
+          : typeof latest.like_count === "number"
+            ? latest.like_count
+            : ooraInstagramConfig.fallbackLatestPost.likes,
+      comments:
+        typeof latest.commentsCount === "number"
+          ? latest.commentsCount
+          : typeof latest.comments_count === "number"
+            ? latest.comments_count
+            : ooraInstagramConfig.fallbackLatestPost.comments
+    };
+  }
+
+  async function syncLatestInstagramPost() {
+    if (!instaLatestImage) return;
+
+    const endpoints = [
+      ooraInstagramConfig.feedApiUrl,
+      `/api/instagram-latest?username=${encodeURIComponent(ooraInstagramConfig.username)}`,
+      `assets/php/instagram-latest.php?username=${encodeURIComponent(ooraInstagramConfig.username)}`
+    ].filter(Boolean);
+
+    for (const url of endpoints) {
+      try {
+        const res = await fetch(url, { cache: "no-store" });
+        if (!res.ok) continue;
+        const contentType = res.headers.get("content-type") || "";
+        if (!contentType.includes("application/json")) continue;
+        const data = await res.json();
+        const normalized = normalizeInstaPayload(data);
+        if (normalized) {
+          applyLatestInstaPost(normalized);
+          return;
+        }
+      } catch (_) {
+        // Try next endpoint
+      }
+    }
+  }
+
+  if (instaLatestImage) {
+    syncLatestInstagramPost();
   }
 
   if (instaLikeBtn && instaLikeIcon && instaLikeCount) {
     let liked = true;
     instaLikeBtn.addEventListener("click", () => {
       liked = !liked;
-      const current = parseInt(instaLikeCount.textContent || "128", 10);
+      const current = parseInt(instaLikeCount.textContent || "0", 10);
       if (liked) {
         instaLikeIcon.className = "ri-heart-3-fill text-[#C84B31] text-lg";
         instaLikeCount.textContent = String(current + 1);

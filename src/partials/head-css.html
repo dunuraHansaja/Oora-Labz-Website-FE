@@ -1,3 +1,22 @@
+<!-- Clean .html and index.html from URL -->
+<script>
+  (function () {
+    try {
+      var p = window.location.pathname;
+      if (p.endsWith('.html') || p.includes('.html')) {
+        var clean = p.replace(/\/index\.html$/, '/');
+        if (clean.endsWith('.html')) {
+          clean = clean.slice(0, -5);
+        }
+        var target = (clean || '/') + window.location.search + window.location.hash;
+        if (target !== window.location.pathname + window.location.search + window.location.hash) {
+          window.history.replaceState(null, '', target);
+        }
+      }
+    } catch (_) {}
+  })();
+</script>
+
 <!-- icon css -->
 <link rel="stylesheet" href="assets/scss/icons.scss" />
 

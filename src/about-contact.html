@@ -310,31 +310,31 @@
 
             <form id="aboutReviewForm" class="flex flex-col gap-4">
 
-              <!-- Name & Role -->
+              <!-- Name & Job Title -->
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
                   <label for="reviewName" class="block text-xs font-bold text-[#231E1A] mb-1">Your Name *</label>
-                  <input type="text" id="reviewName" required placeholder="e.g. Kasun Silva"
+                  <input type="text" id="reviewName" name="name" required placeholder="e.g. Kasun Perera"
                     class="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF5EF] border border-[#E2D6C8] text-sm text-[#231E1A] placeholder-[#9B8B7D] focus:outline-none focus:border-[#745A43] transition-colors" />
                 </div>
                 <div>
-                  <label for="reviewRole" class="block text-xs font-bold text-[#231E1A] mb-1">Role / Company</label>
-                  <input type="text" id="reviewRole" placeholder="e.g. Founder, Apex"
+                  <label for="reviewTitle" class="block text-xs font-bold text-[#231E1A] mb-1">Job Title *</label>
+                  <input type="text" id="reviewTitle" name="title" required placeholder="e.g. Managing Director"
                     class="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF5EF] border border-[#E2D6C8] text-sm text-[#231E1A] placeholder-[#9B8B7D] focus:outline-none focus:border-[#745A43] transition-colors" />
                 </div>
               </div>
 
-              <!-- Headline -->
+              <!-- Company -->
               <div>
-                <label for="reviewTitle" class="block text-xs font-bold text-[#231E1A] mb-1">Review Title</label>
-                <input type="text" id="reviewTitle" placeholder="Summarize your experience"
+                <label for="reviewCompany" class="block text-xs font-bold text-[#231E1A] mb-1">Company / Organization *</label>
+                <input type="text" id="reviewCompany" name="company" required placeholder="e.g. Apex Holdings"
                   class="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF5EF] border border-[#E2D6C8] text-sm text-[#231E1A] placeholder-[#9B8B7D] focus:outline-none focus:border-[#745A43] transition-colors" />
               </div>
 
               <!-- Comment -->
               <div>
                 <label for="reviewComment" class="block text-xs font-bold text-[#231E1A] mb-1">Your Comment *</label>
-                <textarea id="reviewComment" rows="3" required placeholder="Share how Oora Labz helped your business..."
+                <textarea id="reviewComment" name="comment" rows="3" required placeholder="Share how Oora Labz helped your business..."
                   class="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF5EF] border border-[#E2D6C8] text-sm text-[#231E1A] placeholder-[#9B8B7D] focus:outline-none focus:border-[#745A43] transition-colors resize-none"></textarea>
               </div>
 
@@ -344,9 +344,7 @@
                 <i class="ri-send-plane-fill text-sm"></i>
               </button>
 
-              <p id="reviewFormFeedback" class="hidden text-xs font-semibold text-[#2E6F40] text-center pt-1">
-                Thank you! Your review has been added to the comments.
-              </p>
+              <p id="reviewFormFeedback" class="hidden text-xs font-semibold text-center pt-1"></p>
             </form>
           </div>
         </div>

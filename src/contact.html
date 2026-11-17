@@ -220,23 +220,23 @@
                 <!-- Row 1: First Name & Last Name -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                   <div>
-                    <input type="text" name="firstName" placeholder="First Name" required
+                    <input type="text" name="first_name" placeholder="First Name" required
                       class="contact-sand-field w-full rounded-full px-5 py-3.5 text-sm font-medium focus:outline-none transition-all" />
                   </div>
                   <div>
-                    <input type="text" name="lastName" placeholder="Last Name" required
+                    <input type="text" name="last_name" placeholder="Last Name" required
                       class="contact-sand-field w-full rounded-full px-5 py-3.5 text-sm font-medium focus:outline-none transition-all" />
                   </div>
                 </div>
 
-                <!-- Row 2: Email Address & Phone Number -->
+                <!-- Row 2: Email Address & Contact Number -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                   <div>
                     <input type="email" name="email" placeholder="Email Address" required
                       class="contact-sand-field w-full rounded-full px-5 py-3.5 text-sm font-medium focus:outline-none transition-all" />
                   </div>
                   <div>
-                    <input type="tel" name="phone" placeholder="Phone Number"
+                    <input type="tel" name="contact_number" placeholder="Phone Number (e.g. +94 77 123 4567)" required
                       class="contact-sand-field w-full rounded-full px-5 py-3.5 text-sm font-medium focus:outline-none transition-all" />
                   </div>
                 </div>
@@ -246,12 +246,17 @@
                   <select name="subject" required
                     class="contact-sand-field w-full appearance-none rounded-full px-5 pr-11 py-3.5 text-sm font-medium focus:outline-none transition-all cursor-pointer">
                     <option value="" disabled selected>Subject</option>
-                    <option value="Custom Software Development">Custom Software Development</option>
-                    <option value="Business Applications (ERP / CRM)">Business Applications (ERP / CRM)</option>
+                    <option value="Custom Software Developments">Custom Software Developments</option>
+                    <option value="Business Applications">Business Applications</option>
                     <option value="AI & Intelligent Solutions">AI &amp; Intelligent Solutions</option>
-                    <option value="Data & BI">Data &amp; BI</option>
-                    <option value="UI/UX Digital Experiences">UI/UX Digital Experiences</option>
+                    <option value="Data & Business Intelligence">Data &amp; Business Intelligence</option>
+                    <option value="UI/UX & Digital Experiences">UI/UX &amp; Digital Experiences</option>
+                    <option value="Mobile Application Development">Mobile Application Development</option>
                     <option value="Cloud & IT Solutions">Cloud &amp; IT Solutions</option>
+                    <option value="IT Consulting & Technology Services">IT Consulting &amp; Technology Services</option>
+                    <option value="Automation & Digital Transformations">Automation &amp; Digital Transformations</option>
+                    <option value="E-Commerce Solutions">E-Commerce Solutions</option>
+                    <option value="Support & System Maintenance">Support &amp; System Maintenance</option>
                     <option value="Product Inquiry (OOSEND / FINLOO / LOOGA / OOLA)">Product Inquiry</option>
                     <option value="General Inquiry">General Inquiry</option>
                   </select>
@@ -264,6 +269,9 @@
                   <textarea name="message" rows="5" placeholder="Write your message" required
                     class="contact-sand-field w-full rounded-[22px] px-5 py-4 text-sm font-medium focus:outline-none transition-all resize-none"></textarea>
                 </div>
+
+                <!-- Status Feedback Message -->
+                <div id="contactFormFeedback" class="hidden rounded-2xl px-4 py-3 text-xs sm:text-sm font-medium transition-all" role="alert"></div>
 
                 <!-- Row 5: Submit Button -->
                 <div class="pt-1">

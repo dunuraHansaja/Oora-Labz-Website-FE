@@ -659,10 +659,11 @@ body.home-modern-page h6 {
     top 0.55s cubic-bezier(0.22, 1, 0.36, 1),
     width 0.55s cubic-bezier(0.22, 1, 0.36, 1),
     height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
     background-color 0.55s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: left, top, width, height, background-color, box-shadow;
+  will-change: left, top, width, height, opacity, background-color, box-shadow;
   user-select: none;
 
   .fan-card-content {
@@ -675,17 +676,26 @@ body.home-modern-page h6 {
     transition: opacity 0.32s ease, transform 0.48s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
+  .fan-avatar {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    filter: contrast(106%) brightness(102%) saturate(104%);
+  }
+
   /* 1. Left Outer Slot */
   &.pos-outer-left {
     left: 0%;
     top: 0px;
     width: 35.2%;
     height: 214px;
-    background-color: rgba(244, 238, 226, 0.58);
-    backdrop-filter: blur(10px) saturate(135%);
-    -webkit-backdrop-filter: blur(10px) saturate(135%);
-    border: 1px solid rgba(255, 255, 255, 0.68);
-    box-shadow: -7px 8px 6px rgba(0, 0, 0, 0.24), inset 0 1px 1px rgba(255, 255, 255, 0.75);
+    opacity: 0.48;
+    background-color: #EDE5D6;
+    border: none;
+    box-shadow: none;
     z-index: 2;
     cursor: pointer;
 
@@ -702,11 +712,10 @@ body.home-modern-page h6 {
     top: 26px;
     width: 34.2%;
     height: 214px;
-    background-color: rgba(244, 238, 226, 0.72);
-    backdrop-filter: blur(12px) saturate(140%);
-    -webkit-backdrop-filter: blur(12px) saturate(140%);
-    border: 1px solid rgba(255, 255, 255, 0.72);
-    box-shadow: -7px 8px 6px rgba(0, 0, 0, 0.26), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    opacity: 0.72;
+    background-color: #EDE5D6;
+    border: none;
+    box-shadow: none;
     z-index: 5;
     cursor: pointer;
 
@@ -723,6 +732,7 @@ body.home-modern-page h6 {
     top: 46px;
     width: 65.2%;
     height: 218px;
+    opacity: 1;
     background-color: #F4EEE2;
     border: 1px solid transparent;
     box-shadow: 6px 7px 6px rgba(0, 0, 0, 0.24), 0 7px 6px rgba(0, 0, 0, 0.16);
@@ -742,11 +752,10 @@ body.home-modern-page h6 {
     top: 26px;
     width: 34.2%;
     height: 214px;
-    background-color: rgba(244, 238, 226, 0.72);
-    backdrop-filter: blur(12px) saturate(140%);
-    -webkit-backdrop-filter: blur(12px) saturate(140%);
-    border: 1px solid rgba(255, 255, 255, 0.72);
-    box-shadow: 7px 8px 6px rgba(0, 0, 0, 0.26), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    opacity: 0.72;
+    background-color: #EDE5D6;
+    border: none;
+    box-shadow: none;
     z-index: 5;
     cursor: pointer;
 
@@ -763,11 +772,10 @@ body.home-modern-page h6 {
     top: 0px;
     width: 35.2%;
     height: 214px;
-    background-color: rgba(244, 238, 226, 0.58);
-    backdrop-filter: blur(10px) saturate(135%);
-    -webkit-backdrop-filter: blur(10px) saturate(135%);
-    border: 1px solid rgba(255, 255, 255, 0.68);
-    box-shadow: 7px 8px 6px rgba(0, 0, 0, 0.24), inset 0 1px 1px rgba(255, 255, 255, 0.75);
+    opacity: 0.48;
+    background-color: #EDE5D6;
+    border: none;
+    box-shadow: none;
     z-index: 2;
     cursor: pointer;
 
@@ -890,7 +898,7 @@ body.home-modern-page h6 {
       top: 0px;
       width: 35.2%;
       height: 132px;
-      box-shadow: -4px 5px 4px rgba(0, 0, 0, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.75);
+      box-shadow: none;
     }
 
     &.pos-mid-left {
@@ -898,7 +906,7 @@ body.home-modern-page h6 {
       top: 15px;
       width: 34.2%;
       height: 132px;
-      box-shadow: -4px 5px 4px rgba(0, 0, 0, 0.24), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+      box-shadow: none;
     }
 
     &.pos-front {
@@ -914,7 +922,7 @@ body.home-modern-page h6 {
       top: 15px;
       width: 34.2%;
       height: 132px;
-      box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.24), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+      box-shadow: none;
     }
 
     &.pos-outer-right {
@@ -922,7 +930,7 @@ body.home-modern-page h6 {
       top: 0px;
       width: 35.2%;
       height: 132px;
-      box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.75);
+      box-shadow: none;
     }
   }
 }
@@ -1426,4 +1434,14 @@ body.home-modern-page h6 {
   &:active {
     transform: translateY(0);
   }
+}
+
+.comment-card-avatar-img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  filter: contrast(106%) brightness(102%) saturate(104%);
 }
